@@ -7,7 +7,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :zip, { null: false, index: true }
       t.decimal :latitude
       t.decimal :longitude
-      t.references :restaurant
+      t.references :restaurant, { index: true }
 
       t.timestamps
     end
