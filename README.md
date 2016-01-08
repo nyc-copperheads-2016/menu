@@ -25,7 +25,7 @@ by Aaron, Eunice, Jay & Jon
 - Pairing 
 - Agile
 
-<b>The Mission</b>
+<b>The Mission</b> (Also see Trello board for stories)
 
 *User Experience:*
 - Users can view owner-managed, owner-curated menus and decide on their order before being seated at a restaurant.
@@ -48,5 +48,4 @@ by Aaron, Eunice, Jay & Jon
   Default breakfast/lunch/dinner menu based on the current time of day.
   Drop down to sort menu items by trending/special of the day/(owner) featured.
 
-*Schema:*
-<img>
+*Schema:* (See db/schema.png)
