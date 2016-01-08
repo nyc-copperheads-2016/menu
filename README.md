@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/nyc-copperheads-2016/menu.svg?style=svg)](https://circleci.com/gh/nyc-copperheads-2016/menu)
+
 <b>MENU APP</b>
 by Aaron, Eunice, Jay & Jon
 
