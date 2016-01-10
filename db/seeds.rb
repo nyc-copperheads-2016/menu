@@ -862,3 +862,30 @@ num1[:menus].each do |menu|
   end
 end
 
+5.times do
+  FactoryGirl.create(:user)
+end
+
+u = FactoryGirl.create(:user)
+
+20.times do
+  r = FactoryGirl.create(:restaurant)
+
+  3.times do
+    FactoryGirl.create(:location, restaurant: r)
+  end
+
+  2.times do
+    m = FactoryGirl.create(:menu, restaurant: r)
+
+    3.times do
+      s = FactoryGirl.create(:section, menu: m)
+
+      5.times do
+        i = FactoryGirl.create(:item, section: s)
+      end
+
+      FactoryGirl.create(:favorite, user: u, item: Item.last)
+    end
+  end
+end
