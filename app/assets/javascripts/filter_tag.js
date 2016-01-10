@@ -1,10 +1,39 @@
-var myApp = angular.module('myApp',[]);
 
-angular.module('myApp').controller('ItemsController',
-  ['$scope', '$http', function MenuCtrl($scope, $http) {
-   $http.get('http://localhost:3000/api/restaurants/1/items').then(function successCallback(response) {
+// angular.module('ngApp', ['ngRoute'])
+// .config(function ($routeProvider, $locationProvider) {
+//     // configure the routing rules here
+//     $routeProvider.when('/restaurant/:id/items', {
+//         controller: 'restaurantsController'
+//     });
+//     // enable HTML5mode to disable hashbang urls
+//     $locationProvider.html5Mode(true);
+// })
+// .controller('ItemsController', function ($scope, $routeParams, $route) {
+//     // If you want to use URL attributes before the website is loaded
+//     $http.get('http://localhost:3000/api/restaurants/1/items').then(function successCallback(response) {
+//       $scope.menuItems = response.data;
+//   },
+//   function errorCallback(response) {
+//     console.log("There was an error");
+//   });
+// });
+
+
+var myApp = angular.module('myApp',['ngRoute']);
+
+myApp.config(function ($routeProvider, $locationProvider) {
+  $routeProvider.when('/restaurants/:restaurant_id/items', {
+    controller: 'RestaurantController'
+  });
+  // $locationProvider.html5Mode(true);
+})
+.controller('ItemsController',
+  ['$scope', '$route', '$routeParams', '$http', function MenuCtrl($scope, $route, $routeParams, $http) {
+    debugger
+    var params = $routeParams.restaurant_id;
+    $http.get('http://localhost:3000/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.menuItems = response.data;
-  },
+    },
     function errorCallback(response) {
       console.log("There was an error");
   });
