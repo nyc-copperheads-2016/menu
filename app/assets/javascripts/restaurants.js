@@ -1,7 +1,7 @@
 angular.module('restaurants', []).controller('RestaurantsController',
   ['$http', '$filter', '$scope', function($http, $filter, $scope) {
 
-  $http.get('/restaurants')
+  $http.get('/api/restaurants')
   .then(function(response) {
     console.log(response);
     $scope.restaurants = response.data;
