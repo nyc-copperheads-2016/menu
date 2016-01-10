@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
+  root 'restaurants#index'
 
-  root 'static#index'
+  resources :restaurants, only:[:index] do
+      resources :items, only:[:index, :show]
+  end
+
+  resources :users, only: [:new, :create]
+  resources :sessions, only:[:create]
+
   namespace :api do
     resources :restaurants, only:[:index] do
       resources :items, only:[:index, :show]
     end
   end
-
-  resources :restaurants, only:[:index] do
-      resources :items, only:[:index, :show]
-  end
-  resources :users, only: [:new, :create]
-  resources :sessions, only:[:create]
-
 
   get 'login' => 'sessions#new'
   get 'logout'=> 'sessions#destroy'
