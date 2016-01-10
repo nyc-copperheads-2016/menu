@@ -841,6 +841,7 @@ num2 = {
   }
 }
 
+User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
 
 r1 = Restaurant.create(name: num1[:name], website: num1[:website_url])
 l1 = r1.locations.create(address: num1[:location][:address1], city: num1[:location][:locality], state: num1[:location][:region], zip: num1[:location][:postal_code], latitude: num1[:location][:geo][:coordinates][1], longitude: num1[:location][:geo][:coordinates][0])
