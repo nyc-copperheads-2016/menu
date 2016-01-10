@@ -12,5 +12,9 @@
 !/log/.keep
 /tmp
 
+
 # For simplecov gem
 /coverage
+
+#Ignore DS Store
+.DS_Store
