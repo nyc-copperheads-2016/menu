@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'restaurants#index'
 
   resources :restaurants, only:[:index]
+  resources :menus, only:[:index] do
+    resources :items, only:[:index, :show]
+  end
 
   resources :users, only: [:new, :create]
   resources :sessions, only:[:create]
