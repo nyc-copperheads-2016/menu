@@ -1,9 +1,9 @@
 var myApp = angular.module('myApp',[]);
 
-angular.module('myApp').controller('MainController',
+angular.module('myApp').controller('ItemsController',
   ['$scope', '$http', function MenuCtrl($scope, $http) {
-   $http.get('http://localhost:3000/menus/1/items').then(function successCallback(response) {
-    $scope.menuItems = response;
+   $http.get('http://localhost:3000/api/restaurants/1/items').then(function successCallback(response) {
+    $scope.menuItems = response.data;
   },
     function errorCallback(response) {
       console.log("There was an error");
