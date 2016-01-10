@@ -13,6 +13,20 @@
   </head>
 
   <body>
+    <header>
+      <h1>
+        <%= link_to 'Menyou: Where Menus are Yours', root_path %>
+      </h1>
+      <% if logged_in? %>
+        <%= current_user.username %>
+        |
+        <%= link_to 'Sign Out', logout_path %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        |
+        <%= link_to 'Sign In', new_user_path %>
+      <% end %>
+    </header>
 
     <%= yield %>
 
