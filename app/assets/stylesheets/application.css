@@ -19,3 +19,19 @@
 div.ng-scope {
   display: inline;
 }
+
+button.tag-filter1 {
+  background-color: green;
+}
+
+button.tag-filter1:hover {
+  background-color: green;
+}
+
+button.tag-filter2 {
+  background-color: red;
+}
+
+button.tag-filter2:hover {
+  background-color: red;
+}
