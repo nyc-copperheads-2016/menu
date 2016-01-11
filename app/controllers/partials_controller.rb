@@ -4,7 +4,11 @@ class PartialsController < ApplicationController
     render :layout => false
   end
 
-  def menuItems 
+  def menuItems
+    render :layout => false
+  end
+
+  def itemShow
     render :layout => false
   end
 
