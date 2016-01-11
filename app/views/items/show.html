@@ -1,0 +1,19 @@
+<div ng-app="myApp">
+
+  <div ng-controller="ItemsController">
+    <!-- For every tag object (with name and state) in var tagFilters, iterate.  -->
+
+    <ul>
+        <p>Item: {{menuItems[].name}}</p>
+        <p>Description: {{item.description}}</p>
+        <label>Tags: </label>
+        <p>{{item.tags[0].name}}</p>
+        <ul>
+          <li ng-repeat="tag in item.tags">
+            <code>{{tag[0].name}}</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

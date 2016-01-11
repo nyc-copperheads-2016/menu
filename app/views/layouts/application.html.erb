@@ -11,6 +11,7 @@
     <base href="/">
   </head>
   <body>
+
     <header>
       <h1>
         <%= link_to 'Menyou: Where Menus are Yours', root_path %>
@@ -26,6 +27,15 @@
       <% end %>
     </header>
 
-    <%= yield %>
+    <div class = "row">
+      <div class = "top-bar"></div>
+      <div class= "large-2"></div>
+      <div class="small-12 large-8 columns">
+
+        <%= yield %>
+      </div>
+      <div class= "large-2"></div>
+    </div>
+
   </body>
 </html>
