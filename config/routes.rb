@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  root 'restaurants#index'
+  root 'app#index'
 
-  resources :restaurants, only:[:index] do
-      resources :items, only:[:index, :show]
-  end
+  # Any Angular route should go to app#index (to get through ng-view)!
+  match '/restaurants/*path' => 'app#index', via: [:get]
+
+  get 'partials/menuItems' => 'partials#menuItems'
+  get 'partials/restaurants' => 'partials#restaurants'
 
   resources :users, only: [:new, :create]
   resources :sessions, only:[:create]
