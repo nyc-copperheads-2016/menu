@@ -884,6 +884,8 @@ u = FactoryGirl.create(:user)
 
       5.times do
         i = FactoryGirl.create(:item, section: s)
+        i.diet_list = "sweet, spicy, halal, kosher"
+        i.save
       end
 
       FactoryGirl.create(:favorite, user: u, item: Item.last)
