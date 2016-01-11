@@ -3,17 +3,17 @@ myApp.controller('ItemsController',
     var params = $routeParams.restaurant_id;
     $http.get('http://localhost:3000/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.menuItems = response.data;
-    $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
+    $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags(menuItems));
     },
     function errorCallback(response) {
       console.log("There was an error");
   });
 
-  $scope.findUniqueTags = function() {
+  $scope.findUniqueTags = function(menuItems) {
     var tags = {};
-    angular.forEach($scope.menuItems, function(menuItem) {
-      angular.forEach(menuItem.tags, function(tag) {
-        tags[tag] = 1;
+    angular.forEach(menuItems, function(menuItem) {
+      angular.forEach(menuItem["diets"], function(tag) {
+        tags[tag["name"]] = 1;
       });
     });
     /* return is an array of tag strings */
@@ -29,6 +29,7 @@ myApp.controller('ItemsController',
     return filters;
   };
 
+
   /* tagFilter is referencing one of the tag objects in the tagFilters variable. */
   $scope.toggleTagState = function(tagFilter) {
     tagFilter.state = (tagFilter.state + 1) % 3;
@@ -40,12 +41,20 @@ myApp.controller('ItemsController',
     /* Within the array of tagFilters tag objects... */
     angular.forEach($scope.tagFilters, function(tagFilter) {
       /* If tag state is 1 (clicked once) AND the menu item's tags do NOT contain the tag of state 1, then set showItem to false. */
-      if (tagFilter.state == 1 && menuItem.tags.indexOf(tagFilter.name) == -1) {
-        showItem = false;
-      }
-      else if (tagFilter.state == 2 && menuItem.tags.indexOf(tagFilter.name) > -1) {
-        showItem = false;
-      }
+      // if (tagFilter.state == 1 && menuItem.diets.indexOf(tagFilter.name) == -1) {
+        // if the current object has a tag name == to the tag that was clicked on
+        // hide the item
+      debugger
+
+      menuItem.forEach(function (dietTag) {
+        // body...
+        if (tagFilter.state === 1 && dietTag.tag.forEach(function (tag)) { tag.name } !== tagFilter.name) {
+          showItem = false;
+        }
+        else if (tagFilter.state === 2 && tag.name === tagFilter.name) {
+          showItem = false;
+        }
+      })
     });
     return showItem;
   };
