@@ -1,48 +1,13 @@
-
-// angular.module('ngApp', ['ngRoute'])
-// .config(function ($routeProvider, $locationProvider) {
-//     // configure the routing rules here
-//     $routeProvider.when('/restaurant/:id/items', {
-//         controller: 'restaurantsController'
-//     });
-//     // enable HTML5mode to disable hashbang urls
-//     $locationProvider.html5Mode(true);
-// })
-// .controller('ItemsController', function ($scope, $routeParams, $route) {
-//     // If you want to use URL attributes before the website is loaded
-//     $http.get('http://localhost:3000/api/restaurants/1/items').then(function successCallback(response) {
-//       $scope.menuItems = response.data;
-//   },
-//   function errorCallback(response) {
-//     console.log("There was an error");
-//   });
-// });
-
-
-var myApp = angular.module('myApp',['ngRoute']);
-
-myApp.config(function ($routeProvider, $locationProvider) {
-  $routeProvider.when('/restaurants/:restaurant_id/items', {
-    controller: 'RestaurantController'
-  });
-  // $locationProvider.html5Mode(true);
-})
-.controller('ItemsController',
-  ['$scope', '$route', '$routeParams', '$http', function MenuCtrl($scope, $route, $routeParams, $http) {
-    debugger
+myApp.controller('ItemsController',
+  ['$scope', '$routeParams', '$http', function MenuCtrl($scope, $routeParams, $http) {
     var params = $routeParams.restaurant_id;
     $http.get('http://localhost:3000/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.menuItems = response.data;
+    $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
     },
     function errorCallback(response) {
       console.log("There was an error");
   });
-
-  // $scope.menuItems = [
-  //   {name: 'Burger', tags: ['sweet', 'spicy', 'fake meat']},
-  //   {name: 'Cola', tags: ['sweet']},
-  //   {name: 'Grilled Cheese', tags: ['cheesy', 'savory']}
-  // ];
 
   $scope.findUniqueTags = function() {
     var tags = {};
@@ -63,8 +28,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
     /* filters array now holds a bunch of tag objects. Ex: { name: tag_name, state: 0 } */
     return filters;
   };
-
-  $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
 
   /* tagFilter is referencing one of the tag objects in the tagFilters variable. */
   $scope.toggleTagState = function(tagFilter) {
