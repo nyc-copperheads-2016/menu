@@ -884,8 +884,16 @@ u = FactoryGirl.create(:user)
 
       5.times do
         i = FactoryGirl.create(:item, section: s)
-        diets = %w(sweet spicy halal kosher)
+
+        diets = %w(vegan vegetarian halal kosher)
         i.diet_list = diets.sample(2).join(", ")
+
+        tastes = %w(sweet spicy sour)
+        i.taste_list = tastes.sample(2).join(", ")
+
+        ingredients = %w(chicken beef fish nuts eggs)
+        i.taste_list = tastes.sample(2).join(", ")
+
         i.save
       end
 
