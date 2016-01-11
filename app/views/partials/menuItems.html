@@ -2,7 +2,7 @@
   <!-- For every tag object (with name and state) in var tagFilters, iterate.  -->
   <div ng-repeat="tagFilter in tagFilters">
     <!-- On the click event, run the toggleTagState fn to change the tag object's state property. -->
-    <button class="tag-filter" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
+    <button class="tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
   </div>
 
   <h2>
@@ -16,7 +16,7 @@
       <label>Tags: </label>
       <ul>
         <li ng-repeat="diet in item.diets">
-          <code>{{diet.name}}</code>
+          {{diet.name}}
         </li>
       </ul>
       <hr/>
