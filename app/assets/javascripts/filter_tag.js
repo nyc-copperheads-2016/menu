@@ -5,6 +5,14 @@ myApp.controller('ItemsController',
     $scope.restaurantId = params;
     $scope.restaurant = response.data;
 
+    $scope.currentMenu = $scope.restaurant.menus[0];
+    $scope.sections = $scope.currentMenu.sections;
+    $scope.menuItems = [];
+    for (var section in $scope.currentMenu.sections) {
+      for (var item in $scope.currentMenu.sections[section].items) {
+        $scope.menuItems.push($scope.currentMenu.sections[section].items[item]);
+      }
+    }
     tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
     },
@@ -25,7 +33,7 @@ myApp.controller('ItemsController',
         tags[tag["name"]] = 1;
       });
     });
-
+    debugger
     /* return is an array of tag strings */
     return Object.keys(tags).sort();
   };
