@@ -16,7 +16,7 @@
       <h3>{{menu.name}}</h3>
       <div ng-repeat="section in menu.sections">
         <p>{{section.name}}</p>
-        <li ng-repeat="item in section.items | filter:customTagFilter">
+        <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
           <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
           <p><img src="{{item.photo_url}}" width="200"></p>
           <p>Item: {{item.name}}</p>

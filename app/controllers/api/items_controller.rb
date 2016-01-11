@@ -9,9 +9,6 @@ class Api::ItemsController < ApplicationController
         }]
       }]
     }]
-    # render json: restaurant.menus.first.sections, include: [:items => { :include =>
-    # [:diets, :ingredients, :tastes] } ]
-    # render json: restaurant.menus.first.items, include: ['ingredients', 'diets', 'tastes']
 
   end
 
