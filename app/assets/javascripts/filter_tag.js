@@ -3,6 +3,7 @@ myApp.controller('ItemsController',
     var params = $routeParams.restaurant_id;
     $http.get('http://localhost:3000/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.menuItems = response.data;
+    tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
     },
     function errorCallback(response) {
@@ -13,6 +14,9 @@ myApp.controller('ItemsController',
     var tags = {};
     angular.forEach($scope.menuItems, function(menuItem) {
       angular.forEach(menuItem["diets"], function(tag) {
+        tags[tag["name"]] = 1;
+      });
+      angular.forEach(menuItem["tastes"], function(tag) {
         tags[tag["name"]] = 1;
       });
     });
