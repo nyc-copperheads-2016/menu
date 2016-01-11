@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20160108195717) do
     t.datetime "updated_at"
   end
 
+  add_index "restaurants", ["name"], name: "index_restaurants_on_name", using: :btree
+
   create_table "sections", force: :cascade do |t|
     t.integer  "menu_id"
     t.string   "name",       limit: 64, null: false
@@ -98,7 +100,7 @@ ActiveRecord::Schema.define(version: 20160108195717) do
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -107,6 +109,8 @@ ActiveRecord::Schema.define(version: 20160108195717) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   add_foreign_key "items", "sections"
   add_foreign_key "menus", "restaurants"

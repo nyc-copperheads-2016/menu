@@ -12,8 +12,8 @@ myApp.controller('ItemsController',
   $scope.findUniqueTags = function() {
     var tags = {};
     angular.forEach($scope.menuItems, function(menuItem) {
-      angular.forEach(menuItem.tags, function(tag) {
-        tags[tag] = 1;
+      angular.forEach(menuItem["diets"], function(tag) {
+        tags[tag["name"]] = 1;
       });
     });
     /* return is an array of tag strings */
