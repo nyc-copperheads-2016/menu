@@ -8,7 +8,6 @@ class AppController < ApplicationController
   end
 
   def menuItems
-    render 
   end
 
 end
