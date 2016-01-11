@@ -16,6 +16,7 @@ myApp.controller('ItemsController',
         tags[tag["name"]] = 1;
       });
     });
+    debugger
     /* return is an array of tag strings */
     return Object.keys(tags).sort();
   };
