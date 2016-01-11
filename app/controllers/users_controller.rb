@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
   end
 
   def create
@@ -9,9 +8,11 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:notice] = "Congratulations!"
-      render json: user
+      # render json: user
+      redirect_to root_path
     else
-      render json: {message: user.errors.full_messages.join(' ')}, status: 422
+      render :new
+      # render json: {message: user.errors.full_messages.join(' ')}, status: 422
     end
   end
 
