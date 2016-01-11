@@ -8,33 +8,32 @@ myApp.controller('ItemsController',
     $scope.currentMenu = $scope.restaurant.menus[0];
     $scope.sections = $scope.currentMenu.sections;
     $scope.menuItems = [];
-    for (var section in $scope.currentMenu.sections) {
-      for (var item in $scope.currentMenu.sections[section].items) {
-        $scope.menuItems.push($scope.currentMenu.sections[section].items[item]);
-      }
-    }
-    tagType = ["diets", "tastes", "ingredients"];
+    $scope.findMenuItems();
+
+    $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
     },
     function errorCallback(response) {
       console.log("There was an error");
   });
 
+  $scope.findMenuItems = function() {
+    for (var section in $scope.currentMenu.sections) {
+      for (var item in $scope.currentMenu.sections[section].items) {
+        $scope.menuItems.push($scope.currentMenu.sections[section].items[item]);
+      }
+    }
+  }
+
   $scope.findUniqueTags = function() {
     var tags = {};
-    angular.forEach($scope.menuItems, function(menuItem) {
-      angular.forEach(menuItem["diets"], function(tag) {
-        tags[tag["name"]] = 1;
+    for (var type in $scope.tagType) {
+      angular.forEach($scope.menuItems, function(menuItem) {
+        angular.forEach(menuItem[$scope.tagType[type]], function(tag) {
+          tags[tag["name"]] = 1;
+        });
       });
-      angular.forEach(menuItem["tastes"], function(tag) {
-        tags[tag["name"]] = 1;
-      });
-      angular.forEach(menuItem["ingredients"], function(tag) {
-        tags[tag["name"]] = 1;
-      });
-    });
-    debugger
-    /* return is an array of tag strings */
+    };
     return Object.keys(tags).sort();
   };
 
