@@ -2,13 +2,13 @@
   <div id="restaurant-list">
     <div class="restaurant" ng-repeat="restaurant in restaurants track by $index">
 
-      <div>
+      <p>
         <a ng-href="/restaurants/{{restaurant.id}}/menuItems">
           <img ng-src="{{restaurant.logo_url}}">
-          <div class="restaurant-details">Name: {{restaurant.name}}</div>
+          <div class="restaurant-details">{{restaurant.name}}</div>
         </a>
-      </div>
-      
+      </p>
+
     </div>
   </div>
 </div>
