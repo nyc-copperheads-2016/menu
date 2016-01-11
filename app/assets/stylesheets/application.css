@@ -35,3 +35,9 @@ button.tag-filter2 {
 button.tag-filter2:hover {
   background-color: red;
 }
+
+.welcome{
+  color: white;
+  padding-top: 10px;
+  padding-right: 10px;
+}
