@@ -36,6 +36,8 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'foundation-rails'
 
+gem 'rails_12factor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
