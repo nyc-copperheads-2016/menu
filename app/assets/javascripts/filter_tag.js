@@ -1,7 +1,7 @@
 myApp.controller('ItemsController',
   ['$scope', '$routeParams', '$http', function MenuCtrl($scope, $routeParams, $http) {
     var params = $routeParams.restaurant_id;
-    $http.get('http://localhost:3000/api/restaurants/'+params+'/items').then(function successCallback(response) {
+    $http.get('/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.restaurantId = params;
     $scope.menuItems = response.data;
     tagType = ["diets", "tastes", "ingredients"];
