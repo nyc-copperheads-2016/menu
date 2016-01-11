@@ -10,4 +10,7 @@ class AppController < ApplicationController
   def menuItems
   end
 
+  def itemShow
+  end
+
 end

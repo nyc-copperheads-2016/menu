@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Any Angular route should go to app#index (to get through ng-view)!
   match '/restaurants/*path' => 'app#index', via: [:get]
 
+  get 'partials/itemShow' => 'partials#itemShow'
   get 'partials/menuItems' => 'partials#menuItems'
   get 'partials/restaurants' => 'partials#restaurants'
 
