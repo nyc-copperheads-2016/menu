@@ -869,7 +869,7 @@ end
 
 u = FactoryGirl.create(:user)
 
-20.times do
+10.times do
   r = FactoryGirl.create(:restaurant)
 
   3.times do
