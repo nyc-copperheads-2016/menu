@@ -892,7 +892,7 @@ u = FactoryGirl.create(:user)
         i.taste_list = tastes.sample(2).join(", ")
 
         ingredients = %w(chicken beef fish nuts eggs)
-        i.taste_list = tastes.sample(2).join(", ")
+        i.ingredient_list = ingredients.sample(2).join(", ")
 
         i.save
       end
