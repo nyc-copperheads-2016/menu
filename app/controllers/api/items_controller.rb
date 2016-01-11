@@ -2,7 +2,17 @@ class Api::ItemsController < ApplicationController
 
   def index
     restaurant = Restaurant.find_by(id: params[:restaurant_id])
-    render json: restaurant.menus.first.items, include: ['ingredients', 'diets', 'tastes']
+    render json: restaurant, include: [:menus => { :include =>
+      [:sections => { :include =>
+        [:items => { :include =>
+          [:diets, :ingredients, :tastes]
+        }]
+      }]
+    }]
+    # render json: restaurant.menus.first.sections, include: [:items => { :include =>
+    # [:diets, :ingredients, :tastes] } ]
+    # render json: restaurant.menus.first.items, include: ['ingredients', 'diets', 'tastes']
+
   end
 
   def show

@@ -3,7 +3,8 @@ myApp.controller('ItemsController',
     var params = $routeParams.restaurant_id;
     $http.get('/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.restaurantId = params;
-    $scope.menuItems = response.data;
+    $scope.restaurant = response.data;
+
     tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
     },
@@ -20,7 +21,11 @@ myApp.controller('ItemsController',
       angular.forEach(menuItem["tastes"], function(tag) {
         tags[tag["name"]] = 1;
       });
+      angular.forEach(menuItem["ingredients"], function(tag) {
+        tags[tag["name"]] = 1;
+      });
     });
+
     /* return is an array of tag strings */
     return Object.keys(tags).sort();
   };
