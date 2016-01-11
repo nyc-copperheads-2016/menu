@@ -41,13 +41,12 @@ myApp.controller('ItemsController',
     angular.forEach($scope.tagFilters, function(tagFilter) {
       /* If tag state is 1 (clicked once) AND the menu item's tags do NOT contain the tag of state 1, then set showItem to false. */
       if (tagFilter.state == 1) {
-        // debugger
         if (menuItem["diets"].length > 0) {
           for (var prop in menuItem["diets"]) {
-            if (menuItem["diets"].hasOwnProperty(prop)) {
-              if (menuItem["diets"][prop]["name"] === tagFilter.name) {
-                showItem = true;
-              }
+            if (menuItem["diets"][prop]["name"] === tagFilter.name) {
+              showItem = true;
+            } else {
+              showItem = false;
             }
           }
         } else {
@@ -55,13 +54,10 @@ myApp.controller('ItemsController',
         }
       }
       if (tagFilter.state == 2) {
-        // debugger
         if (menuItem["diets"].length > 0) {
           for (var prop in menuItem["diets"]) {
-            if (menuItem["diets"].hasOwnProperty(prop)) {
-              if (menuItem["diets"][prop]["name"] === tagFilter.name) {
-                showItem = false;
-              }
+            if (menuItem["diets"][prop]["name"] === tagFilter.name) {
+              showItem = false;
             }
           }
         } else {
