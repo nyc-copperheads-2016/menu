@@ -37,7 +37,6 @@ myApp.controller('ItemsController',
   /* menuItem references "item" in the HTML ng-repeat directive. Index and array are optional arguments that are not being used in customTagFilter. This fn is being invoked for each menu item, and it determines whether or not the item should be displayed. */
   $scope.customTagFilter = function(menuItem, index, array) {
     var showItem = true;
-    debugger
     /* Within the array of tagFilters tag objects... */
     angular.forEach($scope.tagFilters, function(tagFilter) {
       /* If tag state is 1 (clicked once) AND the menu item's tags do NOT contain the tag of state 1, then set showItem to false. */
