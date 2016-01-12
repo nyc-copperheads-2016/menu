@@ -12,52 +12,45 @@
   </head>
   <body>
     <div class="row sticky">
-        <nav class = "top-bar" data-topbar role="navigation">
-          <header>
-            <ul class="title-area">
-              <li class="name">
-                <h1>
-                  <%= link_to 'M E N U', root_path %>
-                </h1>
+      <nav class= "top-bar" data-topbar role="navigation">
+        <header>
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <%= link_to 'M E N U', root_path %>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="has-dropdown">
+                <% if logged_in? %>
+                  <li class="active welcome">
+                    Bon Appétit, <%= current_user.username %>!
+                  </li>
+                  <li class="active">
+                    <%= link_to 'Sign Out', logout_path %>
+                  </li>
+                <% else %>
+                  <li class="active">
+                    <%= link_to 'Sign In', login_path %>
+                  </li>
+                  <li class="active">
+                    <%= link_to 'Sign Up', new_user_path %>
+                  </li>
+                <% end %>
               </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
-
-            <section class="top-bar-section">
-              <ul class="left">
-                <input type="text" placeholder="Search restaurants">
-              </ul>
-            </section>
-
-            <section class="top-bar-section">
-              <ul class="right">
-                <li class="has-dropdown">
-                  <% if logged_in? %>
-                    <li class="active welcome">
-                      Bon Appétit, <%= current_user.username %>!
-                    </li>
-                    <li class="active">
-                      <%= link_to 'Sign Out', logout_path %>
-                    </li>
-                  <% else %>
-                    <li class="active">
-                      <%= link_to 'Sign In', login_path %>
-                    </li>
-                    <li class="active">
-                      <%= link_to 'Sign Up', new_user_path %>
-                    </li>
-                  <% end %>
-                </li>
-              </ul>
-            </section>
-          </header>
-        </nav>
+          </section>
+        </header>
+      </nav>
     </div>
 
-
     <div class = "row">
-      <div class= "large-2"></div>
-      <div class="small-12 large-8 columns">
+      <div class="large-offset-1 large-10 large-offset-1 columns">
+
         <div id="flash-container">
           <% flash.each do |name, msg| %>
             <% if msg.is_a?(String) %>
@@ -65,10 +58,10 @@
             <% end %>
           <% end %>
         </div>
-        <%= yield %>
-      </div>
-      <div class= "large-2"></div>
-    </div>
 
+        <%= yield %>
+
+      </div>
+    </div>
   </body>
 </html>
