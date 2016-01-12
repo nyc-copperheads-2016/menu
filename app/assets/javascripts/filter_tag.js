@@ -11,7 +11,6 @@ myApp.controller('ItemsController',
 
     $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
-
     },
     function errorCallback(response) {
       console.log("There was an error");
