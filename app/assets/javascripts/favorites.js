@@ -1,5 +1,5 @@
 myApp.controller('FavoritesController',
-  [ '$scope', '$routeParams', '$http', function FaveCtrl($scope, $routeParams, $http) {
+  [ '$scope', '$routeParams', '$http', '$window', function FaveCtrl($scope, $routeParams, $http, $window) {
   var restaurantParam = $routeParams.restaurant_id;
   var itemParam = $routeParams.item_id;
 
@@ -27,6 +27,9 @@ myApp.controller('FavoritesController',
           method: "POST",
           data: {'item_id': itemParam}
         });
+      }
+      else if ($scope.item[1] === '/users/new'){
+        $window.location.href = '/users/new';
       }
       else {
         $scope.heartClass = "fi-heart unliked";
