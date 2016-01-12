@@ -894,6 +894,8 @@ end
 
         i.save
       end
+
+      FactoryGirl.create(:favorite, user: u, item: Item.last)
     end
   end
 end
