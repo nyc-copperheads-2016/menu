@@ -867,6 +867,8 @@ end
   FactoryGirl.create(:user)
 end
 
+u = FactoryGirl.create(:user)
+
 6.times do
   r = FactoryGirl.create(:restaurant)
 
