@@ -41,13 +41,14 @@ gem 'rails_12factor'
 gem 'factory_girl_rails'
 gem 'faker'
 
+gem 'curb'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
   gem 'simplecov', require: false
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers', '~> 3.0'
-  gem 'curb'
 end
 
 group :development do
