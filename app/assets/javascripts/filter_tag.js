@@ -29,18 +29,18 @@ myApp.controller('ItemsController',
     for (var type in $scope.tagType) {
       angular.forEach($scope.menuItems, function(menuItem) {
         angular.forEach(menuItem[$scope.tagType[type]], function(tag) {
-          tags[tag["name"]] = 1;
+          tags[tag["name"]] = $scope.tagType[type];
         });
       });
     };
-    return Object.keys(tags).sort();
+    return tags;
   };
 
   $scope.createTagFilters = function(uniqueTags) {
     var filters = [];
-    angular.forEach(uniqueTags, function(tag) {
-      filters.push({ name: tag, state: 0 });
-    });
+    for (var tag in uniqueTags) {
+      filters.push({ name: tag, state: 0, type: uniqueTags[tag] })
+    }
     return filters;
   };
 
