@@ -53,17 +53,18 @@
           </header>
         </nav>
     </div>
-    <div id="flash-container">
-      <% flash.each do |name, msg| %>
-        <% if msg.is_a?(String) %>
-          <%= content_tag :div, msg, :class => "flash_#{name}" %>
-        <% end %>
-      <% end %>
-    </div>
+
 
     <div class = "row">
       <div class= "large-2"></div>
       <div class="small-12 large-8 columns">
+        <div id="flash-container">
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <%= content_tag :div, msg, :class => "flash_#{name}" %>
+            <% end %>
+          <% end %>
+        </div>
         <%= yield %>
       </div>
       <div class= "large-2"></div>
