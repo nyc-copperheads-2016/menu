@@ -1,7 +1,6 @@
 <div ng-controller="RestaurantsController">
   <div id="restaurant-list">
     <div class="restaurant" ng-repeat="restaurant in restaurants track by $index">
-      <!-- {{restaurant}} -->
 
       <p>
         <a ng-href="/restaurants/{{restaurant.id}}/menuItems">

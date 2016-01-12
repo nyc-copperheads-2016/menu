@@ -1,5 +1,6 @@
 class Api::RestaurantsController < ApplicationController
   def index
-    render json: User.local_restaurants.to_json
+    restaurants = Restaurant.all
+    render json: restaurants.to_json
   end
 end

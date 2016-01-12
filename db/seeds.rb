@@ -34,7 +34,7 @@ JSON.parse(restaurants_with_menus.body_str)["venues"].each do |v|
     "categories"
   ],
   venue_queries: [{ locu_id: v["locu_id"] }]
-  })
+}.to_json)
 
   output = File.open("file#{x}", "w")
   output << single_data
