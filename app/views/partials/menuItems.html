@@ -1,16 +1,19 @@
 <div ng-controller="ItemsController">
 
   <h2>
-    {{restaurant.name}}'s Menu
+    {{restaurant.name}} Menu
   </h2>
   <hr/>
   <ul>
-
-  <!-- For every tag object (with name and state) in var tagFilters, iterate.  -->
-  <div ng-repeat="tagFilter in tagFilters">
-    <!-- On the click event, run the toggleTagState fn to change the tag object's state property. -->
-    <button class="tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
-  </div>
+  <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button>
+    <div ng-show="tagListOpen" id="tagList">
+      <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
+        <p>{{ key.toUpperCase() }}: </p>
+        <div ng-repeat="tagFilter in value">
+          <button class="tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
+        </div>
+      </div>
+    </div>
 
     <div ng-repeat="menu in restaurant.menus">
       <h3>{{menu.name}}</h3>

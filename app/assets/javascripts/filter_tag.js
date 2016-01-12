@@ -39,8 +39,8 @@ myApp.controller('ItemsController',
   $scope.createTagFilters = function(uniqueTags) {
     var filters = [];
     for (var tag in uniqueTags) {
-      filters.push({ name: tag, state: 0, type: uniqueTags[tag] })
-    }
+      filters.push({ type: uniqueTags[tag], name: tag, state: 0 });
+    };
     return filters;
   };
 
