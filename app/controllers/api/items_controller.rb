@@ -13,7 +13,7 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    item = Item.find_by(id: params[:id])
+    item = Item.find(params[:id])
     if current_user
       fave = Favorite.where(user_id: current_user.id, item_id: item.id)
       item_favorite = [item, fave[0]]
