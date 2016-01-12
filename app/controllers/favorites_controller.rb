@@ -7,4 +7,11 @@ class FavoritesController < ApplicationController
       flash[:notice] = "Saved to favorites!"
     end
   end
+
+  def destroy
+    fave = Favorite.find_by(id: params[:id])
+    if fave.destroy
+      flash[:notice] = "Removed from favorites!"
+    end
+  end
 end
