@@ -18,13 +18,14 @@ restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
 venues = JSON.parse(restaurants_with_menus.body_str)["venues"]
 
 venues.each do |v|
-  r = Restaurant.create!(name: v['name'], logo_url: Faker::Company.logo)
+  r = Restaurant.create!(name: v['name'])
 
   r_details_json = Curl.post("https://api.locu.com/v2/venue/search", {
     api_key: Rails.application.secrets.locu_api_key,
     fields: [
       "name",
-      "menus"
+      "menus",
+      "categories"
     ],
   venue_queries: [{ locu_id: v["locu_id"] }]}.to_json)
 
@@ -38,18 +39,9 @@ venues.each do |v|
           s = m.sections.create!(name: subsection['subsection_name'])
           subsection['contents'].each do |content|
             if !(content['name'].blank?)
-              i = s.items.create!(name: content['name'], price: content['price'], description: content['description'])
-
-              diets = %w(vegan vegetarian halal kosher)
-              i.diet_list = diets.sample(2).join(", ")
-
-              tastes = %w(sweet spicy sour)
-              i.taste_list = tastes.sample(2).join(", ")
-
-              ingredients = %w(chicken beef fish nuts eggs)
-              i.ingredient_list = ingredients.sample(2).join(", ")
-
-              i.save
+              i = s.items.create!(name: content['name'],
+                                     price: content['price'],
+                                     description: content['description'])
             else
               puts "Skipping blank content"
             end
