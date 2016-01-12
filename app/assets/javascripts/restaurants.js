@@ -3,7 +3,6 @@ myApp.controller('RestaurantsController',
 
   $http.get('/api/restaurants')
   .then(function(response) {
-    console.log(response)
     $scope.restaurants = response.data;
   });
 }]);
