@@ -8,7 +8,7 @@
   <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button>
     <div ng-show="tagListOpen" id="tagList">
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
-        <p>{{ key.toUpperCase() }}: </p>
+        <p>{{ key | uppercase }}: </p>
         <div ng-repeat="tagFilter in value">
           <button class="tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
         </div>
@@ -38,6 +38,8 @@
             </li>
           </ul>
           </a>
+          <i class="fi-heart"> {{item.favorites.length}}</i>
+
           <hr/>
         </li>
       </div>
