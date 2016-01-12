@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:notice] = user.errors.full_messages.join(". ")
+      flash[:warning] = user.errors.full_messages.join(". ")
       redirect_to new_user_path
     end
   end
