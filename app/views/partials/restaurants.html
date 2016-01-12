@@ -4,9 +4,10 @@
 
       <p>
         <a ng-href="/restaurants/{{restaurant.id}}/menuItems">
-          <img ng-src="{{restaurant.logo_url}}">
-          <div class="restaurant-details">{{restaurant.name}}</div>
+          <div class="restaurant-name">{{restaurant.name}}</div>
+          <img class="restaurant-logo" ng-src="{{restaurant.logo_url}}">
         </a>
+        <hr>
       </p>
 
     </div>

@@ -14,7 +14,9 @@ class Api::ItemsController < ApplicationController
 
   def show
     item = Item.find_by(id: params[:id])
-    render json: item.to_json
+    fave = Favorite.where(user_id: current_user.id, item_id: item.id)
+    item_favorite = [item, fave[0]]
+    render json: item_favorite
   end
 
 end
