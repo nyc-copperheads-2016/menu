@@ -50,6 +50,12 @@ button.tag-filter2:hover {
   opacity: 0.3;
 }
 
-.red {
+.liked {
   color: #ff3333;
+  font-size: 8em;
+}
+
+.unliked {
+  font-size: 8em;
+  color: gray;
 }
