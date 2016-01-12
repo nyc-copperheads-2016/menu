@@ -13,10 +13,15 @@ class Api::ItemsController < ApplicationController
   end
 
   def show
-    item = Item.find_by(id: params[:id])
-    fave = Favorite.where(user_id: current_user.id, item_id: item.id)
-    item_favorite = [item, fave[0]]
-    render json: item_favorite
+    item = Item.find(params[:id])
+    if logged_in?
+      fave = Favorite.where(user_id: current_user.id, item_id: item.id)
+      item_favorite = [item, fave[0]]
+      render json: item_favorite
+    else
+      item = [item, '/users/new']
+      render json: item
+    end
   end
 
 end

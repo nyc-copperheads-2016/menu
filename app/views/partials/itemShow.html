@@ -1,14 +1,8 @@
 <div ng-controller="ItemController">
-  <p><img src="{{item[0].photo_url}}" width="200"></p>
+  <p><img src="{{item[0].photo_url}}" width="400" height="400"></p>
   <p>Item: {{item[0].name}}</p>
   <p>Description: {{item[0].description}}</p>
   <p>Price: {{ item[0].price | currency : $ : 2 }}</p>
-  <label>Tags: </label>
-  <ul>
-    <li ng-repeat="diet in item[0].diets">
-      {{diet.name}}
-    </li>
-  </ul>
 </div>
 
 <div ng-controller="FavoritesController">
