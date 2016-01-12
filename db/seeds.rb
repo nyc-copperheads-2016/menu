@@ -863,13 +863,13 @@ num1[:menus].each do |menu|
   end
 end
 
-5.times do
+4.times do
   FactoryGirl.create(:user)
 end
 
 u = FactoryGirl.create(:user)
 
-10.times do
+6.times do
   r = FactoryGirl.create(:restaurant)
 
   3.times do
@@ -882,7 +882,7 @@ u = FactoryGirl.create(:user)
     3.times do
       s = FactoryGirl.create(:section, menu: m)
 
-      5.times do
+      4.times do
         i = FactoryGirl.create(:item, section: s)
 
         diets = %w(vegan vegetarian halal kosher)

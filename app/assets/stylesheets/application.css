@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
+ *= require icon
 
  */
 
@@ -40,4 +40,22 @@ button.tag-filter2:hover {
   color: white;
   padding-top: 10px;
   padding-right: 10px;
+}
+
+.largeicon {
+  font-size: 8em;
+}
+
+.largeicon:hover {
+  opacity: 0.3;
+}
+
+.liked {
+  color: #ff3333;
+  font-size: 8em;
+}
+
+.unliked {
+  font-size: 8em;
+  color: gray;
 }

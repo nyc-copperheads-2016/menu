@@ -1,5 +1,5 @@
 <div ng-controller="ItemController">
-  <p>{{item.photo_url}}</p>
+  <p><img src="{{item.photo_url}}" width="200"></p>
   <p>Item: {{item.name}}</p>
   <p>Description: {{item.description}}</p>
   <p>Price: {{ item.price | currency : $ : 2 }}</p>
@@ -9,4 +9,8 @@
       {{diet.name}}
     </li>
   </ul>
+</div>
+
+<div ng-controller="FavoritesController">
+  <i class="{{heartClass}}" ng-click="saveFave()"></i>
 </div>
