@@ -5,7 +5,7 @@ class Api::ItemsController < ApplicationController
     render json: restaurant, include: [:menus => { :include =>
       [:sections => { :include =>
         [:items => { :include =>
-          [:diets, :ingredients, :tastes]
+          [:diets, :ingredients, :tastes, :favorites]
         }]
       }]
     }]
