@@ -9,9 +9,10 @@
   </button>
 
     <div ng-show="tagListOpen" class="fade">
+      <p><label>(once to include, twice to exclude, thrice to reset)</label></p>
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
         <p>{{ key | uppercase }}: </p>
-        <div ng-repeat="tagFilter in value">
+        <div class="inline" ng-repeat="tagFilter in value">
           <button class="button round medium tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
         </div>
       </div>
