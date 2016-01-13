@@ -115,3 +115,12 @@ button.tag-filter2:focus {
 .no-list {
   list-style: none;
 }
+
+.fade.ng-hide {
+  transition:0.7s linear all;
+  opacity:0;
+}
+
+.fade.ng-hide-add, .fade.ng-hide-remove {
+  transition: 0.7s linear all;
+}

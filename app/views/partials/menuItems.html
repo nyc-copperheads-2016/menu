@@ -4,7 +4,7 @@
     <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button>
     <button ng-click="trendListOpen = !trendListOpen">Trending</button>
 
-    <div ng-show="tagListOpen" id="tagList">
+    <div ng-show="tagListOpen" class="fade">
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
         <p>{{ key | uppercase }}: </p>
         <div ng-repeat="tagFilter in value">
@@ -13,9 +13,9 @@
       </div>
     </div>
 
-    <div ng-show="trendListOpen">
+    <div ng-show="trendListOpen" class="fade">
       <h2>Trending Items:</h2>
-      <div ng-repeat="item in popularItems" id="trendList">
+      <div ng-repeat="item in popularItems">
         <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <img src="{{item.photo_url}}" width="200">
         <p>Item: {{item.name}}</p>
