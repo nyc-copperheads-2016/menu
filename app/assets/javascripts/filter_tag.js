@@ -4,17 +4,18 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
   $http.get('/api/restaurants/'+params+'/items').then(function successCallback(response) {
     $scope.restaurantId = params;
     $scope.restaurant = response.data;
-    
+
     $scope.currentMenu = $scope.restaurant.menus[0];
     $scope.menuItems = $scope.findMenuItems();
     $scope.popularItems = $scope.findPopular();
-    
+    $scope.featuredItems = $scope.findFeatured();
+
     $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
   }, function errorCallback(response) {
     console.log("There was an error");
   });
-  
+
   $scope.findMenuItems = function() {
     items = [];
     for (var section in $scope.currentMenu.sections) {
@@ -23,6 +24,16 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
       }
     }
     return items;
+  };
+
+  $scope.findFeatured = function() {
+    featured = [];
+    angular.forEach($scope.menuItems, function(menuItem){
+      if (menuItem.featured === true) {
+        featured.push(menuItem)
+      }
+    });
+    return featured;
   };
 
   $scope.findPopular = function() {
