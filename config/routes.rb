@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  root 'app#index'
+
+  # Any Angular route should go to app#index (to get through ng-view)!
+  match '/restaurants/*path' => 'app#index', via: [:get]
+
+  get 'partials/itemShow' => 'partials#itemShow'
+  get 'partials/menuItems' => 'partials#menuItems'
+  get 'partials/restaurants' => 'partials#restaurants'
+
+  resources :users, only: [:new, :create, :show]
+  resources :sessions, only:[:create]
+
+  namespace :api do
+    resources :restaurants, only:[:index] do
+      resources :items, only:[:index, :show]
+    end
+  end
+
+  resources :favorites, only: [:create, :destroy]
+
+  get 'login' => 'sessions#new'
+  get 'logout'=> 'sessions#destroy'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

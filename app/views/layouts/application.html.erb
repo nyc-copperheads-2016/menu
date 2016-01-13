@@ -1,14 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Menu</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <base href="/">
+  </head>
+  <body>
+    <div class="row sticky">
+      <nav class= "top-bar" data-topbar role="navigation">
+        <header>
+          <ul class="title-area">
+            <li class="name">
+              <h1>
+                <%= link_to 'M E N U', root_path %>
+              </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
 
-<%= yield %>
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="has-dropdown">
+                <% if logged_in? %>
+                  <li class="welcome">
+                    Bon Appétit, <a href= '/users/<%= current_user.id %>'><%= current_user.username %></a>!
+                  </li>
+                  <li class="active">
+                    <%= link_to 'Sign Out', logout_path %>
+                  </li>
+                <% else %>
+                  <li class="active">
+                    <%= link_to 'Sign In', login_path %>
+                  </li>
+                  <li class="active">
+                    <%= link_to 'Sign Up', new_user_path %>
+                  </li>
+                <% end %>
+              </li>
+            </ul>
+          </section>
+        </header>
+      </nav>
+    </div>
 
-</body>
+    <div class = "row">
+      <div class="large-offset-1 large-10 large-offset-1 columns">
+
+        <div id="flash-container">
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <%= content_tag :div, msg, :class => "flash_#{name}" %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </body>
 </html>
