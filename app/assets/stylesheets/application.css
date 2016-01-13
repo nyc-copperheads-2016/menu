@@ -129,3 +129,8 @@ button.tag-filter2:focus {
   transition: 1s linear all;
 }
 
+/* Footer */
+footer {
+  padding-top: 5%;
+  padding-bottom: 1%;
+}
