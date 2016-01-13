@@ -27,8 +27,8 @@
             <ul class="right">
               <li class="has-dropdown">
                 <% if logged_in? %>
-                  <li class="active welcome">
-                    Bon Appétit, <%= current_user.username %>!
+                  <li class="welcome">
+                    Bon Appétit, <a href= '/users/<%= current_user.id %>'><%= current_user.username %></a>!
                   </li>
                   <li class="active">
                     <%= link_to 'Sign Out', logout_path %>

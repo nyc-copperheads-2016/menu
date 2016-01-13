@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'partials/menuItems' => 'partials#menuItems'
   get 'partials/restaurants' => 'partials#restaurants'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :sessions, only:[:create]
 
   namespace :api do
