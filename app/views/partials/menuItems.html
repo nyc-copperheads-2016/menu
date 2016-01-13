@@ -13,13 +13,14 @@
       </div>
     </div>
 
-    <div ng-repeat="item in popularItems" ng-show="trendListOpen" id="trendList">
-      <p>{{item.name}}</p>
-      <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-      <img src="{{item.photo_url}}" width="200">
-      <p>Item: {{item.name}}</p>
-      <p>Description: {{item.description}}</p>
-      <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+    <div ng-show="trendListOpen">
+      <h2>Trending Items:</h2>
+      <div ng-repeat="item in popularItems" id="trendList">
+        <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
+        <img src="{{item.photo_url}}" width="200">
+        <p>Item: {{item.name}}</p>
+        <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+      </div>
     </div>
 
     <div ng-repeat="menu in restaurant.menus">
