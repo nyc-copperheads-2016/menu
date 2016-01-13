@@ -6,7 +6,7 @@
   <hr/>
 
 
-  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false;">
+  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false;" ng-if="{{popularItems.length > 0}}">
     Trending
   </button>
   <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false">
