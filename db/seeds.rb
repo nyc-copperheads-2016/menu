@@ -93,7 +93,57 @@ mushrooms.taste_list = "umani"
 mushrooms.ingredient_list = "mushroom"
 mushrooms.save
 
+# ==============================================================================
 
+dead_rabbit = Restaurant.create(name: "The Dead Rabbit",
+                                      website: "http://http://www.deadrabbitnyc.com",
+                                      description: "The Dead Rabbit Grocery and Grog embodies the conviviality of Old New York and the Irish-American tradition. World’s Best Bar 2015",
+                                      logo_url: "https://www.horeca.it/Portals/27/dead_rabbit_1.png")
+
+l = dead_rabbit.locations.create(address: "30 Water Street",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10004")
+
+m = dead_rabbit.menus.create(name: "Drinks")
+
+shaken = m.sections.create(name: "Shaken")
+stirred = m.sections.create(name: "Stirred")
+
+j_t_b = shaken.items.create(name: "John The Baptist", price: "15.00", description: "Green Spot Irish Whiskey, Green Tea, Apricot, Pistachio, Coconut, Absinthe, Lime", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/LdSZ7bSIEWu8EgKSc4IGCg/o.jpg")
+d_k = shaken.items.create(name: "Death Knell", price: "16.00", description: "Nikka Coffey Grain Whiskey, Togarashi, Oloroso Sherry, Lime, Orinoco Bitters", photo_url: "https://media.timeout.com/images/102962776/image.jpg")
+m_j = shaken.items.create(name: "Master Juba", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Dead Rabbit Cask Ale, Apple, Cinnamon, Cream, Egg, Mace, Pimento Bitters", photo_url: "https://slideshow.starchefs.com/p.php?a=UUFRXio7MyQqQFtFPzc1OjQmLjc5Jzw2Mio5LTsiKyQ%2BJzE%2FPzs%2FNCY7LiYoNDs%3D&m=1424381311")
+w_g = shaken.items.create(name: "Western Gate", price: "15.00", description: "Powers Gold Irish Whiskey, Cranberry, Beet, Tangerine, Lemon, Pimento Bitters", photo_url: "http://bestguinnessnyc.com/wp-content/uploads/2014/06/Feature-750x400.jpg")
+m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters")
+s = shaken.items.create(name: "Stronghold", price: "15.00", description: "Connemara Peated Irish Whiskey, Powers Signature Release Irish Whiskey, Pear, Pistachio, Cocoa, Lemon, Orinoco Bitters")
+w = shaken.items.create(name: "Wanderlust", price: "15.00", description: "Jameson Black Barrel Irish Whiskey, Pear, Almond, Chocolate, Cream, Egg, Aromatic Bitters")
+
+p_m = stirred.items.create(name: "Preacher man", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Reposado Tequila, Amaro Ciociaro, Sweet Vermouth, Dry Vermouth Cocoa, Absinthe")
+b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters")
+b_r = stirred.items.create(name: "Black Rose", price: "15.00", description: "Tullamore Dew 12 Year Old Irish Whiskey, Bergamot Black Tea, Curacao, Averna Amaro, Walnut, Aromatic Bitters")
+l_w = stirred.items.create(name: "Little Water", price: "15.00", description: "Tanqueray Gin, Old Tom Gin, Dolin Blanc, Green Chartreuse, Pear, Pennyroyal, Absinthe")
+c_t = stirred.items.create(name: "Cargo Thief", price: "15.00", description: "Bulleit Rye Whiskey, Sweet Vermouth, Curacao, Absinthe, Orinoco Bitters")
+l_k = stirred.items.create(name: "Lighthouse Keeper", price: "15.00", description: "Teeling Small Batch Irish Whiskey, Jamaican Rum, Citron Sauvage, Falernum, Pink Grapefruit, Pimento Dram, Angostura Bitters")
+
+
+
+j_t_b.taste_list = "sour, heavy, bitter"
+j_t_b.ingredient_list = "whiskey, absinthe, lime, bitters"
+j_t_b.save
+
+d_k.taste_list = "heavy, bitter"
+d_k.ingredient_list = "whiskey, sherry, lime, bitters"
+d_k.save
+
+m_j.taste_list = "sweet, creamy"
+m_j.ingredient_list = "whiskey, egg, bitters"
+m_j.save
+
+w_g.diet_list = "sour, creamy"
+w_g.ingredient_list = "whiskey, bitters"
+w_g.save
+
+#===============================================================================
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
   api_key: Rails.application.secrets.locu_api_key,
   fields: [
