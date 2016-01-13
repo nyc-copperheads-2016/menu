@@ -11,5 +11,5 @@ myApp.config( ["$routeProvider", "$locationProvider", function($routeProvider, $
   .otherwise({
     templateUrl: '/partials/restaurants'
   });
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(false);
 }])
