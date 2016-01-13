@@ -17,20 +17,20 @@ raw = m.sections.create(name: "Raw Bar")
 large = m.sections.create(name: "Large Plates")
 sides = m.sections.create(name: "Sides")
 
-onion = bites.items.create(name: "Classic Onion Soup", price: "13.00")
+onion = bites.items.create(name: "Classic Onion Soup", price: "13.00", photo_url: "https://static.wixstatic.com/media/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg")
 yellowfin = bites.items.create(name: "Yellowfin Tuna Tartare", price: "18.00")
-mussels = bites.items.create(name: "Mussel Pot", price: "17.00")
+mussels = bites.items.create(name: "Mussel Pot", price: "17.00", photo_url: "https://static.wixstatic.com/media/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg")
 
-kale = salads.items.create(name: "Local Kale", price: "14.00")
+kale = salads.items.create(name: "Local Kale", price: "14.00", photo_url: "https://static.wixstatic.com/media/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg")
 beets = salads.items.create(name: "Roasted Beets", price: "15.00")
 
 sausage = flatbreads.items.create(name: "Sausage", price: "16.00")
 shrimp = flatbreads.items.create(name: "Spicy Shrimp", price: "16.00")
 
-jumbo = raw.items.create(name: "Jumbo Shrimp (each)", price: "6.00")
+jumbo = raw.items.create(name: "Jumbo Shrimp (each)", price: "6.00", photo_url: "https://static.wixstatic.com/media/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg")
 oysters = raw.items.create(name: "East Coast Oysters (each)", price: "3.00")
 
-salmon = large.items.create(name: "Scottish Salmon", price: "28.00")
+salmon = large.items.create(name: "Scottish Salmon", price: "28.00", photo_url: "https://static.wixstatic.com/media/7846b5_f9417ade3c9745108df059ca8326ba57.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_f9417ade3c9745108df059ca8326ba57.jpg")
 chicken = large.items.create(name: "Roasted Amish Chicken Breast", price: "25.00")
 
 fries = sides.items.create(name: "Hand-Cut Fries", price: "8.00")
@@ -43,7 +43,7 @@ onion.save
 
 yellowfin.diet_list = "pescatarian"
 yellowfin.taste_list = "savory"
-yellowfin.ingredient_list = "fish, ginger, cilantro, truffle soy"
+yellowfin.ingredient_list = "fish, ginger, cilantro, truffle, soy"
 yellowfin.save
 
 mussels.diet_list = "pescatarian"
@@ -70,7 +70,7 @@ shrimp.ingredient_list = "tomatillo, avocado, cilantro"
 shrimp.save
 
 jumbo.diet_list = "pescatarian"
-jumbo.ingredient_list = "shrimp"
+jumbo.ingredient_list = "shellfish"
 jumbo.save
 
 oysters.diet_list = "pescatarian"
@@ -78,7 +78,7 @@ oysters.taste_list = "umani, sour, salty"
 oysters.ingredient_list = "shellfish"
 oysters.save
 
-salmon.ingredient_list = "salmon, lentils, mustard"
+salmon.ingredient_list = "fish, lentils, mustard"
 salmon.save
 
 chicken.ingredient_list = "brussel sprouts, apple, chicken"
@@ -92,6 +92,104 @@ mushrooms.diet_list = "vegetarian"
 mushrooms.taste_list = "umani"
 mushrooms.ingredient_list = "mushroom"
 mushrooms.save
+
+
+
+lukes = Restaurant.create(name: "Luke’s Lobster",
+                                      website: "http://lukeslobster.com/",
+                                      description: "Pure, Sustainable Maine Lobster Rolls",
+                                      logo_url: "http://static1.squarespace.com/static/4feb30c5c4aaa03b060dccd8/t/56607dbde4b0b03b8620c02f/1452276611896/?format=1000w")
+
+l = lukes.locations.create(address: "26 S William St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10004")
+
+l = lukes.locations.create(address: "11 Water St",
+                                      city: "Brooklyn",
+                                      state: "NY",
+                                      zip: "11201")
+
+m = lukes.menus.create(name: "Main Menu")
+
+main = m.sections.create(name: "Bites, Bowls, Boards")
+extras = m.sections.create(name: "Salads")
+drinks = m.sections.create(name: "Flatbreads")
+sweets = m.sections.create(name: "Raw Bar")
+
+lobster = main.items.create(name: "Lobster Roll", price: "16.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+crab = main.items.create(name: "Crab Roll", price: "13.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/1yUPo3-t0OMQwcquM8Swng/258s.jpg")
+
+clam = extras.items.create(name: "New England Clam Chowder", price: "9.00", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/bHTtpvjf5eYRmUHKBQsSow/258s.jpg")
+claws = extras.items.create(name: "4 Jonah Crab Claws", price: "8.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+
+mainebrew = drinks.items.create(name: "Maine Microbrews", price: "6.50", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
+mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade", price: "3.00", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/j3GgKBhbtoj98_dJFp0PCg/258s.jpg")
+
+icecream = sweets.items.create(name: "Ice Cream Sandwiches", price: "4.00", photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
+
+lobster.taste_list = "salty, buttery"
+lobster.ingredient_list = "lobster, butter"
+lobster.save
+
+crab.taste_list = "salty, buttery"
+crab.ingredient_list = "crab, butter"
+crab.save
+
+clam.taste_list = "savory"
+clam.ingredient_list = "clam"
+clam.save
+
+claws.ingredient_list = "crab"
+claws.save
+
+mainebrew.taste_list = "hoppy"
+mainebrew.ingredient_list = "beer"
+mainebrew.save
+
+mainesoda.taste_list = "sweet"
+mainesoda.ingredient_list = "blueberry, lemon, sarsparilla, ginger"
+mainesoda.save
+
+icecream.taste_list = "sweet"
+icecream.ingredient_list = "milk, blueberry, chocolate"
+icecream.save
+
+
+chopt = Restaurant.create(name: "Chop't",
+                                      website: "http://choptsalad.com/",
+                                      description: "Creative Salad Company",
+                                      logo_url: "http://choptsalad.com/wp-content/themes/twentyfourteen-child/images/logo.png")
+
+l = chopt.locations.create(address: "80 Pine St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10005")
+
+m = chopt.menus.create(name: "Salads")
+
+specials = m.sections.create(name: "Specials")
+classics = m.sections.create(name: "Classics")
+
+street = specials.items.create(name: "NYC STREET CART", price: "8.00", photo_url: "https://media.glassdoor.com/l/ed/7c/2f/35/the-nyc-street-cart-salad.jpg")
+falafel = specials.items.create(name: "FALAFEL MARKET PLATE", price: "8.50", photo_url: "https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/s320x320/e35/12145423_1795795263980952_1219895798_n.jpg")
+
+santafe = classics.items.create(name: "SANTA FE", price: "7.00", photo_url: "http://s3-media1.fl.yelpcdn.com/bphoto/YEhApVeVujYYRpjEMdj0PQ/348s.jpg")
+steakhouse = classics.items.create(name: "STEAKHOUSE", price: "8.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/Xgw0IMs4aoCtjPU_TzFN_A/o.jpg")
+
+street.ingredient_list = "chicken, cauliflower, tomato, lettuce, cabbage"
+street.save
+
+falafel.diet_list = "vegetarian"
+falafel.ingredient_list = "kale, quinoa, lentil, beets, chickpea, cauliflower"
+falafel.save
+
+santafe.diet_list = "vegetarian"
+santafe.ingredient_list = "avocado, tomato, corn, cheese, onion, lettuce"
+santafe.save
+
+steakhouse.ingredient_list = "beef, tomato, onion, lettuce"
+steakhouse.save
 
 
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
