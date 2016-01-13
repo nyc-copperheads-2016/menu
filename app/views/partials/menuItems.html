@@ -32,21 +32,22 @@
           <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
             <p>Item: {{item.name}}</p>
             <p>Price:  {{ item.price | currency : $ : 2 }}</p>
-            Tags:
-            <ul class="no-list">
-              <li class="tag-list" ng-repeat="diet in item.diets">
-                {{diet.name}}&nbsp;
-              </li>
-              <li class="tag-list" ng-repeat="taste in item.tastes">
-                {{taste.name}}&nbsp;
-              </li>
-              <li class="tag-list" ng-repeat="ingredient in item.ingredients">
-                {{ingredient.name}}&nbsp;
-              </li>
-            </ul>
           </a>
 
-          <label>Favorites: </label>
+          <label>Tags:</label>
+          <p id="tag-name">
+            <span ng-repeat="diet in item.diets">
+              {{diet.name}}&nbsp;
+            </span>
+            <span ng-repeat="taste in item.tastes">
+              {{taste.name}}&nbsp;
+            </span>
+            <span ng-repeat="ingredient in item.ingredients">
+              {{ingredient.name}}&nbsp;
+            </span>
+          </p>
+
+          <label>Favorites:</label>
           <i class="fi-heart"> {{item.favorites.length}}</i>
 
           <hr/>
