@@ -17,20 +17,20 @@ raw = m.sections.create(name: "Raw Bar")
 large = m.sections.create(name: "Large Plates")
 sides = m.sections.create(name: "Sides")
 
-onion = bites.items.create(name: "Classic Onion Soup", price: "13.00")
+onion = bites.items.create(name: "Classic Onion Soup", price: "13.00", photo_url: "https://static.wixstatic.com/media/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg")
 yellowfin = bites.items.create(name: "Yellowfin Tuna Tartare", price: "18.00")
-mussels = bites.items.create(name: "Mussel Pot", price: "17.00")
+mussels = bites.items.create(name: "Mussel Pot", price: "17.00", photo_url: "https://static.wixstatic.com/media/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg")
 
-kale = salads.items.create(name: "Local Kale", price: "14.00")
+kale = salads.items.create(name: "Local Kale", price: "14.00", photo_url: "https://static.wixstatic.com/media/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg")
 beets = salads.items.create(name: "Roasted Beets", price: "15.00")
 
 sausage = flatbreads.items.create(name: "Sausage", price: "16.00")
 shrimp = flatbreads.items.create(name: "Spicy Shrimp", price: "16.00")
 
-jumbo = raw.items.create(name: "Jumbo Shrimp (each)", price: "6.00")
+jumbo = raw.items.create(name: "Jumbo Shrimp (each)", price: "6.00", photo_url: "https://static.wixstatic.com/media/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg")
 oysters = raw.items.create(name: "East Coast Oysters (each)", price: "3.00")
 
-salmon = large.items.create(name: "Scottish Salmon", price: "28.00")
+salmon = large.items.create(name: "Scottish Salmon", price: "28.00", photo_url: "https://static.wixstatic.com/media/7846b5_f9417ade3c9745108df059ca8326ba57.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_f9417ade3c9745108df059ca8326ba57.jpg")
 chicken = large.items.create(name: "Roasted Amish Chicken Breast", price: "25.00")
 
 fries = sides.items.create(name: "Hand-Cut Fries", price: "8.00")
