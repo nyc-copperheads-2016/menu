@@ -68,3 +68,12 @@ button.tag-filter2:hover {
   max-height: 180px;
   max-width: 180px;
 }
+
+.fade.ng-hide {
+  transition:0.7s linear all;
+  opacity:0;
+}
+
+.fade.ng-hide-add, .fade.ng-hide-remove {
+  transition: 0.7s linear all;
+}

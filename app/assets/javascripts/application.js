@@ -16,6 +16,7 @@
 //= require angular
 //= require angular-route
 //= require angular-filter.min
+//= require angular-animate
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
