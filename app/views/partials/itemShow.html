@@ -1,11 +1,12 @@
-<div ng-controller="ItemController">
-  <p><img src="{{item[0].photo_url}}" width="400" height="400"></p>
-  <p>Item: {{item[0].name}}</p>
-  <p>Description: {{item[0].description}}</p>
-  <p>Price: {{ item[0].price | currency : $ : 2 }}</p>
-</div>
-
-<div ng-controller="FavoritesController">
-  <i class="{{heartClass}}" ng-click="saveFave()"></i>
-  <button ng-click="menuBack()">Back</button>
-</div>
+<main class="centered">
+  <div ng-controller="ItemController">
+    <p id="item-img"><img src="{{item[0].photo_url}}"></p>
+    <p>Item: {{item[0].name}}</p>
+    <p>Description: {{item[0].description}}</p>
+    <p>Price: {{ item[0].price | currency : $ : 2 }}</p>
+  </div>
+  <div ng-controller="FavoritesController">
+    <i class="{{heartClass}}" ng-click="saveFave()"></i>
+    <button ng-click="menuBack()">Back</button>
+  </div>
+</main>
