@@ -5,52 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
     <%= stylesheet_link_tag    "application" %>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <base href="/">
   </head>
   <body>
-    <div class="row sticky">
-      <nav class= "top-bar" data-topbar role="navigation">
-        <header>
-          <ul class="title-area">
+    <div class="row contain-to-grid">
+      <div class="medium-offset-1 medium-10 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area name">
             <li class="name">
-              <h1>
-                <%= link_to 'M E N U', root_path %>
-              </h1>
+              <h1><%= link_to 'M E N U', root_path %></h1>
             </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            <li class="toggle-topbar menu-icon">
+              <a href="#"><span></span></a>
+            </li>
           </ul>
-
           <section class="top-bar-section">
-            <ul class="right">
-              <li class="has-dropdown">
-                <% if logged_in? %>
-                  <li class="welcome">
-                    Bon Appétit, <a href= '/users/<%= current_user.id %>'><%= current_user.username %></a>!
-                  </li>
-                  <li class="active">
-                    <%= link_to 'Sign Out', logout_path %>
-                  </li>
-                <% else %>
-                  <li class="active">
-                    <%= link_to 'Sign In', login_path %>
-                  </li>
-                  <li class="active">
-                    <%= link_to 'Sign Up', new_user_path %>
-                  </li>
-                <% end %>
-              </li>
+            <ul class="right has-dropdown">
+              <% if logged_in? %>
+                <li class="active welcome">
+                  Bon appétit, <a href= '/users/<%= current_user.id %>'><%= current_user.username %></a>!
+                </li>
+                <li id="sign-out">
+                  <%= link_to 'Sign Out', logout_path %>
+                </li>
+              <% else %>
+                <li class="active">
+                  <%= link_to 'Sign In', login_path %>
+                </li>
+                <li class="active">
+                  <%= link_to 'Sign Up', new_user_path %>
+                </li>
+              <% end %>
             </ul>
           </section>
-        </header>
-      </nav>
+        </nav>
+      </div>
     </div>
 
     <div class = "row">
-      <div class="large-offset-1 large-10 large-offset-1 columns">
-
+      <div class="small-offset-1 small-10 small-offset-1 columns">
         <div id="flash-container">
           <% flash.each do |name, msg| %>
             <% if msg.is_a?(String) %>
@@ -58,10 +55,9 @@
             <% end %>
           <% end %>
         </div>
-
         <%= yield %>
-
       </div>
     </div>
+
   </body>
 </html>

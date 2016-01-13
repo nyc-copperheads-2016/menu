@@ -16,55 +16,102 @@
 
  */
 
+body {
+  font-family: 'Josefin Slab', sans-serif;
+}
+
+.restaurant-name {
+  font-size: 2.3rem;
+}
+
+#restaurant-list {
+  margin-top: 1rem;
+}
+
+.restaurant-logo {
+  max-height: 12rem;
+  max-width: 12rem;
+}
+
 div.ng-scope {
   display: inline;
 }
 
-button.tag-filter1 {
-  background-color: green;
-}
 
-button.tag-filter1:hover {
-  background-color: green;
-}
 
-button.tag-filter2 {
-  background-color: red;
-}
-
-button.tag-filter2:hover {
-  background-color: red;
+/* Nav Bar */
+.title-area {
+  padding-top: 0.3%;
 }
 
 .welcome{
   color: white;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding-top: 3%;
+  padding-right: 1%;
+  text-align: right;
+  width: 105%;
+  float: right;
 }
 
-.largeicon {
-  font-size: 8em;
+
+
+/* Tags */
+#tag-name {
+  font-size: .95rem;
 }
 
-.largeicon:hover {
-  opacity: 0.3;
+button.tag-filter1 {
+  background-color: #078446;
+}
+
+button.tag-filter1:hover {
+  background-color: #389c6a;
+}
+
+button.tag-filter1:focus {
+  background-color: #078446;
+}
+
+button.tag-filter2 {
+  background-color: #232a35;
+}
+
+button.tag-filter2:hover {
+  background-color: #4e545d;
+}
+
+button.tag-filter2:focus {
+  background-color: #232a35;
+}
+
+
+
+/* Item Show */
+#item-img {
+  display: block;
+  margin: 10% auto;
+  margin-top: 10%;
+  max-width: 85%;
+  max-height: 85%;
 }
 
 .liked {
   color: #ff3333;
-  font-size: 8em;
+  font-size: 7rem;
 }
 
 .unliked {
-  font-size: 8em;
-  color: gray;
+  font-size: 7rem;
+  color: #ffeaea;
 }
 
-.restaurant-name {
-  font-size: 2.5rem;
+
+
+/*Defaults*/
+.centered {
+  text-align: center;
 }
 
-.restaurant-logo {
-  max-height: 180px;
-  max-width: 180px;
+.no-list {
+  list-style: none;
 }
