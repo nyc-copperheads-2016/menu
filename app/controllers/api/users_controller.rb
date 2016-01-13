@@ -9,10 +9,3 @@ class Api::UsersController < ApplicationController
   end
 
 end
-
-
-# include: [:menus => { :include =>
-#       [:sections => { :include =>
-#         [:items => { :include =>
-#           [:diets, :ingredients, :tastes, :favorites]
-#         }]
