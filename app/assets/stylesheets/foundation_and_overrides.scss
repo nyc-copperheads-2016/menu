@@ -52,7 +52,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // This is the default html and body font-size for the base rem value.
-$rem-base: 18px;
+$rem-base: 20px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import 'foundation/functions';
@@ -114,7 +114,6 @@ $font-family-sans-serif: "Josefin Slab", Roboto, sans-serif;
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
-// $heart       : #ff3333;
 
 // We use these as default colors throughout
 $primary-color: #a10000;
@@ -462,13 +461,13 @@ $button-font-lrg: rem-calc(24);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: 15%;
 
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-color: $primary-color;
+$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -1424,7 +1423,7 @@ $topbar-link-color: $secondary-color;
 $topbar-link-font-size: rem-calc(19);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: $primary-color;
 // $topbar-link-bg-color-hover: $charcoal;
 $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
