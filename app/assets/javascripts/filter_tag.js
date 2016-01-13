@@ -33,10 +33,10 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         featured.push(menuItem)
       }
     });
-    if (featured.length > 0) {
+    if (featured.length === 0) {
       return false;
     } else {
-       return featured;
+      return featured;
     }
   };
 
@@ -65,10 +65,10 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         }
       });
     });
-    if (trending.length > 0) {
+    if (trending.length === 0) {
       return false;
     } else {
-       return trending;
+      return trending;
     }
   };
 
