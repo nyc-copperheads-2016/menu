@@ -1,56 +1,49 @@
-<div ng-controller="ItemsController">
+<div class="centered" ng-controller="ItemsController">
+  <h1 class="restaurant-name">{{restaurant.name}}</h1>
+  <ul class="no-list">
+    <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button>
+    <button ng-click="trendListOpen = !trendListOpen">Trending</button>
 
-  <h2>
-    {{restaurant.name}}
-  </h2>
-  <hr/>
-
-
-  <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button> <button ng-click="trendListOpen = !trendListOpen">Trending</button>
     <div ng-show="tagListOpen" id="tagList">
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
         <p>{{ key | uppercase }}: </p>
         <div ng-repeat="tagFilter in value">
-          <button class="tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
+          <button class="button round medium tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
         </div>
       </div>
     </div>
 
-
-      <div ng-repeat="item in popularItems" ng-show="trendListOpen" id="trendList">
-          <!-- <p ng-if="item.favorite == true">{{item.name}}</p> -->
-        <p>{{item.name}}</p>
-        <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-        <img src="{{item.photo_url}}" width="200">
-        <p>Item: {{item.name}}</p>
-        <p>Description: {{item.description}}</p>
-        <p>Price:  {{ item.price | currency : $ : 2 }}</p>
-      </div>
-
-
+    <div ng-repeat="item in popularItems" ng-show="trendListOpen" id="trendList">
+      <p>{{item.name}}</p>
+      <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
+      <img src="{{item.photo_url}}" width="200">
+      <p>Item: {{item.name}}</p>
+      <p>Description: {{item.description}}</p>
+      <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+    </div>
 
     <div ng-repeat="menu in restaurant.menus">
       <h3>Menu: {{menu.name}}</h3>
       <div ng-repeat="section in menu.sections">
         <p>Section: {{section.name}}</p>
+        <hr>
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
+
           <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-          <img src="{{item.photo_url}}" width="200">
-          <p>Item: {{item.name}}</p>
-          <p>Description: {{item.description}}</p>
-          <p>Price:  {{ item.price | currency : $ : 2 }}</p>
-          <label>Tags: </label>
-          <ul>
-            <li ng-repeat="diet in item.diets">
-              {{diet.name}}
-            </li>
-            <li ng-repeat="ingredient in item.ingredients">
-              {{ingredient.name}}
-            </li>
-            <li ng-repeat="taste in item.tastes">
-              {{taste.name}}
-            </li>
-          </ul>
+            <p>Item: {{item.name}}</p>
+            <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+            Tags:
+            <ul class="no-list">
+              <li class="tag-list" ng-repeat="diet in item.diets">
+                {{diet.name}}&nbsp;
+              </li>
+              <li class="tag-list" ng-repeat="taste in item.tastes">
+                {{taste.name}}&nbsp;
+              </li>
+              <li class="tag-list" ng-repeat="ingredient in item.ingredients">
+                {{ingredient.name}}&nbsp;
+              </li>
+            </ul>
           </a>
 
           <label>Favorites: </label>
