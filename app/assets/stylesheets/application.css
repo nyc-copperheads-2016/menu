@@ -16,38 +16,42 @@
 
  */
 
+body {
+  font-family: 'Josefin Slab', sans-serif;
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+}
+
+.title-area {
+  padding-top: 3px;
+}
+
 div.ng-scope {
   display: inline;
 }
 
 button.tag-filter1 {
-  background-color: green;
+  background-color: #078446;
 }
 
 button.tag-filter1:hover {
-  background-color: green;
+  background-color: #078446;
 }
 
 button.tag-filter2 {
-  background-color: red;
+  background-color: #232a35;
 }
 
 button.tag-filter2:hover {
-  background-color: red;
+  background-color: #232a35;
 }
 
 .welcome{
   color: white;
   padding-top: 10px;
   padding-right: 10px;
-}
-
-.largeicon {
-  font-size: 8em;
-}
-
-.largeicon:hover {
-  opacity: 0.3;
 }
 
 .liked {
@@ -60,11 +64,25 @@ button.tag-filter2:hover {
   color: gray;
 }
 
-.restaurant-name {
-  font-size: 2.5rem;
-}
-
 .restaurant-logo {
   max-height: 180px;
   max-width: 180px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.no-list {
+  list-style: none;
+}
+
+.tag-list {
+  display: inline-block;
+}
+
+#item-img {
+  margin-top: 20px;
+  max-width: 400px;
+  max-height: 400px;
 }
