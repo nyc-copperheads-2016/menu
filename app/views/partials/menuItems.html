@@ -17,8 +17,9 @@
     </div>
 
 
-      <div ng-repeat="item in menuItems" ng-show="trendListOpen" id="trendList">
-        <p ng-if="item.favorite == true">{{item.name}}</p>
+      <div ng-repeat="item in popularItems" ng-show="trendListOpen" id="trendList">
+          <!-- <p ng-if="item.favorite == true">{{item.name}}</p> -->
+        <p>{{item.name}}</p>
         <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <img src="{{item.photo_url}}" width="200">
         <p>Item: {{item.name}}</p>
