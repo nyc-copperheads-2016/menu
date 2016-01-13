@@ -56,8 +56,8 @@ div.ng-scope {
 
 
 /* Tags */
-.tag-list {
-  display: inline-block;
+#tag-name {
+  font-size: .95rem;
 }
 
 button.tag-filter1 {
@@ -97,11 +97,11 @@ button.tag-filter2:focus {
 
 .liked {
   color: #ff3333;
-  font-size: 7em;
+  font-size: 7rem;
 }
 
 .unliked {
-  font-size: 7em;
+  font-size: 7rem;
   color: #ffeaea;
 }
 
