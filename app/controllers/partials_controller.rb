@@ -12,4 +12,8 @@ class PartialsController < ApplicationController
     render :layout => false
   end
 
+  def userShow
+    render :layout => false
+  end
+
 end

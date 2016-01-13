@@ -13,4 +13,7 @@ class AppController < ApplicationController
   def itemShow
   end
 
+  def userShow
+  end
+
 end
