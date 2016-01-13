@@ -12,9 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require icon
 
  */
+
+@import 'foundation-icons';
 
 body {
   font-family: 'Josefin Slab', sans-serif;
