@@ -192,6 +192,69 @@ steakhouse.ingredient_list = "beef, tomato, onion, lettuce"
 steakhouse.save
 
 
+dead_rabbit = Restaurant.create(name: "The Dead Rabbit",
+                                      website: "http://http://www.deadrabbitnyc.com",
+                                      description: "The Dead Rabbit Grocery and Grog embodies the conviviality of Old New York and the Irish-American tradition. World’s Best Bar 2015",
+                                      logo_url: "https://www.horeca.it/Portals/27/dead_rabbit_1.png")
+
+l = dead_rabbit.locations.create(address: "30 Water Street",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10004")
+
+m = dead_rabbit.menus.create(name: "Drinks")
+
+shaken = m.sections.create(name: "Shaken")
+stirred = m.sections.create(name: "Stirred")
+
+j_t_b = shaken.items.create(name: "John The Baptist", price: "15.00", description: "Green Spot Irish Whiskey, Green Tea, Apricot, Pistachio, Coconut, Absinthe, Lime", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/LdSZ7bSIEWu8EgKSc4IGCg/o.jpg")
+d_k = shaken.items.create(name: "Death Knell", price: "16.00", description: "Nikka Coffey Grain Whiskey, Togarashi, Oloroso Sherry, Lime, Orinoco Bitters", photo_url: "https://media.timeout.com/images/102962776/image.jpg")
+m_j = shaken.items.create(name: "Master Juba", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Dead Rabbit Cask Ale, Apple, Cinnamon, Cream, Egg, Mace, Pimento Bitters", photo_url: "https://slideshow.starchefs.com/p.php?a=UUFRXio7MyQqQFtFPzc1OjQmLjc5Jzw2Mio5LTsiKyQ%2BJzE%2FPzs%2FNCY7LiYoNDs%3D&m=1424381311")
+w_g = shaken.items.create(name: "Western Gate", price: "15.00", description: "Powers Gold Irish Whiskey, Cranberry, Beet, Tangerine, Lemon, Pimento Bitters", photo_url: "http://bestguinnessnyc.com/wp-content/uploads/2014/06/Feature-750x400.jpg")
+m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters", photo_url: "http://www.fodors.com/ee/files/slideshows/3-The-Dead-Rabbit.jpg")
+
+p_m = stirred.items.create(name: "Preacher man", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Reposado Tequila, Amaro Ciociaro, Sweet Vermouth, Dry Vermouth Cocoa, Absinthe", photo_url: "http://assets.bwbx.io/images/iUOCn1jJ5beM/v2/1200x-1.jpg")
+b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters", photo_url: "http://static01.nyt.com/images/2015/03/01/travel/01COVER1/01COVER1-master315-v2.jpg")
+b_r = stirred.items.create(name: "Black Rose", price: "15.00", description: "Tullamore Dew 12 Year Old Irish Whiskey, Bergamot Black Tea, Curacao, Averna Amaro, Walnut, Aromatic Bitters", photo_url: "https://cdn3.vox-cdn.com/thumbor/S6aDOWaEuOXmzEPP_ud5i5BDECU=/cdn0.vox-cdn.com/uploads/chorus_asset/file/3626146/The_Eddy__-_Deep_SEa_Colony.0.jpg")
+l_w = stirred.items.create(name: "Little Water", price: "15.00", description: "Tanqueray Gin, Old Tom Gin, Dolin Blanc, Green Chartreuse, Pear, Pennyroyal, Absinthe", photo_url: "https://media.timeout.com/images/100643847/617/347/image.jpg")
+
+j_t_b.taste_list = "sour, heavy, bitter"
+j_t_b.ingredient_list = "whiskey, absinthe, lime, bitters"
+j_t_b.save
+
+d_k.taste_list = "heavy, bitter"
+d_k.ingredient_list = "whiskey, sherry, lime, bitters"
+d_k.save
+
+m_j.taste_list = "sweet, creamy"
+m_j.ingredient_list = "whiskey, egg, bitters"
+m_j.save
+
+w_g.taste_list = "sour, creamy"
+w_g.ingredient_list = "whiskey, bitters"
+w_g.save
+
+m.taste_list = "sweet, creamy"
+m.ingredient_list = "sherry, bitters, vanilla"
+m.save
+
+p_m.taste_list = "sweet, heavy, bitter"
+p_m.ingredient_list = "whiskey, tequila, bitters ,vermouth"
+p_m.save
+
+b_j.taste_list = "creamy, bitter"
+b_j.ingredient_list = "whiskey, bitters"
+b_j.save
+
+b_r.taste_list = "aromatic, bitter, sweet"
+b_r.ingredient_list = "whiskey, black tea, bitters"
+b_r.save
+
+l_w.taste_list = "heavy, sweet, aromatic"
+l_w.ingredient_list = 'gin, chartreuse, absinthe'
+l_w.save
+
+
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
   api_key: Rails.application.secrets.locu_api_key,
   fields: [
