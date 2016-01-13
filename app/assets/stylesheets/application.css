@@ -70,10 +70,15 @@ button.tag-filter2:hover {
 }
 
 .fade.ng-hide {
-  transition:0.7s linear all;
+  transition: 1s linear all;
   opacity:0;
 }
 
-.fade.ng-hide-add, .fade.ng-hide-remove {
-  transition: 0.7s linear all;
+.fade.ng-hide-add {
+  transition: 0s linear all;
 }
+
+.fade.ng-hide-remove {
+  transition: 1s linear all;
+}
+
