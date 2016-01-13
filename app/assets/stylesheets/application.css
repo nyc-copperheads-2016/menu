@@ -12,4 +12,59 @@
  *
  *= require_tree .
  *= require_self
+ *= require icon
+
  */
+
+div.ng-scope {
+  display: inline;
+}
+
+button.tag-filter1 {
+  background-color: green;
+}
+
+button.tag-filter1:hover {
+  background-color: green;
+}
+
+button.tag-filter2 {
+  background-color: red;
+}
+
+button.tag-filter2:hover {
+  background-color: red;
+}
+
+.welcome{
+  color: white;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.largeicon {
+  font-size: 8em;
+}
+
+.largeicon:hover {
+  opacity: 0.3;
+}
+
+.liked {
+  color: #ff3333;
+  font-size: 8em;
+}
+
+.unliked {
+  font-size: 8em;
+  color: gray;
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+}
+
+.restaurant-logo {
+  max-height: 180px;
+  max-width: 180px;
+}

@@ -1,0 +1,12 @@
+<h3>Hello, <%= current_user.username %></h3>
+<p>member since: <%= current_user.created_at.strftime("%m/%Y") %></p>
+
+<div>
+  <p>You have <%= current_user.items.count %> Favorited Items:</p>
+    <ol>
+    <% current_user.items.each do |item| %>
+      <li><%= item.name %> from <%= item.section.menu.restaurant.name %></li>
+    <% end %>
+    </ol>
+</div>
+

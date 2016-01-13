@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
+//= require angular
+//= require angular-route
+//= require angular-filter.min
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
