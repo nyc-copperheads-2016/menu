@@ -20,7 +20,7 @@
     <div ng-show="trendListOpen" class="fade">
       <h2>Trending Items:</h2>
       <div ng-repeat="item in popularItems">
-        <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
+        <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <img src="{{item.photo_url}}" width="200">
         <p>Item: {{item.name}}</p>
         <p>Price:  {{ item.price | currency : $ : 2 }}</p>
@@ -34,7 +34,7 @@
         <hr>
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
 
-          <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
+          <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
             <p>Item: {{item.name}}</p>
             <p>Price:  {{ item.price | currency : $ : 2 }}</p>
           </a>
