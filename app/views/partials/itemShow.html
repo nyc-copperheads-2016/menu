@@ -1,12 +1,12 @@
 <main class="centered">
   <div ng-controller="ItemController">
-    <p id="item-img"><img src="{{item[0].photo_url}}"></p>
+    <p class="row"><img id="item-img" src="{{item[0].photo_url}}"></p>
     <p>Item: {{item[0].name}}</p>
     <p>Description: {{item[0].description}}</p>
     <p>Price: {{ item[0].price | currency : $ : 2 }}</p>
   </div>
   <div ng-controller="FavoritesController">
     <i class="{{heartClass}}" ng-click="saveFave()"></i>
-    <button ng-click="menuBack()">Back</button>
   </div>
+  <p><button ng-click="menuBack()">Back</button></p>
 </main>

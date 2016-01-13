@@ -12,15 +12,49 @@
  *
  *= require_tree .
  *= require_self
-
  */
 
 @import 'foundation-icons';
+
+/*Defaults*/
+.inline {
+  display: inline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.no-list {
+  list-style: none;
+}
 
 body {
   font-family: 'Josefin Slab', sans-serif;
 }
 
+
+
+/* Nav Bar */
+.title-area {
+  padding-top: 1%;
+}
+
+.welcome{
+  color: white;
+  text-align: right;
+  width: 105%;
+  float: right;
+  margin-right: 2.6%;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+
+
+/* Restaurant Show */
 .restaurant-name {
   font-size: 2.3rem;
 }
@@ -32,26 +66,6 @@ body {
 .restaurant-logo {
   max-height: 12rem;
   max-width: 12rem;
-}
-
-div.ng-scope {
-  display: inline;
-}
-
-
-
-/* Nav Bar */
-.title-area {
-  padding-top: 0.3%;
-}
-
-.welcome{
-  color: white;
-  padding-top: 3%;
-  padding-right: 1%;
-  text-align: right;
-  width: 105%;
-  float: right;
 }
 
 
@@ -85,6 +99,10 @@ button.tag-filter2:focus {
   background-color: #232a35;
 }
 
+button {
+  outline-color: #470400;
+}
+
 
 
 /* Item Show */
@@ -92,31 +110,23 @@ button.tag-filter2:focus {
   display: block;
   margin: 10% auto;
   margin-top: 10%;
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .liked {
-  color: #ff3333;
+  color: #aa1919;
   font-size: 7rem;
 }
 
 .unliked {
   font-size: 7rem;
-  color: #ffeaea;
+  color: #eccccc;
 }
 
 
 
-/*Defaults*/
-.centered {
-  text-align: center;
-}
-
-.no-list {
-  list-style: none;
-}
-
+/* Animations */
 .fade.ng-hide {
   transition: 1s linear all;
   opacity:0;
@@ -129,6 +139,8 @@ button.tag-filter2:focus {
 .fade.ng-hide-remove {
   transition: 1s linear all;
 }
+
+
 
 /* Footer */
 footer {
