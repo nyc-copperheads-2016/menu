@@ -6,7 +6,14 @@
   <hr/>
 
 
-  <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button> <button ng-click="trendListOpen = !trendListOpen">Trending</button>
+  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false;">
+    Trending
+  </button>
+  <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false">
+    Select by Tags
+  </button>
+
+
     <div ng-show="tagListOpen" id="tagList">
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
         <p>{{ key | uppercase }}: </p>
@@ -16,16 +23,15 @@
       </div>
     </div>
 
-
-      <div ng-repeat="item in popularItems" ng-show="trendListOpen" id="trendList">
-          <!-- <p ng-if="item.favorite == true">{{item.name}}</p> -->
-        <p>{{item.name}}</p>
+    <div ng-show="trendListOpen">
+      <h2>Trending Items:</h2>
+      <div ng-repeat="item in popularItems" id="trendList">
         <a ng-href="/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <img src="{{item.photo_url}}" width="200">
         <p>Item: {{item.name}}</p>
-        <p>Description: {{item.description}}</p>
         <p>Price:  {{ item.price | currency : $ : 2 }}</p>
       </div>
+    </div>
 
 
 
