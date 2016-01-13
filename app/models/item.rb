@@ -8,4 +8,5 @@ class Item < ActiveRecord::Base
   acts_as_taggable_on :diets, :tastes, :ingredients
 
   validates :name, presence: true, length: { maximum: 128 }
+
 end
