@@ -128,22 +128,18 @@ mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade", price: "3.00
 
 icecream = sweets.items.create(name: "Ice Cream Sandwiches", price: "4.00", photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
 
-lobster.diet_list = "pescatarian"
 lobster.taste_list = "salty, buttery"
 lobster.ingredient_list = "lobster, butter"
 lobster.save
 
-crab.diet_list = "pescatarian"
 crab.taste_list = "salty, buttery"
 crab.ingredient_list = "crab, butter"
 crab.save
 
-clam.diet_list = "pescatarian"
 clam.taste_list = "savory"
 clam.ingredient_list = "clam"
 clam.save
 
-claws.diet_list = "pescatarian"
 claws.ingredient_list = "crab"
 claws.save
 
@@ -159,6 +155,41 @@ icecream.taste_list = "sweet"
 icecream.ingredient_list = "milk, blueberry, chocolate"
 icecream.save
 
+
+chopt = Restaurant.create(name: "Chop't",
+                                      website: "http://choptsalad.com/",
+                                      description: "Creative Salad Company",
+                                      logo_url: "http://choptsalad.com/wp-content/themes/twentyfourteen-child/images/logo.png")
+
+l = chopt.locations.create(address: "80 Pine St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10005")
+
+m = chopt.menus.create(name: "Salads")
+
+specials = m.sections.create(name: "Specials")
+classics = m.sections.create(name: "Classics")
+
+street = specials.items.create(name: "NYC STREET CART", price: "8.00", photo_url: "https://media.glassdoor.com/l/ed/7c/2f/35/the-nyc-street-cart-salad.jpg")
+falafel = specials.items.create(name: "FALAFEL MARKET PLATE", price: "8.50", photo_url: "https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/s320x320/e35/12145423_1795795263980952_1219895798_n.jpg")
+
+santafe = classics.items.create(name: "SANTA FE", price: "7.00", photo_url: "http://s3-media1.fl.yelpcdn.com/bphoto/YEhApVeVujYYRpjEMdj0PQ/348s.jpg")
+steakhouse = classics.items.create(name: "STEAKHOUSE", price: "8.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/Xgw0IMs4aoCtjPU_TzFN_A/o.jpg")
+
+street.ingredient_list = "chicken, cauliflower, tomato, lettuce, cabbage"
+street.save
+
+falafel.diet_list = "vegetarian"
+falafel.ingredient_list = "kale, quinoa, lentil, beets, chickpea, cauliflower"
+falafel.save
+
+santafe.diet_list = "vegetarian"
+santafe.ingredient_list = "avocado, tomato, corn, cheese, onion, lettuce"
+santafe.save
+
+steakhouse.ingredient_list = "beef, tomato, onion, lettuce"
+steakhouse.save
 
 
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
