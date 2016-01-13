@@ -1,11 +1,12 @@
 <div ng-controller="RestaurantsController">
-  <div id="restaurant-list">
+  <div class="centered" id="restaurant-list">
     <div class="restaurant" ng-repeat="restaurant in restaurants track by $index">
 
       <p>
-        <a ng-href="/restaurants/{{restaurant.id}}/menuItems">
-          <div class="restaurant-name">{{restaurant.name}}</div>
+        <a class="restaurant-name" ng-href="/restaurants/{{restaurant.id}}/menuItems">
           <img class="restaurant-logo" ng-src="{{restaurant.logo_url}}">
+          <div>{{restaurant.name}}</div>
+          <div>{{restaurant.address}}</div>
         </a>
         <hr>
       </p>
