@@ -15,6 +15,10 @@ myApp.controller('FavoritesController',
     }
   });
 
+  $scope.menuBack = function() {
+    $window.history.back();
+  };
+
   $scope.saveFave = function() {
     $http.get('/api/restaurants/' + restaurantParam + '/items/' + itemParam)
     .then(function successCallback(response) {
