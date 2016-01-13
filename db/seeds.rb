@@ -43,7 +43,7 @@ onion.save
 
 yellowfin.diet_list = "pescatarian"
 yellowfin.taste_list = "savory"
-yellowfin.ingredient_list = "fish, ginger, cilantro, truffle soy"
+yellowfin.ingredient_list = "fish, ginger, cilantro, truffle, soy"
 yellowfin.save
 
 mussels.diet_list = "pescatarian"
@@ -70,7 +70,7 @@ shrimp.ingredient_list = "tomatillo, avocado, cilantro"
 shrimp.save
 
 jumbo.diet_list = "pescatarian"
-jumbo.ingredient_list = "shrimp"
+jumbo.ingredient_list = "shellfish"
 jumbo.save
 
 oysters.diet_list = "pescatarian"
@@ -78,7 +78,7 @@ oysters.taste_list = "umani, sour, salty"
 oysters.ingredient_list = "shellfish"
 oysters.save
 
-salmon.ingredient_list = "salmon, lentils, mustard"
+salmon.ingredient_list = "fish, lentils, mustard"
 salmon.save
 
 chicken.ingredient_list = "brussel sprouts, apple, chicken"
@@ -92,6 +92,73 @@ mushrooms.diet_list = "vegetarian"
 mushrooms.taste_list = "umani"
 mushrooms.ingredient_list = "mushroom"
 mushrooms.save
+
+
+
+lukes = Restaurant.create(name: "Luke’s Lobster",
+                                      website: "http://lukeslobster.com/",
+                                      description: "Pure, Sustainable Maine Lobster Rolls",
+                                      logo_url: "http://static1.squarespace.com/static/4feb30c5c4aaa03b060dccd8/t/56607dbde4b0b03b8620c02f/1452276611896/?format=1000w")
+
+l = lukes.locations.create(address: "26 S William St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10004")
+
+l = lukes.locations.create(address: "11 Water St",
+                                      city: "Brooklyn",
+                                      state: "NY",
+                                      zip: "11201")
+
+m = lukes.menus.create(name: "Main Menu")
+
+main = m.sections.create(name: "Bites, Bowls, Boards")
+extras = m.sections.create(name: "Salads")
+drinks = m.sections.create(name: "Flatbreads")
+sweets = m.sections.create(name: "Raw Bar")
+
+lobster = main.items.create(name: "Lobster Roll", price: "16.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+crab = main.items.create(name: "Crab Roll", price: "13.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/1yUPo3-t0OMQwcquM8Swng/258s.jpg")
+
+clam = extras.items.create(name: "New England Clam Chowder", price: "9.00", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/bHTtpvjf5eYRmUHKBQsSow/258s.jpg")
+claws = extras.items.create(name: "4 Jonah Crab Claws", price: "8.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+
+mainebrew = drinks.items.create(name: "Maine Microbrews", price: "6.50", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
+mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade", price: "3.00", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/j3GgKBhbtoj98_dJFp0PCg/258s.jpg")
+
+icecream = sweets.items.create(name: "Ice Cream Sandwiches", price: "4.00", photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
+
+lobster.diet_list = "pescatarian"
+lobster.taste_list = "salty, buttery"
+lobster.ingredient_list = "lobster, butter"
+lobster.save
+
+crab.diet_list = "pescatarian"
+crab.taste_list = "salty, buttery"
+crab.ingredient_list = "crab, butter"
+crab.save
+
+clam.diet_list = "pescatarian"
+clam.taste_list = "savory"
+clam.ingredient_list = "clam"
+clam.save
+
+claws.diet_list = "pescatarian"
+claws.ingredient_list = "crab"
+claws.save
+
+mainebrew.taste_list = "hoppy"
+mainebrew.ingredient_list = "beer"
+mainebrew.save
+
+mainesoda.taste_list = "sweet"
+mainesoda.ingredient_list = "blueberry, lemon, sarsparilla, ginger"
+mainesoda.save
+
+icecream.taste_list = "sweet"
+icecream.ingredient_list = "milk, blueberry, chocolate"
+icecream.save
+
 
 
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
