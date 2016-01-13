@@ -8,6 +8,7 @@ myApp.controller('ItemsController',
     $scope.currentMenu = $scope.restaurant.menus[0];
     $scope.menuItems = [];
     $scope.findMenuItems();
+    $scope.popularItems = $scope.findPopular();
 
     $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
@@ -22,7 +23,36 @@ myApp.controller('ItemsController',
         $scope.menuItems.push($scope.currentMenu.sections[section].items[item]);
       }
     }
-  }
+  };
+
+  $scope.findPopular = function() {
+    liked = {};
+    popular = [];
+    angular.forEach($scope.menuItems, function(menuItem){
+      if (menuItem.favorites.length > 0) {
+        liked[menuItem.name] = menuItem.favorites.length;
+      }
+    });
+    // angular.forEach($scope.menuItems, function(menuItem){
+    //   if (menuItem.favorites.length > 0) {
+    //     menuItem.favorites = menuItem.favorites.length;
+    //   }
+    // });
+    for (var like in liked) {
+      popular.push([like, liked[like]])
+      popular.sort(function(a, b) {return b[1] - a[1]})
+    };
+    if (popular.length > 6) {
+      popular = popular.slice(0, 5)
+    };
+    angular.forEach($scope.menuItems, function(menuItem){
+      popular.forEach(function(pop) {
+        if (pop[0] === menuItem.name) {
+          menuItem.favorite = true;
+        }
+      })
+    });
+  };
 
   $scope.findUniqueTags = function() {
     var tags = {};
