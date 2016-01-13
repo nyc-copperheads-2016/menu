@@ -114,18 +114,12 @@ j_t_b = shaken.items.create(name: "John The Baptist", price: "15.00", descriptio
 d_k = shaken.items.create(name: "Death Knell", price: "16.00", description: "Nikka Coffey Grain Whiskey, Togarashi, Oloroso Sherry, Lime, Orinoco Bitters", photo_url: "https://media.timeout.com/images/102962776/image.jpg")
 m_j = shaken.items.create(name: "Master Juba", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Dead Rabbit Cask Ale, Apple, Cinnamon, Cream, Egg, Mace, Pimento Bitters", photo_url: "https://slideshow.starchefs.com/p.php?a=UUFRXio7MyQqQFtFPzc1OjQmLjc5Jzw2Mio5LTsiKyQ%2BJzE%2FPzs%2FNCY7LiYoNDs%3D&m=1424381311")
 w_g = shaken.items.create(name: "Western Gate", price: "15.00", description: "Powers Gold Irish Whiskey, Cranberry, Beet, Tangerine, Lemon, Pimento Bitters", photo_url: "http://bestguinnessnyc.com/wp-content/uploads/2014/06/Feature-750x400.jpg")
-m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters")
-s = shaken.items.create(name: "Stronghold", price: "15.00", description: "Connemara Peated Irish Whiskey, Powers Signature Release Irish Whiskey, Pear, Pistachio, Cocoa, Lemon, Orinoco Bitters")
-w = shaken.items.create(name: "Wanderlust", price: "15.00", description: "Jameson Black Barrel Irish Whiskey, Pear, Almond, Chocolate, Cream, Egg, Aromatic Bitters")
+m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters", photo_url: "http://www.fodors.com/ee/files/slideshows/3-The-Dead-Rabbit.jpg")
 
-p_m = stirred.items.create(name: "Preacher man", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Reposado Tequila, Amaro Ciociaro, Sweet Vermouth, Dry Vermouth Cocoa, Absinthe")
-b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters")
-b_r = stirred.items.create(name: "Black Rose", price: "15.00", description: "Tullamore Dew 12 Year Old Irish Whiskey, Bergamot Black Tea, Curacao, Averna Amaro, Walnut, Aromatic Bitters")
-l_w = stirred.items.create(name: "Little Water", price: "15.00", description: "Tanqueray Gin, Old Tom Gin, Dolin Blanc, Green Chartreuse, Pear, Pennyroyal, Absinthe")
-c_t = stirred.items.create(name: "Cargo Thief", price: "15.00", description: "Bulleit Rye Whiskey, Sweet Vermouth, Curacao, Absinthe, Orinoco Bitters")
-l_k = stirred.items.create(name: "Lighthouse Keeper", price: "15.00", description: "Teeling Small Batch Irish Whiskey, Jamaican Rum, Citron Sauvage, Falernum, Pink Grapefruit, Pimento Dram, Angostura Bitters")
-
-
+p_m = stirred.items.create(name: "Preacher man", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Reposado Tequila, Amaro Ciociaro, Sweet Vermouth, Dry Vermouth Cocoa, Absinthe", photo_url: "http://assets.bwbx.io/images/iUOCn1jJ5beM/v2/1200x-1.jpg")
+b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters", photo_url: "http://static01.nyt.com/images/2015/03/01/travel/01COVER1/01COVER1-master315-v2.jpg")
+b_r = stirred.items.create(name: "Black Rose", price: "15.00", description: "Tullamore Dew 12 Year Old Irish Whiskey, Bergamot Black Tea, Curacao, Averna Amaro, Walnut, Aromatic Bitters", photo_url: "https://cdn3.vox-cdn.com/thumbor/S6aDOWaEuOXmzEPP_ud5i5BDECU=/cdn0.vox-cdn.com/uploads/chorus_asset/file/3626146/The_Eddy__-_Deep_SEa_Colony.0.jpg")
+l_w = stirred.items.create(name: "Little Water", price: "15.00", description: "Tanqueray Gin, Old Tom Gin, Dolin Blanc, Green Chartreuse, Pear, Pennyroyal, Absinthe", photo_url: "https://media.timeout.com/images/100643847/617/347/image.jpg")
 
 j_t_b.taste_list = "sour, heavy, bitter"
 j_t_b.ingredient_list = "whiskey, absinthe, lime, bitters"
@@ -143,62 +137,82 @@ w_g.diet_list = "sour, creamy"
 w_g.ingredient_list = "whiskey, bitters"
 w_g.save
 
+m.diet_list = "sweet, creamy"
+m.ingredient_list = "sherry, bitters, vanilla"
+m.save
+
+p_m.diet_list = "sweet, heavy, bitter"
+p_m.ingredient_list = "whiskey, tequila, bitters ,vermouth"
+p_m.save
+
+b_j.diet_list = "creamy, bitter"
+b_j.ingredient_list = "whiskey, bitters"
+b_j.save
+
+b_r.diet_list = "aromatic, bitter, sweet"
+b_r.ingredient_list = "whiskey, black tea, bitters"
+b_r.save
+
+l_w.diet_list = "heavy, sweet, aromatic"
+l_w.ingredient_list = 'gin, chartreuse, absinthe'
+l_w.save
+
 #===============================================================================
-restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
-  api_key: Rails.application.secrets.locu_api_key,
-  fields: [
-    "locu_id",
-    "name"
-  ],
-  venue_queries: [
-  {
-    location: {
-      geo: {
-        '$in_lat_lng_radius'.to_sym => [40.7061972,-74.0123236, 200]
-      }
-    },
-    menus: { '$present'.to_sym => true }
-  }
-]}.to_json)
+# restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
+#   api_key: Rails.application.secrets.locu_api_key,
+#   fields: [
+#     "locu_id",
+#     "name"
+#   ],
+#   venue_queries: [
+#   {
+#     location: {
+#       geo: {
+#         '$in_lat_lng_radius'.to_sym => [40.7061972,-74.0123236, 200]
+#       }
+#     },
+#     menus: { '$present'.to_sym => true }
+#   }
+# ]}.to_json)
 
-venues = JSON.parse(restaurants_with_menus.body_str)["venues"]
+# venues = JSON.parse(restaurants_with_menus.body_str)["venues"]
 
-venues.each do |v|
-  r = Restaurant.create!(name: v['name'])
+# venues.each do |v|
+#   r = Restaurant.create!(name: v['name'])
 
-  r_details_json = Curl.post("https://api.locu.com/v2/venue/search", {
-    api_key: Rails.application.secrets.locu_api_key,
-    fields: [
-      "name",
-      "menus",
-      "categories"
-    ],
-  venue_queries: [{ locu_id: v["locu_id"] }]}.to_json)
+#   r_details_json = Curl.post("https://api.locu.com/v2/venue/search", {
+#     api_key: Rails.application.secrets.locu_api_key,
+#     fields: [
+#       "name",
+#       "menus",
+#       "categories"
+#     ],
+#   venue_queries: [{ locu_id: v["locu_id"] }]}.to_json)
 
-  menus = JSON.parse(r_details_json.body_str)['venues'].first['menus']
+#   menus = JSON.parse(r_details_json.body_str)['venues'].first['menus']
 
-  menus.each do |menu|
-    m = r.menus.create!(name: menu['menu_name'])
-    menu['sections'].each do |section|
-      section['subsections'].each do |subsection|
-        if !(subsection['subsection_name']).blank?
-          s = m.sections.create!(name: subsection['subsection_name'])
-          subsection['contents'].each do |content|
-            if !(content['name'].blank?)
-              i = s.items.create!(name: content['name'],
-                                     price: content['price'],
-                                     description: content['description'])
-            else
-              puts "Skipping blank content"
-            end
-          end
-        else
-          puts "Not saving blank subsection"
-        end
-      end
-    end
-  end
-end
+#   menus.each do |menu|
+#     m = r.menus.create!(name: menu['menu_name'])
+#     menu['sections'].each do |section|
+#       section['subsections'].each do |subsection|
+#         if !(subsection['subsection_name']).blank?
+#           s = m.sections.create!(name: subsection['subsection_name'])
+#           subsection['contents'].each do |content|
+#             if !(content['name'].blank?)
+#               i = s.items.create!(name: content['name'],
+#                                      price: content['price'],
+#                                      description: content['description'])
+#             else
+#               puts "Skipping blank content"
+#             end
+#           end
+#         else
+#           puts "Not saving blank subsection"
+#         end
+#       end
+#     end
+#   end
+# end
 
 User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
 
