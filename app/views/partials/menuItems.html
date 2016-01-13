@@ -1,8 +1,12 @@
 <div class="centered" ng-controller="ItemsController">
   <h1 class="restaurant-name">{{restaurant.name}}</h1>
   <ul class="no-list">
-    <button ng-click="tagListOpen = !tagListOpen">Select by Tags</button>
-    <button ng-click="trendListOpen = !trendListOpen">Trending</button>
+  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false;" ng-if="{{popularItems.length > 0}}">
+    Trending
+  </button>
+  <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false">
+    Select by Tags
+  </button>
 
     <div ng-show="tagListOpen" class="fade">
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
