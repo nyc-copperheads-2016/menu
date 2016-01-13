@@ -8,6 +8,9 @@ myApp.config( ["$routeProvider", "$locationProvider", function($routeProvider, $
   .when('/restaurants/:restaurant_id/menuItems/:item_id', {
     templateUrl: '/partials/itemShow'
   })
+  .when('/users/:user_id', {
+    templateUrl: '/partials/userShow'
+  })
   .otherwise({
     templateUrl: '/partials/restaurants'
   });
