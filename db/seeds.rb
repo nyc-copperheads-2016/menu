@@ -313,16 +313,16 @@ end
 
 User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
 
-5.times do
+2.times do
   FactoryGirl.create(:user)
 end
 
 u = FactoryGirl.create(:user)
 
-6.times do
+2.times do
   r = FactoryGirl.create(:restaurant)
 
-  3.times do
+  2.times do
     FactoryGirl.create(:location, restaurant: r)
   end
 
