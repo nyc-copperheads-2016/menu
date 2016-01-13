@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -35,6 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
 
 gem 'rails_12factor'
 
