@@ -33,7 +33,11 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         featured.push(menuItem)
       }
     });
-    return featured;
+    if (featured.length > 0) {
+      return false;
+    } else {
+       return featured;
+    }
   };
 
   $scope.findPopular = function() {
@@ -61,7 +65,11 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         }
       });
     });
-    return trending;
+    if (trending.length > 0) {
+      return false;
+    } else {
+       return trending;
+    }
   };
 
   $scope.findUniqueTags = function() {
