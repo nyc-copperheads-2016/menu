@@ -32,7 +32,7 @@
                   <li class="active welcome">
                     Bon appétit, <a href= '/users/<%= current_user.id %>'><%= current_user.username %></a>!
                   </li>
-                  <li class="active">
+                  <li id="sign-out">
                     <%= link_to 'Sign Out', logout_path %>
                   </li>
                 <% else %>
