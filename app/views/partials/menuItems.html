@@ -1,5 +1,7 @@
 <div class="centered" ng-controller="ItemsController">
-  <h1 class="restaurant-name">{{restaurant.name}}</h1>
+  <h1 class="restaurant-name">
+    {{restaurant.name}}
+  </h1>
   <ul class="no-list">
   <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false; featuredListOpen = false" class="button-{{popularButton}}">
     Trending
@@ -12,44 +14,75 @@
   </button>
 
     <div ng-show="tagListOpen" class="fade">
+      <p>
+        <label>
+          (once to include, twice to exclude, thrice to reset)
+        </label>
+      </p>
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
-        <p>{{ key | uppercase }}: </p>
-        <div ng-repeat="tagFilter in value">
-          <button class="button round medium tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
+        <p>
+          {{ key | uppercase }}:
+        </p>
+        <div class="inline" ng-repeat="tagFilter in value">
+          <button class="button round medium tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">
+            {{tagFilter.name}}
+          </button>
         </div>
       </div>
     </div>
 
     <div ng-show="featuredListOpen" class="fade">
-      <h2>Featured Items:</h2>
+      <h2>
+        Featured Items:
+      </h2>
       <div ng-repeat="item in featuredItems">
         <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-        <p>Item: {{item.name}}</p>
-        <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+        <p>
+          Item: {{item.name}}
+        </p>
+        <p>
+          Price:  {{ item.price | currency : $ : 2 }}
+        </p>
       </div>
     </div>
 
     <div ng-show="trendListOpen" class="fade">
-      <h2>Trending Items:</h2>
+      <h2>
+        Trending Items:
+      </h2>
       <div ng-repeat="item in popularItems">
         <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-        <p>Item: {{item.name}}</p>
-        <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+        <p>
+          Item: {{item.name}}
+        </p>
+        <p>
+          Price:  {{ item.price | currency : $ : 2 }}
+        </p>
       </div>
     </div>
 
     <div ng-repeat="menu in restaurant.menus">
-      <h2>{{menu.name}}</h2>
+      <h2>
+        {{menu.name}}
+      </h2>
       <div ng-repeat="section in menu.sections">
-        <h4>- {{section.name}} -</h4>
+        <h4>
+          - {{section.name}} -
+        </h4>
+
         <hr>
+
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
 
           <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-            <p>{{item.name}} - {{ item.price | currency : $ : 2 }}</p>
+            <p>
+              {{item.name}} - {{ item.price | currency : $ : 2 }}
+            </p>
           </a>
 
-          <label>Tags:</label>
+          <label>
+            Tags:
+          </label>
           <p id="tag-name">
             <span ng-repeat="diet in item.diets">
               {{diet.name}}&nbsp;
@@ -62,10 +95,15 @@
             </span>
           </p>
 
-          <label>Favorites:</label>
-          <i class="fi-heart"> {{item.favorites.length}}</i>
+          <label>
+            Favorites:
+          </label>
+          <i class="fi-heart">
+            {{item.favorites.length}}
+          </i>
 
           <hr/>
+
         </li>
       </div>
     </div>
