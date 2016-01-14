@@ -356,9 +356,9 @@ end
 
 ###############################################################################
 claudio = Restaurant.create(name: "Da Claudio Ristorante",
-                                      website: "http://www.daclaudionyc.com",
-                                      description: "In the heart of lower Manhattan, Da Claudio brings a locally sourced seasonal Italian menu and friendly modern aesthetic to one of the oldest streets in New York. Its Nassau / Ann Street location is rich with both history and possibility. Da Claudio embraces New York tradition along with the city's changing dining landscape, offering curated fresh market driven-fare enhanced with the finest Italian imports,  a beautiful bar and salumeria as well as take-out and full service dining in a contemporary, light and airy space.",
-                                      logo_url: "http://www.daclaudionyc.com/images/daclaudio_logo269x155.png")
+  website: "http://www.daclaudionyc.com",
+  description: "In the heart of lower Manhattan, Da Claudio brings a locally sourced seasonal Italian menu and friendly modern aesthetic to one of the oldest streets in New York. Its Nassau / Ann Street location is rich with both history and possibility. Da Claudio embraces New York tradition along with the city's changing dining landscape, offering curated fresh market driven-fare enhanced with the finest Italian imports,  a beautiful bar and salumeria as well as take-out and full service dining in a contemporary, light and airy space.",
+  logo_url: "http://www.daclaudionyc.com/images/daclaudio_logo269x155.png")
 
 l = claudio.locations.create(address: "21 Ann St",
                                       city: "New York",
@@ -464,11 +464,11 @@ carpaccio = antipasti.items.create(
 
 carpaccio.taste_list = "salty"
 carpaccio.ingredient_list = "olives, lemon"
+carpaccio.save
 
 u1.favorites.create(item_id: carpaccio.id)
 u2.favorites.create(item_id: carpaccio.id)
 u3.favorites.create(item_id: carpaccio.id)
-carpaccio.save
 
 insalata = antipasti.items.create(
   name: "Carpaccio Di Bresaola",
@@ -480,9 +480,9 @@ insalata = antipasti.items.create(
 insalata.taste_list = "spicy, salty"
 insalata.ingredient_list = "cheese, walnuts"
 insalata.diet_list = ""
+insalata.save
 
 u1.favorites.create(item_id: insalata.id)
-insalata.save
 
 insaltaverde = antipasti.items.create(
   name: "Insalta Verde Del Mercato",
@@ -617,9 +617,9 @@ gnocchi = primi.items.create(
 
 gnocchi.taste_list = "salty"
 gnocchi.ingredient_list = "speck, cheese"
+gnocchi.save
 
 u2.favorites.create(item_id: gnocchi.id)
-gnocchi.save
 
 spaghetti2 = primi.items.create(
   name: "Spaghetti with Baby Octopus and Preserved Lemon",
