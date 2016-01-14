@@ -31,7 +31,7 @@
     <div ng-repeat="menu in restaurant.menus">
       <h3>Menu: {{menu.name}}</h3>
       <div ng-repeat="section in menu.sections">
-        <p>Section: {{section.name}}</p>
+        <h4>Section: {{section.name}}</h4>
         <hr>
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
 
