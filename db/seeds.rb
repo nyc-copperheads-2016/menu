@@ -328,7 +328,9 @@ venues.each do |v|
   end
 end
 
-User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
+u1 = User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
+u2 = User.create(username: "admin2", email: "admin@example2.com", password: "asdfasdf")
+u3 = User.create(username: "admin3", email: "admin@example3.com", password: "asdfasdf")
 
 2.times do
   FactoryGirl.create(:user)
@@ -368,3 +370,494 @@ u = FactoryGirl.create(:user)
     end
   end
 end
+
+###############################################################################
+claudio = Restaurant.create(name: "Da Claudio Ristorante",
+  website: "http://www.daclaudionyc.com",
+  description: "In the heart of lower Manhattan, Da Claudio brings a locally sourced seasonal Italian menu and friendly modern aesthetic to one of the oldest streets in New York. Its Nassau / Ann Street location is rich with both history and possibility. Da Claudio embraces New York tradition along with the city's changing dining landscape, offering curated fresh market driven-fare enhanced with the finest Italian imports,  a beautiful bar and salumeria as well as take-out and full service dining in a contemporary, light and airy space.",
+  logo_url: "http://www.daclaudionyc.com/images/daclaudio_logo269x155.png")
+
+l = claudio.locations.create(address: "21 Ann St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10038")
+
+m = claudio.menus.create(name: "Dinner")
+
+cicchetti = m.sections.create(name: "Cicchetti")
+antipasti = m.sections.create(name: "Antipasti")
+contorni = m.sections.create(name: "Contorni Del Di'")
+primi = m.sections.create(name: "Primi")
+secondi = m.sections.create(name: "Secondi")
+dolci = m.sections.create(name: "Dolci")
+
+piatto = cicchetti.items.create(
+  name: "Piatto Del Salumiere",
+  price: "16.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_03.jpg",
+  featured: true,
+  description: "Salumi, cheese plate")
+
+piatto.taste_list = "salty"
+piatto.ingredient_list = "cheese"
+piatto.diet_list = ""
+piatto.save
+
+u1.favorites.create(item_id: piatto.id)
+u2.favorites.create(item_id: piatto.id)
+
+crostini = cicchetti.items.create(
+  name: "Crostini Del Di",
+  price: "8.00",
+  photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZQEi0AYUNp5MLhNllhffpA/o.jpg",
+  description: "Open faced toasted bread of the day",
+  featured: true)
+
+crostini.taste_list = "salty"
+crostini.ingredient_list = ""
+crostini.diet_list = ""
+crostini.save
+
+vegetables = contorni.items.create(
+  name: "Mixed Grilled Vegetables",
+  price: "10.00",
+  photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/zSLOaXnehUlL-BUB0Ohh7Q/o.jpg",
+  featured: true)
+
+vegetables.taste_list = ""
+vegetables.ingredient_list = ""
+vegetables.diet_list = "vegan, healthy"
+vegetables.save
+
+kale = contorni.items.create(
+  name: "Kale with Whole Grain Mustard",
+  price: "10.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+kale.taste_list = ""
+kale.ingredient_list = "kale"
+kale.diet_list = "vegatarian, healthy"
+kale.save
+
+u1.favorites.create(item_id: kale.id)
+
+potatoes = contorni.items.create(
+  name: "Sauteed Herbed Potatoes",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+potatoes.taste_list = ""
+potatoes.ingredient_list = ""
+potatoes.diet_list = "vegatarian"
+potatoes.save
+
+polenta = contorni.items.create(
+  name: "Parsnip Polenta",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+polenta.taste_list = ""
+polenta.ingredient_list = ""
+polenta.diet_list = "healthy"
+polenta.save
+
+zuppa = antipasti.items.create(
+  name: "Zuppa Del Di",
+  price: "10.00",
+  photo_url: "",
+  description: "soup of the day",
+  featured: false)
+
+carpaccio = antipasti.items.create(
+  name: "Carpaccio Di Bresaola",
+  price: "13.00",
+  photo_url: "",
+  description: "With parmigiano, olio di oliva, limone",
+  featured: false)
+
+carpaccio.taste_list = "salty"
+carpaccio.ingredient_list = "olives, lemon"
+carpaccio.save
+
+u1.favorites.create(item_id: carpaccio.id)
+u2.favorites.create(item_id: carpaccio.id)
+u3.favorites.create(item_id: carpaccio.id)
+
+insalata = antipasti.items.create(
+  name: "Carpaccio Di Bresaola",
+  price: "14.00",
+  photo_url: "",
+  description: "With spicy sopressata, balsamiv, pecorino cheese, caramelized walnuts",
+  featured: false)
+
+insalata.taste_list = "spicy, salty"
+insalata.ingredient_list = "cheese, walnuts"
+insalata.diet_list = ""
+insalata.save
+
+u1.favorites.create(item_id: insalata.id)
+
+insaltaverde = antipasti.items.create(
+  name: "Insalta Verde Del Mercato",
+  price: "15.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_05.jpg",
+  description: "With pickled beets & squash, radish, pear, cabernet vinegar, pumpkin seeds",
+  featured: true)
+
+insaltaverde.taste_list = "salty"
+insaltaverde.ingredient_list = "beets, pumpkin, pear"
+insaltaverde.diet_list = "vegetarian, healthy"
+insaltaverde.save
+
+arugala = antipasti.items.create(
+  name: "Insalata Di Arugula",
+  price: "12.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_02.jpg",
+  description: "With cherry tomato, parmigiano",
+  featured: true)
+
+arugala.taste_list = ""
+arugala.ingredient_list = "tomato, cheese"
+arugala.diet_list = "vegetarian, healthy"
+arugala.save
+
+alpo = antipasti.items.create(
+  name: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
+  price: "18.00",
+  photo_url: "",
+  description: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
+  featured: false)
+
+alpo.taste_list = ""
+alpo.ingredient_list = "octopus"
+alpo.diet_list = ""
+alpo.save
+
+crudo = antipasti.items.create(
+  name: "Palpo",
+  price: "18.00",
+  photo_url: "",
+  description: "raw fish",
+  featured: false)
+
+crudo.taste_list = "salty"
+crudo.ingredient_list = "fish"
+crudo.diet_list = "healthy"
+crudo.save
+
+melanzane = antipasti.items.create(
+  name: "Melanzane",
+  price: "15.00",
+  photo_url: "",
+  description: "eggplant alla parmigana",
+  featured: false)
+
+melanzane.taste_list = "salty"
+melanzane.ingredient_list = "eggplant"
+melanzane.diet_list = ""
+melanzane.save
+
+fritto = antipasti.items.create(
+  name: "Fritto Misto",
+  price: "18.00",
+  photo_url: "",
+  description: "fried calamari, white fish, prawns with parsnip polenta for dinner only",
+  featured: false)
+
+fritto.taste_list = "salty"
+fritto.ingredient_list = "prawns, calamari, fish"
+fritto.diet_list = "healthy"
+fritto.save
+
+u1.favorites.create(item_id: fritto.id)
+u2.favorites.create(item_id: fritto.id)
+u3.favorites.create(item_id: fritto.id)
+
+trofie = primi.items.create(
+  name: "Trofie",
+  price: "21.00",
+  photo_url: "",
+  description: "With lamb ragu",
+  featured: false)
+
+trofie.taste_list = "salty"
+trofie.ingredient_list = "lamb"
+trofie.diet_list = "healthy"
+trofie.save
+
+linguine = primi.items.create(
+  name: "Linguine Nere Housemade Black Linguine",
+  price: "23.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_09.jpg",
+  description: "With shrimp in sweet pepper sauce",
+  featured: true)
+
+linguine.taste_list = "sweet, spicy"
+linguine.ingredient_list = "shrimp, pasta"
+linguine.diet_list = ""
+linguine.save
+
+spaghetti = primi.items.create(
+  name: "Spaghetti Alle Vongole with Clams",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+spaghetti.taste_list = ""
+spaghetti.ingredient_list = "clams, pasta"
+spaghetti.diet_list = ""
+spaghetti.save
+
+fettuccine = primi.items.create(
+  name: "Fettuccine Casalinghe Al Pesto",
+  price: "18.00",
+  photo_url: "",
+  description: "With shrimp in sweet pepper sauce",
+  featured: false)
+
+fettuccine.taste_list = "sweet, spicy"
+fettuccine.ingredient_list = "shrimp, pasta"
+fettuccine.diet_list = ""
+fettuccine.save
+
+gnocchi = primi.items.create(
+  name: "Gnocchi Di Melanzane",
+  price: "19.00",
+  photo_url: "",
+  description: "With speck and asiago cheese",
+  featured: false)
+
+gnocchi.taste_list = "salty"
+gnocchi.ingredient_list = "speck, cheese"
+gnocchi.save
+
+u2.favorites.create(item_id: gnocchi.id)
+
+spaghetti2 = primi.items.create(
+  name: "Spaghetti with Baby Octopus and Preserved Lemon",
+  price: "26.00",
+  photo_url: "",
+  description: "Duck and endive malfatti",
+  featured: false)
+
+spaghetti2.taste_list = ""
+spaghetti2.ingredient_list = "duck, octopus, lemon"
+spaghetti2.diet_list = ""
+spaghetti2.save
+
+risotto = primi.items.create(
+  name: "Risotto Del Di",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+bucatini = primi.items.create(
+  name: "Bucatini Arrabbiata",
+  price: "16.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_06.jpg",
+  description: "With spicy tomato sauce",
+  featured: true)
+
+bucatini.taste_list = "spicy"
+bucatini.ingredient_list = ""
+bucatini.diet_list = ""
+bucatini.save
+
+spaghettic = primi.items.create(
+  name: "Spaghetti Carbonara Dello Chef",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+spaghettic.taste_list = ""
+spaghettic.ingredient_list = "pasta"
+spaghettic.diet_list = ""
+spaghettic.save
+
+garganelli = primi.items.create(
+  name: "Garganelli Alla Bolognese",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+garganelli.taste_list = "salty"
+garganelli.ingredient_list = "bolognese"
+garganelli.diet_list = ""
+garganelli.save
+
+u2.favorites.create(item_id: garganelli.id)
+u3.favorites.create(item_id: garganelli.id)
+
+polloa = secondi.items.create(
+  name: "Pollo Alla Diavola (For 2)",
+  price: "32.00",
+  photo_url: "",
+  description: "With shallot potato puree",
+  featured: false)
+
+polloa.taste_list = ""
+polloa.ingredient_list = "chicken"
+polloa.diet_list = ""
+polloa.save
+
+bistecca = secondi.items.create(
+  name: "Bistecca Tagliata",
+  price: "32.00",
+  photo_url: "",
+  description: "Sliced sirloin steak. With cabernet vinegar reduction and herbed sauteed potatoes",
+  featured: false)
+
+bistecca.taste_list = ""
+bistecca.ingredient_list = "steak"
+bistecca.diet_list = ""
+bistecca.save
+
+grigliata = secondi.items.create(
+  name: "Grigliata Mista Di Pesce",
+  price: "27.00",
+  photo_url: "",
+  description: "Grilled mixed fish with eggplant fennel",
+  featured: false)
+
+grigliata.taste_list = ""
+grigliata.ingredient_list = "fish, eggplant"
+grigliata.diet_list = ""
+grigliata.save
+
+u1.favorites.create(item_id: grigliata.id)
+
+pesce = secondi.items.create(
+  name: "Pesce Del Di",
+  price: "30.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_01.jpg",
+  description: "Choice of grilled or oven roasted fish of the day",
+  featured: true)
+
+pesce.taste_list = ""
+pesce.ingredient_list = "fish"
+pesce.diet_list = ""
+pesce.save
+
+stinco = secondi.items.create(
+  name: "Stinco Di Maiale Pork Shank",
+  price: "26.00",
+  photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/RyhElWAglLxfNoBOajT7kg/o.jpg",
+  description: "With honey crisp apple cipollini agrodolce",
+  featured: true)
+
+stinco.taste_list = ""
+stinco.ingredient_list = "apple, pork"
+stinco.diet_list = ""
+stinco.save
+
+u1.favorites.create(item_id: stinco.id)
+u2.favorites.create(item_id: stinco.id)
+
+pollo = secondi.items.create(
+  name: "Pollo Alla Milanese",
+  price: "21n.00",
+  photo_url: "",
+  description: "With arugula salad",
+  featured: false)
+
+pollo.taste_list = ""
+pollo.ingredient_list = "chicken, arugula"
+pollo.diet_list = ""
+pollo.save
+
+scaloppine = secondi.items.create(
+  name: "Scaloppine Pollo",
+  price: "21.00",
+  photo_url: "",
+  description: "Asmish chicken with lemon, white wine, capers",
+  featured: false)
+
+scaloppine.taste_list = ""
+scaloppine.ingredient_list = "chicken, lemon"
+scaloppine.diet_list = "healthy"
+scaloppine.save
+
+gelato = dolci.items.create(
+  name: "Gelato",
+  price: "9.00",
+  photo_url: "http://www.daclaudionyc.com/assets/desset_01.jpg",
+  description: "Vanilla or nocciola",
+  featured: true)
+
+gelato.taste_list = "sweet"
+gelato.ingredient_list = "dairy"
+gelato.diet_list = "vegetarian"
+gelato.save
+
+sorbetto = dolci.items.create(
+  name: "Sorbetto",
+  price: "9.00",
+  photo_url: "",
+  description: "Cioccolato or pera",
+  featured: false)
+
+sorbetto.taste_list = "sweet"
+sorbetto.ingredient_list = "dairy"
+sorbetto.diet_list = "vegetarian"
+sorbetto.save
+
+tora = dolci.items.create(
+  name: "Torta Di Cioccolato & Ricotta",
+  price: "10.00",
+  photo_url: "http://www.daclaudionyc.com/assets/desset_02.jpg",
+  description: "With ricotta gelato",
+  featured: true)
+
+tora.taste_list = "sweet"
+tora.ingredient_list = "dairy"
+tora.diet_list = "vegetarian"
+tora.save
+u1.favorites.create(item_id: tora.id)
+
+frutti = dolci.items.create(
+  name: "Frutti Di Bosco Di Stagione",
+  price: "12.00",
+  photo_url: "",
+  description: "Mascarpone, amaretto",
+  featured: false)
+
+frutti.taste_list = "sweet"
+frutti.ingredient_list = "dairy"
+frutti.diet_list = "vegetarian"
+frutti.save
+
+tiramisu = dolci.items.create(
+  name: "Tiramisu",
+  price: "10.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+tiramisu.taste_list = "sweet"
+tiramisu.ingredient_list = "dairy"
+tiramisu.diet_list = "vegetarian"
+tiramisu.save
+
+crostatina = dolci.items.create(
+  name: "Crostatina Di Stagione Seasonal Fruit Tart",
+  price: "12.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+crostatina.taste_list = "sweet"
+crostatina.ingredient_list = "dairy"
+crostatina.diet_list = "vegetarian"
+crostatina.save
+
+###############################################################################
