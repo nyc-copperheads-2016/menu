@@ -38,10 +38,7 @@
       <div ng-repeat="item in featuredItems">
         <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <p>
-          Item: {{item.name}}
-        </p>
-        <p>
-          Price:  {{ item.price | currency : $ : 2 }}
+          {{item.name}}
         </p>
       </div>
     </div>
@@ -53,10 +50,7 @@
       <div ng-repeat="item in popularItems">
         <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
         <p>
-          Item: {{item.name}}
-        </p>
-        <p>
-          Price:  {{ item.price | currency : $ : 2 }}
+          {{item.name}}
         </p>
       </div>
     </div>
