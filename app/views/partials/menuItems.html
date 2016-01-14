@@ -1,10 +1,10 @@
 <div class="centered" ng-controller="ItemsController">
   <h1 class="restaurant-name">{{restaurant.name}}</h1>
   <ul class="no-list">
-  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false; featuredListOpen = false">
+  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false; featuredListOpen = false" class="button-{{popularButton}}">
     Trending
   </button>
-  <button ng-click="featuredListOpen = !featuredListOpen; trendListOpen = false; tagListOpen = false">
+  <button ng-click="featuredListOpen = !featuredListOpen; trendListOpen = false; tagListOpen = false" class="button-{{featuredButton}}">
     Featured
   </button>
   <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false; featuredListOpen = false">
@@ -12,10 +12,9 @@
   </button>
 
     <div ng-show="tagListOpen" class="fade">
-      <p><label>(once to include, twice to exclude, thrice to reset)</label></p>
       <div ng-repeat="(key, value) in tagFilters | groupBy: 'type'">
         <p>{{ key | uppercase }}: </p>
-        <div class="inline" ng-repeat="tagFilter in value">
+        <div ng-repeat="tagFilter in value">
           <button class="button round medium tag-filter{{tagFilter.state}}" ng-class="{'include': tagFilter.state == 1, 'exclude': tagFilter.state == 2}" ng-click="toggleTagState(tagFilter)">{{tagFilter.name}}</button>
         </div>
       </div>
