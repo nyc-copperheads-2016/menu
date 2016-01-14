@@ -50,7 +50,6 @@ icecream = sweets.items.create(name: "Ice Cream Sandwiches",
                                     price: "4.00",
                                     photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
 
-
 lobster.taste_list = "salty, buttery"
 lobster.ingredient_list = "lobster, butter"
 lobster.save
@@ -395,9 +394,9 @@ subway = Restaurant.create(name: "Subway", logo_url: "https://upload.wikimedia.o
 #   end
 # end
 #
-# u1 = User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
-# u2 = User.create(username: "admin2", email: "admin@example2.com", password: "asdfasdf")
-# u3 = User.create(username: "admin3", email: "admin@example3.com", password: "asdfasdf")
+u1 = User.create(username: "admin", email: "admin@example.com", password: "asdfasdf")
+u2 = User.create(username: "admin2", email: "admin@example2.com", password: "asdfasdf")
+u3 = User.create(username: "admin3", email: "admin@example3.com", password: "asdfasdf")
 #
 # 2.times do
 #   FactoryGirl.create(:user)
