@@ -74,7 +74,7 @@ jumbo.ingredient_list = "shellfish"
 jumbo.save
 
 oysters.diet_list = "pescatarian"
-oysters.taste_list = "umani, sour, salty"
+oysters.taste_list = "umami, sour, salty"
 oysters.ingredient_list = "shellfish"
 oysters.save
 
@@ -89,7 +89,7 @@ fries.ingredient_list = "potato"
 fries.save
 
 mushrooms.diet_list = "vegetarian"
-mushrooms.taste_list = "umani"
+mushrooms.taste_list = "umami"
 mushrooms.ingredient_list = "mushroom"
 mushrooms.save
 
