@@ -22,11 +22,12 @@ sweets = m.sections.create(name: "Raw Bar")
 
 lobster = main.items.create(name: "Lobster Roll",
                                 price: "16.00",
-                                photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg",
+                                photo_url: "http://assets3.thrillist.com/v1/image/746319/size/tl-horizontal_main/buttery-bunned-lobster-rolls-you-bring-the-booze",
                                 featured: true)
+
 crab = main.items.create(name: "Crab Roll",
                              price: "13.00",
-                             photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/1yUPo3-t0OMQwcquM8Swng/258s.jpg")
+                             photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg")
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
@@ -35,16 +36,13 @@ clam = extras.items.create(name: "New England Clam Chowder",
                                photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
 claws = extras.items.create(name: "4 Jonah Crab Claws",
                                 price: "8.00",
-                                photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+                                photo_url: "https://www.giltcity.com/images/share/uploads/0000/0003/0415/304158271/orig.jpg")
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: extras.items.sample) }
 
-mainebrew = drinks.items.create(name: "Maine Microbrews",
-                                     price: "6.50",
-                                     photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
 mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade",
                                      price: "3.00",
-                                     photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/j3GgKBhbtoj98_dJFp0PCg/258s.jpg")
+                                     photo_url: "https://s3.amazonaws.com/trycaviar.com/offers/143/5932.jpg")
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: drinks.items.sample) }
 
@@ -67,10 +65,6 @@ clam.save
 
 claws.ingredient_list = "crab"
 claws.save
-
-mainebrew.taste_list = "hoppy"
-mainebrew.ingredient_list = "beer"
-mainebrew.save
 
 mainesoda.taste_list = "sweet"
 mainesoda.ingredient_list = "blueberry, lemon, sarsparilla, ginger"
