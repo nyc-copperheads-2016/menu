@@ -10,11 +10,22 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
     $scope.popularItems = $scope.findPopular();
     $scope.featuredItems = $scope.findFeatured();
 
+    $scope.popularButton = $scope.displayButton($scope.popularItems)
+    $scope.featureButton = $scope.displayButton($scope.featuredItems)
+
     $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
   }, function errorCallback(response) {
     console.log("There was an error");
   });
+
+  $scope.displayButton = function(items) {
+    if (items.length === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   $scope.findMenuItems = function() {
     items = [];
@@ -33,11 +44,7 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         featured.push(menuItem)
       }
     });
-    if (featured.length === 0) {
-      return false;
-    } else {
-      return featured;
-    }
+    return featured;
   };
 
   $scope.findPopular = function() {
