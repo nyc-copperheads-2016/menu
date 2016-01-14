@@ -1,9 +1,8 @@
 <main class="centered">
   <div ng-controller="ItemController">
     <p class="row"><img id="item-img" src="{{item[0].photo_url}}"></p>
-    <p>Item: {{item[0].name}}</p>
+    <p>{{item[0].name}} - {{ item[0].price | currency : $ : 2 }}</p>
     <p>Description: {{item[0].description}}</p>
-    <p>Price: {{ item[0].price | currency : $ : 2 }}</p>
   </div>
   <div ng-controller="FavoritesController">
     <i class="{{heartClass}}" ng-click="saveFave()"></i>

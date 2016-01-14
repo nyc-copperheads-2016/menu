@@ -39,15 +39,14 @@
     </div>
 
     <div ng-repeat="menu in restaurant.menus">
-      <h3>Menu: {{menu.name}}</h3>
+      <h2>{{menu.name}}</h2>
       <div ng-repeat="section in menu.sections">
-        <p>Section: {{section.name}}</p>
+        <h4>- {{section.name}} -</h4>
         <hr>
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
 
           <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-            <p>Item: {{item.name}}</p>
-            <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+            <p>{{item.name}} - {{ item.price | currency : $ : 2 }}</p>
           </a>
 
           <label>Tags:</label>

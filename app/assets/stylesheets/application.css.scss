@@ -33,19 +33,22 @@ body {
   font-family: 'Josefin Slab', sans-serif;
 }
 
+/*
+.asdf {
+  background-image: url("http://images.ilovewallpaper.co.uk/images/products/1427719141-28195200.jpg");
+  opacity: 0.5;
+}
+*/
 
 
 /* Nav Bar */
 .title-area {
-  padding-top: 1%;
+  padding-top: .4%;
 }
 
 .welcome{
-  color: white;
   text-align: right;
-  width: 105%;
-  float: right;
-  margin-right: 2.6%;
+  overflow: visible;
 }
 
 .row {
