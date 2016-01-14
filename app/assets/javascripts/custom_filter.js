@@ -3,12 +3,12 @@ myApp.filter('matchClickedItems', function() {
 
     // Checks for tags that are clicked once aka inclusive search
     var includes = tagFilters.filter(function(tag) {
-      return tag.state == 1;
+      return tag.state === 1;
     });
 
     // Checks for tags that are clicked twice aka exclusive search
     var excludes = tagFilters.filter(function(tag) {
-      return tag.state == 2;
+      return tag.state === 2;
     });
 
     // Checks if an item
@@ -22,7 +22,7 @@ myApp.filter('matchClickedItems', function() {
       var filtered = item[propName].filter(function(ing) {
         // console.log('ing', ing);
         // console.log('pv', propValue);
-        return ing.name == propValue;
+        return ing.name === propValue;
       });
       // Return if filtered if any found
       return filtered.length > 0;
