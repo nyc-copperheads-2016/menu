@@ -11,7 +11,7 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
     $scope.featuredItems = $scope.findFeatured();
 
     $scope.popularButton = $scope.displayButton($scope.popularItems)
-    $scope.featureButton = $scope.displayButton($scope.featuredItems)
+    $scope.featuredButton = $scope.displayButton($scope.featuredItems)
 
     $scope.tagType = ["diets", "tastes", "ingredients"];
     $scope.tagFilters = $scope.createTagFilters($scope.findUniqueTags());
