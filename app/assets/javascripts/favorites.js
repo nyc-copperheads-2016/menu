@@ -32,8 +32,8 @@ myApp.controller('FavoritesController',
           data: {'item_id': itemParam}
         });
       }
-      else if ($scope.item[1] === '/users/new'){
-        $window.location.href = '/users/new';
+      else if ($scope.item[1] === '/register'){
+        $window.location.href = '/register';
       }
       else {
         $scope.heartClass = "fi-heart unliked";

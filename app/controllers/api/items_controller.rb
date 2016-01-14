@@ -19,7 +19,7 @@ class Api::ItemsController < ApplicationController
       item_favorite = [item, fave[0]]
       render json: item_favorite
     else
-      item = [item, '/users/new']
+      item = [item, '/register']
       render json: item
     end
   end
