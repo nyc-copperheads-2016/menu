@@ -157,6 +157,11 @@ l_w.taste_list = "heavy, sweet, aromatic"
 l_w.ingredient_list = 'gin, chartreuse, absinthe'
 l_w.save
 
+la_colombe = Restaurant.create(name: "La Colombe", logo_url: "https://pbs.twimg.com/profile_images/461243267376353280/MhvMVqGd_400x400.jpeg")
+
+chipotle = Restaurant.create(name: "Chipotle", logo_url: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Chipotle_Mexican_Grill_logo.svg/768px-Chipotle_Mexican_Grill_logo.svg.png")
+
+dos_toros = Restaurant.create(name: "Dos Toros Taqueria", logo_url: "http://aruliden.com/files/2015-03/Dos-Toros_logo.png")
 
 trading_post = Restaurant.create(name: "Trading Post",
                                       website: "http://www.tradingpostnyc.com/",
@@ -253,7 +258,19 @@ mushrooms.taste_list = "umami"
 mushrooms.ingredient_list = "mushroom"
 mushrooms.save
 
+cipriani = Restaurant.create(name: "Cipriani Wall Street", logo_url: "http://majasdiary.com/wp-content/uploads/2015/08/Cipriani-Logo.png")
 
+roti = Restaurant.create(name: "Roti Mediterranean Grill", logo_url: "http://roti.com/wp-content/themes/roti_theme/graphics/nav-logo.png")
+
+bonchon = Restaurant.create(name: "Bon Chon Chicken", logo_url: "http://static.wixstatic.com/media/145345_5b9f8a828ce6fae5d7f41f1c8f26a39c.gif")
+
+neapolitan = Restaurant.create(name: "Neapolitan Express", logo_url: "http://www.pmq.com/images/cache/cache_b/cache_a/cache_9/logo-e5c9c9ab.jpeg?ver=1415373108&aspectratio=2.3575638506876")
+
+starbucks = Restaurant.create(name: "Starbucks", logo_url:"https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Starbucks_Coffee_Logo.svg/1024px-Starbucks_Coffee_Logo.svg.png")
+
+jersey_mikes = Restaurant.create(name: "Jersey Mikes", logo_url: "https://www.masters.edu/media/652122/Jersey%20Mike's%20Logo.png")
+
+subway = Restaurant.create(name: "Subway", logo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Subway_restaurant.svg/500px-Subway_restaurant.svg.png")
 
 restaurants_with_menus = Curl.post("https://api.locu.com/v2/venue/search", {
   api_key: Rails.application.secrets.locu_api_key,
