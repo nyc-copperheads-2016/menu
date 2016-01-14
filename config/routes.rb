@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'partials/restaurants' => 'partials#restaurants'
   get 'partials/userShow' => 'partials#userShow'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:create]
   resources :sessions, only:[:create]
 
   namespace :api do
