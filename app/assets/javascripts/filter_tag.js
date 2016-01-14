@@ -37,7 +37,7 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
     featured = [];
     angular.forEach($scope.menuItems, function(menuItem){
       if (menuItem.featured === true) {
-        featured.push(menuItem)
+        featured.push(menuItem);
       }
     });
     return featured;
