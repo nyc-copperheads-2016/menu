@@ -20,11 +20,7 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
   });
 
   $scope.displayButton = function(items) {
-    if (items.length === 0) {
-      return false;
-    } else {
-      return true;
-    }
+    return items.length === 0 ? false: true;
   }
 
   $scope.findMenuItems = function() {
