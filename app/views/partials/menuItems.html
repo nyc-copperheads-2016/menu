@@ -60,9 +60,9 @@
         {{menu.name}}
       </h2>
       <div ng-repeat="section in menu.sections">
-        <h4>
+        <h2>
           - {{section.name}} -
-        </h4>
+        </h2>
 
         <hr>
 
@@ -71,35 +71,33 @@
           <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
             <div class="row">
               <div class="small-1 columns">&nbsp;</div>
-              <div class="small-5 columns">{{item.name}}</div>
-              <div class="small-5 columns" id="price">{{ item.price | currency : $ : 2 }}</div>              
+              <div class="small-6 columns">{{item.name}}</div>
+              <div class="small-4 columns" id="price">{{ item.price | currency : $ : 2 }}</div>              
               <div class="small-1 columns">&nbsp;</div>
-
             </div>
+          
+            <label id="tag-label">
+              Tags:
+            </label>
+            <p id="tag-name">
+              <span ng-repeat="diet in item.diets">
+                {{diet.name}}&nbsp;
+              </span>
+              <span ng-repeat="taste in item.tastes">
+                {{taste.name}}&nbsp;
+              </span>
+              <span ng-repeat="ingredient in item.ingredients">
+                {{ingredient.name}}&nbsp;
+              </span>
+            </p>
+
+            <label>
+              Favorites:
+            </label>
+            <i class="fi-heart">
+              {{item.favorites.length}}
+            </i>
           </a>
-
-          <label>
-            Tags:
-          </label>
-          <p id="tag-name">
-            <span ng-repeat="diet in item.diets">
-              {{diet.name}}&nbsp;
-            </span>
-            <span ng-repeat="taste in item.tastes">
-              {{taste.name}}&nbsp;
-            </span>
-            <span ng-repeat="ingredient in item.ingredients">
-              {{ingredient.name}}&nbsp;
-            </span>
-          </p>
-
-          <label>
-            Favorites:
-          </label>
-          <i class="fi-heart">
-            {{item.favorites.length}}
-          </i>
-
           <hr/>
         </li>
       </div>
