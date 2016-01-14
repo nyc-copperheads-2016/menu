@@ -38,15 +38,15 @@ body {
 }
 
 .align-right {
-  float: right;
+  text-align: right;
 }
 
 .align-left {
-  float: left;
+  text-align: left;
 }
 
-.cleared {
-  clear: both;
+.overflow {
+  overflow: visible;
 }
 
 /*
@@ -126,6 +126,11 @@ button {
   display: none;
 }
 
+
+/* Menu Show */
+#price {
+  font-size: 1rem;
+}
 
 
 /* Item Show */
