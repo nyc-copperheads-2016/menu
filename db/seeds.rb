@@ -372,7 +372,7 @@ antipasti = m.sections.create(name: "Antipasti")
 contorni = m.sections.create(name: "Contorni Del Di'")
 primi = m.sections.create(name: "Primi")
 secondi = m.sections.create(name: "Secondi")
-desserts = m.sections.create(name: "Dolci")
+dolci = m.sections.create(name: "Dolci")
 
 piatto = cicchetti.items.create(
   name: "Piatto Del Salumiere",
@@ -586,9 +586,9 @@ fettuccine = primi.items.create(
   description: "With shrimp in sweet pepper sauce",
   featured: false)
 
-fettucine.taste_list = "sweet, spicy"
-fettucine.ingredient_list = "shrimp, pasta"
-fettucine.diet_list = ""
+fettuccine.taste_list = "sweet, spicy"
+fettuccine.ingredient_list = "shrimp, pasta"
+fettuccine.diet_list = ""
 
 gnocchi = primi.items.create(
   name: "Gnocchi Di Melanzane",
