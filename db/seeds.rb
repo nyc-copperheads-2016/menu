@@ -1,3 +1,78 @@
+###############################################################################
+claudio = Restaurant.create(name: "Da Claudio Ristorante",
+                                      website: "http://www.daclaudionyc.com",
+                                      description: "In the heart of lower Manhattan, Da Claudio brings a locally sourced seasonal Italian menu and friendly modern aesthetic to one of the oldest streets in New York. Its Nassau / Ann Street location is rich with both history and possibility. Da Claudio embraces New York tradition along with the city's changing dining landscape, offering curated fresh market driven-fare enhanced with the finest Italian imports,  a beautiful bar and salumeria as well as take-out and full service dining in a contemporary, light and airy space.",
+                                      logo_url: "http://www.daclaudionyc.com/images/daclaudio_logo269x155.png")
+
+l = claudio.locations.create(address: "21 Ann St",
+                                      city: "New York",
+                                      state: "NY",
+                                      zip: "10038")
+
+m = claudio.menus.create(name: "Dinner")
+
+cicchetti = m.sections.create(name: "Cicchetti")
+antipasti = m.sections.create(name: "Antipasti")
+contorni = m.sections.create(name: "Contorni Del Di'")
+primi = m.sections.create(name: "Primi")
+secondi = m.sections.create(name: "Secondi")
+
+piatto = cicchetti.items.create(name: "Piatto Del Salumiere", price: "16.00", photo_url: "http://www.daclaudionyc.com/assets/food_03.jpg", featured: true, description: "Salumi, cheese plate")
+
+crostini = cicchetti.items.create(name: "Crostini Del Di", price: "8.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZQEi0AYUNp5MLhNllhffpA/o.jpg", description: "Open faced toasted bread of the day")
+
+vegetables = contorni.items.create(name: "Mixed Grilled Vegetables", price: "10.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/zSLOaXnehUlL-BUB0Ohh7Q/o.jpg")
+
+kale = contorni.items.create(
+  name: "Kale with Whole Grain Mustard",
+  price: "10.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+potatoes = contorni.items.create(
+  name: "Sauteed Herbed Potatoes",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+polenta = contorni.items.create(
+  name: "Parsnip Polenta",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: true)
+
+zuppa = antipasti.items.create(
+  name: "Zuppa Del Di",
+  price: "10.00",
+  photo_url: "",
+  description: "soup of the day",
+  featured: false)
+
+carpaccio = antipasti.items.create(
+  name: "Carpaccio Di Bresaola",
+  price: "13.00",
+  photo_url: "",
+  description: "With parmigiano, olio di oliva, limone",
+  featured: false)
+
+insalata = antipasti.items.create(
+  name: "Carpaccio Di Bresaola",
+  price: "13.00",
+  photo_url: "",
+  description: "With parmigiano, olio di oliva, limone",
+  featured: false)
+
+
+lobster.taste_list = "salty, buttery"
+lobster.ingredient_list = "lobster, butter"
+lobster.save
+
+
+###############################################################################
+
 trading_post = Restaurant.create(name: "Trading Post",
                                       website: "http://www.tradingpostnyc.com/",
                                       description: "Classic American restaurant and bar",
