@@ -92,6 +92,8 @@ body {
 /* Tags */
 #tag-name {
   font-size: .95rem;
+  margin-bottom: 3%;
+  color: black;
 }
 
 button.tag-filter1 {
@@ -127,9 +129,18 @@ button {
 }
 
 
+
 /* Menu Show */
 #price {
   font-size: 1rem;
+}
+
+.fi-heart.ng-binding {
+  font-size: .8rem;
+}
+
+#tag-label {
+  margin-top: 4%;
 }
 
 
