@@ -75,12 +75,11 @@
         <li ng-repeat="item in section.items | matchClickedItems:tagFilters">
 
           <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-            <p>
-              {{item.name}} - {{ item.price | currency : $ : 2 }}
-            </p>
+            <span class="align-left">{{item.name}}</span>
+            <span class="align-right">{{ item.price | currency : $ : 2 }}</span>
           </a>
 
-          <label>
+          <label class="cleared">
             Tags:
           </label>
           <p id="tag-name">
