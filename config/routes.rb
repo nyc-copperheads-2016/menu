@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:create, :destroy]
 
+  get 'register' => 'users#new'
+
   get 'login' => 'sessions#new'
   get 'logout'=> 'sessions#destroy'
 
