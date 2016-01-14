@@ -17,6 +17,8 @@ contorni = m.sections.create(name: "Contorni Del Di'")
 primi = m.sections.create(name: "Primi")
 secondi = m.sections.create(name: "Secondi")
 
+desserts = m.sections.create(name: "Dolci")
+
 piatto = cicchetti.items.create(name: "Piatto Del Salumiere", price: "16.00", photo_url: "http://www.daclaudionyc.com/assets/food_03.jpg", featured: true, description: "Salumi, cheese plate")
 
 crostini = cicchetti.items.create(name: "Crostini Del Di", price: "8.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZQEi0AYUNp5MLhNllhffpA/o.jpg", description: "Open faced toasted bread of the day")
@@ -60,11 +62,216 @@ carpaccio = antipasti.items.create(
 
 insalata = antipasti.items.create(
   name: "Carpaccio Di Bresaola",
-  price: "13.00",
+  price: "14.00",
   photo_url: "",
-  description: "With parmigiano, olio di oliva, limone",
+  description: "With spicy sopressata, balsamiv, pecorino cheese, caramelized walnuts",
   featured: false)
 
+insaltaverde = antipasti.items.create(
+  name: "Insalta Verde Del Mercato",
+  price: "15.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_05.jpg",
+  description: "With pickled beets & squash, radish, pear, cabernet vinegar, pumpkin seeds",
+  featured: true)
+
+arugala = antipasti.items.create(
+  name: "Insalata Di Arugula",
+  price: "12.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_02.jpg",
+  description: "With cherry tomato, parmigiano",
+  featured: true)
+
+alpo = antipasti.items.create(
+  name: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
+  price: "18.00",
+  photo_url: "",
+  description: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
+  featured: true)
+
+crudo = antipasti.items.create(
+  name: "Palpo",
+  price: "18.00",
+  photo_url: "",
+  description: "raw fish",
+  featured: false)
+
+melanzane = antipasti.items.create(
+  name: "Melanzane",
+  price: "15.00",
+  photo_url: "",
+  description: "eggplant alla parmigana",
+  featured: false)
+
+fritto = antipasti.items.create(
+  name: "Fritto Misto",
+  price: "18.00",
+  photo_url: "",
+  description: "fried calamari, white fish, prawns with parsnip polenta for dinner only",
+  featured: true)
+
+trofie = primi.items.create(
+  name: "Trofie",
+  price: "21.00",
+  photo_url: "",
+  description: "With lamb ragu",
+  featured: false)
+
+linguine = primi.items.create(
+  name: "Linguine Nere Housemade Black Linguine",
+  price: "23.00",
+  photo_url: "",
+  description: "With shrimp in sweet pepper sauce",
+  featured: false)
+
+spaghetti = primi.items.create(
+  name: "Spaghetti Alle Vongole with Clams",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+fettuccine = primi.items.create(
+  name: "Fettuccine Casalinghe Al Pesto",
+  price: "18.00",
+  photo_url: "",
+  description: "With shrimp in sweet pepper sauce",
+  featured: false)
+
+gnocchi = primi.items.create(
+  name: "Gnocchi Di Melanzane",
+  price: "19.00",
+  photo_url: "",
+  description: "With speck and asiago cheese",
+  featured: false)
+
+spaghetti = primi.items.create(
+  name: "Spaghetti with Baby Octopus and Presereved Lemon",
+  price: "26.00",
+  photo_url: "",
+  description: "Duck and endive malfatti",
+  featured: false)
+
+risotto = primi.items.create(
+  name: "Risotto Del Di",
+  price: "8.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+bucatini = primi.items.create(
+  name: "Bucatini Arrabbiata",
+  price: "16.00",
+  photo_url: "",
+  description: "With spicy tomato sauce",
+  featured: false)
+
+spaghettic = primi.items.create(
+  name: "Spaghetti Carbonara Dello Chef",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+garganelli = primi.items.create(
+  name: "Garganelli Alla Bolognese",
+  price: "19.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+polloa = secondi.items.create(
+  name: "Pollo Alla Diavola (For 2)",
+  price: "32.00",
+  photo_url: "",
+  description: "With shallot potato puree",
+  featured: false)
+
+bistecca = secondi.items.create(
+  name: "Bistecca Tagliata",
+  price: "32.00",
+  photo_url: "",
+  description: "Sliced sirloin steak. With cabernet vinegar reduction and herbed sauteed potatoes",
+  featured: false)
+
+grigliata = secondi.items.create(
+  name: "Grigliata Mista Di Pesce",
+  price: "27.00",
+  photo_url: "",
+  description: "Grilled mixed fish with eggplant fennel",
+  featured: false)
+
+pesce = secondi.items.create(
+  name: "Pesce Del Di",
+  price: "30.00",
+  photo_url: "http://www.daclaudionyc.com/assets/food_01.jpg",
+  description: "Choice of grilled or oven roasted fish of the day",
+  featured: true)
+
+stinco = secondi.items.create(
+  name: "Stinco Di Maiale Pork Shank",
+  price: "26.00",
+  photo_url: "",
+  description: "With honey crisp apple cipollini agrodolce",
+  featured: false)
+
+pollo = secondi.items.create(
+  name: "Pollo Alla Milanese",
+  price: "21n.00",
+  photo_url: "",
+  description: "With arugula salad",
+  featured: false)
+
+scaloppine = secondi.items.create(
+  name: "Scaloppine Pollo",
+  price: "21.00",
+  photo_url: "",
+  description: "Asmish chicken with lemon, white wine, capers",
+  featured: false)
+
+gelato = dolci.items.create(
+  name: "Gelato",
+  price: "9.00",
+  photo_url: "",
+  description: "Vanilla or nocciola",
+  featured: false)
+
+sorbetto = dolci.items.create(
+  name: "Sorbetto",
+  price: "9.00",
+  photo_url: "",
+  description: "Cioccolato or pera",
+  featured: false)
+
+
+tora = dolci.items.create(
+  name: "Torta Di Cioccolato & Ricotta",
+  price: "10.00",
+  photo_url: "",
+  description: "With ricotta gelato",
+  featured: false)
+
+
+frutti = dolci.items.create(
+  name: "Frutti Di Bosco Di Stagione",
+  price: "12.00",
+  photo_url: "",
+  description: "Mascarpone, amaretto",
+  featured: false)
+
+
+tiramisu = dolci.items.create(
+  name: "Tiramisu",
+  price: "10.00",
+  photo_url: "",
+  description: "",
+  featured: false)
+
+crostatina = dolci.items.create(
+  name: "Crostatina Di Stagione Seasonal Fruit Tart",
+  price: "12.00",
+  photo_url: "",
+  description: "",
+  featured: false)
 
 lobster.taste_list = "salty, buttery"
 lobster.ingredient_list = "lobster, butter"
