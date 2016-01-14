@@ -1,10 +1,13 @@
 <div class="centered" ng-controller="ItemsController">
   <h1 class="restaurant-name">{{restaurant.name}}</h1>
   <ul class="no-list">
-  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false;" ng-if="{{popularItems.length > 0}}">
+  <button ng-click="trendListOpen = !trendListOpen; tagListOpen = false; featuredListOpen = false">
     Trending
   </button>
-  <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false">
+  <button ng-click="featuredListOpen = !featuredListOpen; trendListOpen = false; tagListOpen = false">
+    Featured
+  </button>
+  <button ng-click="tagListOpen = !tagListOpen; trendListOpen = false; featuredListOpen = false">
     Select by Tags
   </button>
 
@@ -18,11 +21,19 @@
       </div>
     </div>
 
+    <div ng-show="featuredListOpen" class="fade">
+      <h2>Featured Items:</h2>
+      <div ng-repeat="item in featuredItems">
+        <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
+        <p>Item: {{item.name}}</p>
+        <p>Price:  {{ item.price | currency : $ : 2 }}</p>
+      </div>
+    </div>
+
     <div ng-show="trendListOpen" class="fade">
       <h2>Trending Items:</h2>
       <div ng-repeat="item in popularItems">
         <a ng-href="#/restaurants/{{restaurantId}}/menuItems/{{item.id}}">
-        <img src="{{item.photo_url}}" width="200">
         <p>Item: {{item.name}}</p>
         <p>Price:  {{ item.price | currency : $ : 2 }}</p>
       </div>
