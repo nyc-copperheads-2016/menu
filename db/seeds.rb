@@ -384,6 +384,7 @@ piatto = cicchetti.items.create(
 piatto.taste_list = "salty"
 piatto.ingredient_list = "cheese"
 piatto.diet_list = ""
+piatto.save
 
 u1.favorites.create(item_id: piatto.id)
 u2.favorites.create(item_id: piatto.id)
@@ -397,15 +398,17 @@ crostini = cicchetti.items.create(
 crostini.taste_list = "salty"
 crostini.ingredient_list = ""
 crostini.diet_list = ""
+crostini.save
 
 vegetables = contorni.items.create(
   name: "Mixed Grilled Vegetables",
   price: "10.00",
   photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/zSLOaXnehUlL-BUB0Ohh7Q/o.jpg")
 
-crostini.taste_list = ""
-crostini.ingredient_list = ""
-crostini.diet_list = "vegan, healthy"
+vegetables.taste_list = ""
+vegetables.ingredient_list = ""
+vegetables.diet_list = "vegan, healthy"
+vegetables.save
 
 kale = contorni.items.create(
   name: "Kale with Whole Grain Mustard",
@@ -417,6 +420,7 @@ kale = contorni.items.create(
 kale.taste_list = ""
 kale.ingredient_list = "kale"
 kale.diet_list = "vegatarian, healthy"
+kale.save
 
 u1.favorites.create(item_id: kale.id)
 
@@ -430,6 +434,7 @@ potatoes = contorni.items.create(
 potatoes.taste_list = ""
 potatoes.ingredient_list = ""
 potatoes.diet_list = "vegatarian"
+potatoes.save
 
 polenta = contorni.items.create(
   name: "Parsnip Polenta",
@@ -438,9 +443,10 @@ polenta = contorni.items.create(
   description: "",
   featured: true)
 
-potatoes.taste_list = ""
-potatoes.ingredient_list = ""
-potatoes.diet_list = "healthy"
+polenta.taste_list = ""
+polenta.ingredient_list = ""
+polenta.diet_list = "healthy"
+polenta.save
 
 zuppa = antipasti.items.create(
   name: "Zuppa Del Di",
@@ -462,6 +468,7 @@ carpaccio.ingredient_list = "olives, lemon"
 u1.favorites.create(item_id: carpaccio.id)
 u2.favorites.create(item_id: carpaccio.id)
 u3.favorites.create(item_id: carpaccio.id)
+carpaccio.save
 
 insalata = antipasti.items.create(
   name: "Carpaccio Di Bresaola",
@@ -475,6 +482,7 @@ insalata.ingredient_list = "cheese, walnuts"
 insalata.diet_list = ""
 
 u1.favorites.create(item_id: insalata.id)
+insalata.save
 
 insaltaverde = antipasti.items.create(
   name: "Insalta Verde Del Mercato",
@@ -486,6 +494,7 @@ insaltaverde = antipasti.items.create(
 insaltaverde.taste_list = "salty"
 insaltaverde.ingredient_list = "beets, pumpkin, pear"
 insaltaverde.diet_list = "vegetarian, healthy"
+insaltaverde.save
 
 arugala = antipasti.items.create(
   name: "Insalata Di Arugula",
@@ -497,17 +506,19 @@ arugala = antipasti.items.create(
 arugala.taste_list = ""
 arugala.ingredient_list = "tomato, cheese"
 arugala.diet_list = "vegetarian, healthy"
+arugala.save
 
 alpo = antipasti.items.create(
   name: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
   price: "18.00",
   photo_url: "",
   description: "Grilled Octopus, with hebed sauteed potatoes, tggiasca olive tapenade",
-  featured: true)
+  featured: false)
 
 alpo.taste_list = ""
 alpo.ingredient_list = "octopus"
 alpo.diet_list = ""
+alpo.save
 
 crudo = antipasti.items.create(
   name: "Palpo",
@@ -519,6 +530,7 @@ crudo = antipasti.items.create(
 crudo.taste_list = "salty"
 crudo.ingredient_list = "fish"
 crudo.diet_list = "healthy"
+crudo.save
 
 melanzane = antipasti.items.create(
   name: "Melanzane",
@@ -530,6 +542,7 @@ melanzane = antipasti.items.create(
 melanzane.taste_list = "salty"
 melanzane.ingredient_list = "eggplant"
 melanzane.diet_list = ""
+melanzane.save
 
 fritto = antipasti.items.create(
   name: "Fritto Misto",
@@ -541,6 +554,7 @@ fritto = antipasti.items.create(
 fritto.taste_list = "salty"
 fritto.ingredient_list = "prawns, calamari, fish"
 fritto.diet_list = "healthy"
+fritto.save
 
 u1.favorites.create(item_id: fritto.id)
 u2.favorites.create(item_id: fritto.id)
@@ -556,6 +570,7 @@ trofie = primi.items.create(
 trofie.taste_list = "salty"
 trofie.ingredient_list = "lamb"
 trofie.diet_list = "healthy"
+trofie.save
 
 linguine = primi.items.create(
   name: "Linguine Nere Housemade Black Linguine",
@@ -567,6 +582,7 @@ linguine = primi.items.create(
 linguine.taste_list = "sweet, spicy"
 linguine.ingredient_list = "shrimp, pasta"
 linguine.diet_list = ""
+linguine.save
 
 spaghetti = primi.items.create(
   name: "Spaghetti Alle Vongole with Clams",
@@ -578,6 +594,7 @@ spaghetti = primi.items.create(
 spaghetti.taste_list = ""
 spaghetti.ingredient_list = "clams, pasta"
 spaghetti.diet_list = ""
+spaghetti.save
 
 fettuccine = primi.items.create(
   name: "Fettuccine Casalinghe Al Pesto",
@@ -589,6 +606,7 @@ fettuccine = primi.items.create(
 fettuccine.taste_list = "sweet, spicy"
 fettuccine.ingredient_list = "shrimp, pasta"
 fettuccine.diet_list = ""
+fettuccine.save
 
 gnocchi = primi.items.create(
   name: "Gnocchi Di Melanzane",
@@ -601,6 +619,7 @@ gnocchi.taste_list = "salty"
 gnocchi.ingredient_list = "speck, cheese"
 
 u2.favorites.create(item_id: gnocchi.id)
+gnocchi.save
 
 spaghetti2 = primi.items.create(
   name: "Spaghetti with Baby Octopus and Preserved Lemon",
@@ -612,6 +631,7 @@ spaghetti2 = primi.items.create(
 spaghetti2.taste_list = ""
 spaghetti2.ingredient_list = "duck, octopus, lemon"
 spaghetti2.diet_list = ""
+spaghetti2.save
 
 risotto = primi.items.create(
   name: "Risotto Del Di",
@@ -630,6 +650,7 @@ bucatini = primi.items.create(
 bucatini.taste_list = "spicy"
 bucatini.ingredient_list = ""
 bucatini.diet_list = ""
+bucatini.save
 
 spaghettic = primi.items.create(
   name: "Spaghetti Carbonara Dello Chef",
@@ -641,6 +662,7 @@ spaghettic = primi.items.create(
 spaghettic.taste_list = ""
 spaghettic.ingredient_list = "pasta"
 spaghettic.diet_list = ""
+spaghettic.save
 
 garganelli = primi.items.create(
   name: "Garganelli Alla Bolognese",
@@ -652,6 +674,7 @@ garganelli = primi.items.create(
 garganelli.taste_list = "salty"
 garganelli.ingredient_list = "bolognese"
 garganelli.diet_list = ""
+garganelli.save
 
 u2.favorites.create(item_id: garganelli.id)
 u3.favorites.create(item_id: garganelli.id)
@@ -666,6 +689,7 @@ polloa = secondi.items.create(
 polloa.taste_list = ""
 polloa.ingredient_list = "chicken"
 polloa.diet_list = ""
+polloa.save
 
 bistecca = secondi.items.create(
   name: "Bistecca Tagliata",
@@ -677,6 +701,7 @@ bistecca = secondi.items.create(
 bistecca.taste_list = ""
 bistecca.ingredient_list = "steak"
 bistecca.diet_list = ""
+bistecca.save
 
 grigliata = secondi.items.create(
   name: "Grigliata Mista Di Pesce",
@@ -688,6 +713,7 @@ grigliata = secondi.items.create(
 grigliata.taste_list = ""
 grigliata.ingredient_list = "fish, eggplant"
 grigliata.diet_list = ""
+grigliata.save
 
 u1.favorites.create(item_id: grigliata.id)
 
@@ -701,6 +727,7 @@ pesce = secondi.items.create(
 pesce.taste_list = ""
 pesce.ingredient_list = "fish"
 pesce.diet_list = ""
+pesce.save
 
 stinco = secondi.items.create(
   name: "Stinco Di Maiale Pork Shank",
@@ -712,6 +739,7 @@ stinco = secondi.items.create(
 stinco.taste_list = ""
 stinco.ingredient_list = "apple, pork"
 stinco.diet_list = ""
+stinco.save
 
 u1.favorites.create(item_id: stinco.id)
 u2.favorites.create(item_id: stinco.id)
@@ -726,6 +754,7 @@ pollo = secondi.items.create(
 pollo.taste_list = ""
 pollo.ingredient_list = "chicken, arugula"
 pollo.diet_list = ""
+pollo.save
 
 scaloppine = secondi.items.create(
   name: "Scaloppine Pollo",
@@ -737,6 +766,7 @@ scaloppine = secondi.items.create(
 scaloppine.taste_list = ""
 scaloppine.ingredient_list = "chicken, lemon"
 scaloppine.diet_list = "healthy"
+scaloppine.save
 
 gelato = dolci.items.create(
   name: "Gelato",
@@ -748,6 +778,7 @@ gelato = dolci.items.create(
 gelato.taste_list = "sweet"
 gelato.ingredient_list = "dairy"
 gelato.diet_list = "vegetarian"
+gelato.save
 
 sorbetto = dolci.items.create(
   name: "Sorbetto",
@@ -759,6 +790,7 @@ sorbetto = dolci.items.create(
 sorbetto.taste_list = "sweet"
 sorbetto.ingredient_list = "dairy"
 sorbetto.diet_list = "vegetarian"
+sorbetto.save
 
 tora = dolci.items.create(
   name: "Torta Di Cioccolato & Ricotta",
@@ -770,7 +802,7 @@ tora = dolci.items.create(
 tora.taste_list = "sweet"
 tora.ingredient_list = "dairy"
 tora.diet_list = "vegetarian"
-
+tora.save
 u1.favorites.create(item_id: tora.id)
 
 frutti = dolci.items.create(
@@ -783,6 +815,7 @@ frutti = dolci.items.create(
 frutti.taste_list = "sweet"
 frutti.ingredient_list = "dairy"
 frutti.diet_list = "vegetarian"
+frutti.save
 
 tiramisu = dolci.items.create(
   name: "Tiramisu",
@@ -794,6 +827,7 @@ tiramisu = dolci.items.create(
 tiramisu.taste_list = "sweet"
 tiramisu.ingredient_list = "dairy"
 tiramisu.diet_list = "vegetarian"
+tiramisu.save
 
 crostatina = dolci.items.create(
   name: "Crostatina Di Stagione Seasonal Fruit Tart",
@@ -805,9 +839,6 @@ crostatina = dolci.items.create(
 crostatina.taste_list = "sweet"
 crostatina.ingredient_list = "dairy"
 crostatina.diet_list = "vegetarian"
-
-m.items do |i|
-  i.save
-end
+crostatina.save
 
 ###############################################################################
