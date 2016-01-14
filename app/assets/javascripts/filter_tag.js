@@ -68,7 +68,7 @@ myApp.controller('ItemsController', ['$scope', '$routeParams', '$http',
         }
       });
     });
-    return trending.length === 0 ? false : trending;
+    return trending;
   };
 
   $scope.findUniqueTags = function() {
