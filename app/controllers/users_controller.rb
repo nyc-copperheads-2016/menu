@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:warning] = user.errors.full_messages.join(". ")
-      redirect_to new_user_path
+      redirect_to register_path
     end
   end
 
