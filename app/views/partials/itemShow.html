@@ -5,7 +5,7 @@
     <p>Description: {{item[0].description}}</p>
   </div>
   <div ng-controller="FavoritesController">
-    <i class="{{heartClass}}" ng-click="saveFave()"></i>
+    <i id="heart-icon" class="{{heartClass}}" ng-click="saveFave()"></i>
     <p><button ng-click="menuBack()">Back</button></p>
   </div>
 </main>
