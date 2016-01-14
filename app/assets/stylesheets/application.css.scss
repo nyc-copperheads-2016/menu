@@ -25,16 +25,28 @@
   display: inline;
 }
 
-.centered {
-  text-align: center;
-}
-
 .no-list {
   list-style: none;
 }
 
 body {
   font-family: 'Josefin Slab', sans-serif;
+}
+
+.centered {
+  text-align: center;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-left {
+  float: left;
+}
+
+.cleared {
+  clear: both;
 }
 
 /*
