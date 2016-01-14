@@ -20,16 +20,38 @@ extras = m.sections.create(name: "Salads")
 drinks = m.sections.create(name: "Flatbreads")
 sweets = m.sections.create(name: "Raw Bar")
 
-lobster = main.items.create(name: "Lobster Roll", price: "16.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
-crab = main.items.create(name: "Crab Roll", price: "13.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/1yUPo3-t0OMQwcquM8Swng/258s.jpg")
+lobster = main.items.create(name: "Lobster Roll",
+                                price: "16.00",
+                                photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg",
+                                featured: true)
+crab = main.items.create(name: "Crab Roll",
+                             price: "13.00",
+                             photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/1yUPo3-t0OMQwcquM8Swng/258s.jpg")
 
-clam = extras.items.create(name: "New England Clam Chowder", price: "9.00", photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
-claws = extras.items.create(name: "4 Jonah Crab Claws", price: "8.00", photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
+rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
-mainebrew = drinks.items.create(name: "Maine Microbrews", price: "6.50", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
-mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade", price: "3.00", photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/j3GgKBhbtoj98_dJFp0PCg/258s.jpg")
+clam = extras.items.create(name: "New England Clam Chowder",
+                               price: "9.00",
+                               photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
+claws = extras.items.create(name: "4 Jonah Crab Claws",
+                                price: "8.00",
+                                photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZrnAsssJfSJMjWepQKXP9w/258s.jpg")
 
-icecream = sweets.items.create(name: "Ice Cream Sandwiches", price: "4.00", photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
+rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: extras.items.sample) }
+
+mainebrew = drinks.items.create(name: "Maine Microbrews",
+                                     price: "6.50",
+                                     photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
+mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade",
+                                     price: "3.00",
+                                     photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/j3GgKBhbtoj98_dJFp0PCg/258s.jpg")
+
+rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: drinks.items.sample) }
+
+icecream = sweets.items.create(name: "Ice Cream Sandwiches",
+                                    price: "4.00",
+                                    photo_url: "http://cdn-jpg.thedailymeal.net/sites/default/files/u12505/lukes_lobster_blue_monster.jpg")
+
 
 lobster.taste_list = "salty, buttery"
 lobster.ingredient_list = "lobster, butter"
@@ -58,27 +80,40 @@ icecream.taste_list = "sweet"
 icecream.ingredient_list = "milk, blueberry, chocolate"
 icecream.save
 
-
 chopt = Restaurant.create(name: "Chop't",
-                                      website: "http://choptsalad.com/",
-                                      description: "Creative Salad Company",
-                                      logo_url: "http://choptsalad.com/wp-content/themes/twentyfourteen-child/images/logo.png")
+                              website: "http://choptsalad.com/",
+                              description: "Creative Salad Company",
+                              logo_url: "http://choptsalad.com/wp-content/themes/twentyfourteen-child/images/logo.png")
 
 l = chopt.locations.create(address: "80 Pine St",
-                                      city: "New York",
-                                      state: "NY",
-                                      zip: "10005")
+                              city: "New York",
+                              state: "NY",
+                              zip: "10005")
 
 m = chopt.menus.create(name: "Salads")
 
 specials = m.sections.create(name: "Specials")
 classics = m.sections.create(name: "Classics")
 
-street = specials.items.create(name: "NYC STREET CART", price: "8.00", photo_url: "https://media.glassdoor.com/l/ed/7c/2f/35/the-nyc-street-cart-salad.jpg")
-falafel = specials.items.create(name: "FALAFEL MARKET PLATE", price: "8.50", photo_url: "https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/s320x320/e35/12145423_1795795263980952_1219895798_n.jpg")
+street = specials.items.create(name: "NYC STREET CART",
+                                   price: "8.00",
+                                   photo_url: "https://media.glassdoor.com/l/ed/7c/2f/35/the-nyc-street-cart-salad.jpg",
+                                   featured: true)
+falafel = specials.items.create(name: "FALAFEL MARKET PLATE",
+                                    price: "8.50",
+                                    photo_url: "https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/s320x320/e35/12145423_1795795263980952_1219895798_n.jpg",
+                                    featured: true)
 
-santafe = classics.items.create(name: "SANTA FE", price: "7.00", photo_url: "http://s3-media1.fl.yelpcdn.com/bphoto/YEhApVeVujYYRpjEMdj0PQ/348s.jpg")
-steakhouse = classics.items.create(name: "STEAKHOUSE", price: "8.00", photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/Xgw0IMs4aoCtjPU_TzFN_A/o.jpg")
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: specials.items.sample) }
+
+santafe = classics.items.create(name: "SANTA FE",
+                                     price: "7.00",
+                                     photo_url: "http://s3-media1.fl.yelpcdn.com/bphoto/YEhApVeVujYYRpjEMdj0PQ/348s.jpg")
+steakhouse = classics.items.create(name: "STEAKHOUSE",
+                                        price: "8.00",
+                                        photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/Xgw0IMs4aoCtjPU_TzFN_A/o.jpg")
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: classics.items.sample) }
 
 street.ingredient_list = "chicken, cauliflower, tomato, lettuce, cabbage"
 street.save
@@ -114,12 +149,16 @@ j_t_b = shaken.items.create(name: "John The Baptist", price: "15.00", descriptio
 d_k = shaken.items.create(name: "Death Knell", price: "16.00", description: "Nikka Coffey Grain Whiskey, Togarashi, Oloroso Sherry, Lime, Orinoco Bitters", photo_url: "https://media.timeout.com/images/102962776/image.jpg")
 m_j = shaken.items.create(name: "Master Juba", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Dead Rabbit Cask Ale, Apple, Cinnamon, Cream, Egg, Mace, Pimento Bitters", photo_url: "https://slideshow.starchefs.com/p.php?a=UUFRXio7MyQqQFtFPzc1OjQmLjc5Jzw2Mio5LTsiKyQ%2BJzE%2FPzs%2FNCY7LiYoNDs%3D&m=1424381311")
 w_g = shaken.items.create(name: "Western Gate", price: "15.00", description: "Powers Gold Irish Whiskey, Cranberry, Beet, Tangerine, Lemon, Pimento Bitters", photo_url: "http://bestguinnessnyc.com/wp-content/uploads/2014/06/Feature-750x400.jpg")
-m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters", photo_url: "http://www.fodors.com/ee/files/slideshows/3-The-Dead-Rabbit.jpg")
+m = shaken.items.create(name: "Mockingbird", price: "15.00", description: "Boomsma Oude Genever, Cachaca, Mazanilla Sherry, Macadamia Nut, Vanilla, Lemon, Aromatic Bitters", photo_url: "http://www.fodors.com/ee/files/slideshows/3-The-Dead-Rabbit.jpg", featured: true)
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: shaken.items.sample) }
 
 p_m = stirred.items.create(name: "Preacher man", price: "15.00", description: "Powers John’s Lane Irish Whiskey, Reposado Tequila, Amaro Ciociaro, Sweet Vermouth, Dry Vermouth Cocoa, Absinthe", photo_url: "http://assets.bwbx.io/images/iUOCn1jJ5beM/v2/1200x-1.jpg")
-b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters", photo_url: "http://static01.nyt.com/images/2015/03/01/travel/01COVER1/01COVER1-master315-v2.jpg")
+b_j = stirred.items.create(name: "Broadway Junction", price: "15.00", description: "Bushmills Black Bush Irish Whiskey, Creme De Noyeau, Campari, Cacao, Creole Bitters", photo_url: "http://static01.nyt.com/images/2015/03/01/travel/01COVER1/01COVER1-master315-v2.jpg", featured: true)
 b_r = stirred.items.create(name: "Black Rose", price: "15.00", description: "Tullamore Dew 12 Year Old Irish Whiskey, Bergamot Black Tea, Curacao, Averna Amaro, Walnut, Aromatic Bitters", photo_url: "https://cdn3.vox-cdn.com/thumbor/S6aDOWaEuOXmzEPP_ud5i5BDECU=/cdn0.vox-cdn.com/uploads/chorus_asset/file/3626146/The_Eddy__-_Deep_SEa_Colony.0.jpg")
 l_w = stirred.items.create(name: "Little Water", price: "15.00", description: "Tanqueray Gin, Old Tom Gin, Dolin Blanc, Green Chartreuse, Pear, Pennyroyal, Absinthe", photo_url: "https://media.timeout.com/images/100643847/617/347/image.jpg")
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: stirred.items.sample) }
 
 j_t_b.taste_list = "sour, heavy, bitter"
 j_t_b.ingredient_list = "whiskey, absinthe, lime, bitters"
@@ -182,24 +221,58 @@ raw = m.sections.create(name: "Raw Bar")
 large = m.sections.create(name: "Large Plates")
 sides = m.sections.create(name: "Sides")
 
-onion = bites.items.create(name: "Classic Onion Soup", price: "13.00", photo_url: "https://static.wixstatic.com/media/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg")
-yellowfin = bites.items.create(name: "Yellowfin Tuna Tartare", price: "18.00")
-mussels = bites.items.create(name: "Mussel Pot", price: "17.00", photo_url: "https://static.wixstatic.com/media/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg")
+onion = bites.items.create(name: "Classic Onion Soup",
+                              price: "13.00",
+                              photo_url: "https://static.wixstatic.com/media/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_b53a041e5a0e42989fe03294cf391a19.jpg",
+                              featured: true)
+yellowfin = bites.items.create(name: "Yellowfin Tuna Tartare",
+                                  price: "18.00")
+mussels = bites.items.create(name: "Mussel Pot",
+                                 price: "17.00",
+                                 photo_url: "https://static.wixstatic.com/media/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_a15dae4597274e218cd9ce8fdcd774ec.jpg")
 
-kale = salads.items.create(name: "Local Kale", price: "14.00", photo_url: "https://static.wixstatic.com/media/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg")
-beets = salads.items.create(name: "Roasted Beets", price: "15.00")
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: bites.items.sample) }
 
-sausage = flatbreads.items.create(name: "Sausage", price: "16.00")
-shrimp = flatbreads.items.create(name: "Spicy Shrimp", price: "16.00")
+kale = salads.items.create(name: "Local Kale",
+                               price: "14.00",
+                               photo_url: "https://static.wixstatic.com/media/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_79ff71fe805e4004851c6a6f31e9bf5a.jpg")
+beets = salads.items.create(name: "Roasted Beets",
+                                price: "15.00")
 
-jumbo = raw.items.create(name: "Jumbo Shrimp (each)", price: "6.00", photo_url: "https://static.wixstatic.com/media/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg")
-oysters = raw.items.create(name: "East Coast Oysters (each)", price: "3.00")
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: salads.items.sample) }
 
-salmon = large.items.create(name: "Scottish Salmon", price: "28.00", photo_url: "https://static.wixstatic.com/media/7846b5_f9417ade3c9745108df059ca8326ba57.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_f9417ade3c9745108df059ca8326ba57.jpg")
-chicken = large.items.create(name: "Roasted Amish Chicken Breast", price: "25.00")
+sausage = flatbreads.items.create(name: "Sausage",
+                                        price: "16.00",
+                                        featured: true)
+shrimp = flatbreads.items.create(name: "Spicy Shrimp",
+                                      price: "16.00")
 
-fries = sides.items.create(name: "Hand-Cut Fries", price: "8.00")
-mushrooms = sides.items.create(name: "Foraged Mushrooms", price: "9.00")
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: flatbreads.items.sample) }
+
+jumbo = raw.items.create(name: "Jumbo Shrimp (each)",
+                              price: "6.00",
+                              photo_url: "https://static.wixstatic.com/media/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_bd1d734bcb2e487bbb673e21527fc2ae.jpg")
+oysters = raw.items.create(name: "East Coast Oysters (each)",
+                               price: "3.00",
+                               featured: true)
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: raw.items.sample) }
+
+salmon = large.items.create(name: "Scottish Salmon",
+                                 price: "28.00",
+                                 photo_url: "https://static.wixstatic.com/media/7846b5_f9417ade3c9745108df059ca8326ba57.jpg/v1/fit/w_1896,h_1264,q_90,usm_0.66_1.00_0.01/7846b5_f9417ade3c9745108df059ca8326ba57.jpg",
+                                 featured: true)
+chicken = large.items.create(name: "Roasted Amish Chicken Breast",
+                                 price: "25.00")
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: large.items.sample) }
+
+fries = sides.items.create(name: "Hand-Cut Fries",
+                              price: "8.00")
+mushrooms = sides.items.create(name: "Foraged Mushrooms",
+                                    price: "9.00")
+
+rand(20).times { Favorite.create(user: FactoryGirl.create(:user), item: sides.items.sample) }
 
 onion.diet_list = "vegetarian"
 onion.taste_list = "savory"
