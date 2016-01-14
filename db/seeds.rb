@@ -393,7 +393,8 @@ crostini = cicchetti.items.create(
   name: "Crostini Del Di",
   price: "8.00",
   photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/ZQEi0AYUNp5MLhNllhffpA/o.jpg",
-  description: "Open faced toasted bread of the day")
+  description: "Open faced toasted bread of the day",
+  featured: true)
 
 crostini.taste_list = "salty"
 crostini.ingredient_list = ""
@@ -403,7 +404,8 @@ crostini.save
 vegetables = contorni.items.create(
   name: "Mixed Grilled Vegetables",
   price: "10.00",
-  photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/zSLOaXnehUlL-BUB0Ohh7Q/o.jpg")
+  photo_url: "http://s3-media2.fl.yelpcdn.com/bphoto/zSLOaXnehUlL-BUB0Ohh7Q/o.jpg",
+  featured: true)
 
 vegetables.taste_list = ""
 vegetables.ingredient_list = ""
@@ -441,7 +443,7 @@ polenta = contorni.items.create(
   price: "8.00",
   photo_url: "",
   description: "",
-  featured: true)
+  featured: false)
 
 polenta.taste_list = ""
 polenta.ingredient_list = ""
@@ -549,7 +551,7 @@ fritto = antipasti.items.create(
   price: "18.00",
   photo_url: "",
   description: "fried calamari, white fish, prawns with parsnip polenta for dinner only",
-  featured: true)
+  featured: false)
 
 fritto.taste_list = "salty"
 fritto.ingredient_list = "prawns, calamari, fish"
@@ -734,7 +736,7 @@ stinco = secondi.items.create(
   price: "26.00",
   photo_url: "http://s3-media3.fl.yelpcdn.com/bphoto/RyhElWAglLxfNoBOajT7kg/o.jpg",
   description: "With honey crisp apple cipollini agrodolce",
-  featured: false)
+  featured: true)
 
 stinco.taste_list = ""
 stinco.ingredient_list = "apple, pork"
@@ -773,7 +775,7 @@ gelato = dolci.items.create(
   price: "9.00",
   photo_url: "http://www.daclaudionyc.com/assets/desset_01.jpg",
   description: "Vanilla or nocciola",
-  featured: false)
+  featured: true)
 
 gelato.taste_list = "sweet"
 gelato.ingredient_list = "dairy"
@@ -797,7 +799,7 @@ tora = dolci.items.create(
   price: "10.00",
   photo_url: "http://www.daclaudionyc.com/assets/desset_02.jpg",
   description: "With ricotta gelato",
-  featured: false)
+  featured: true)
 
 tora.taste_list = "sweet"
 tora.ingredient_list = "dairy"
