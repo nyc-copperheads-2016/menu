@@ -84,6 +84,11 @@ lemonade = drinks.items.create(name: "Luke's Blueberry Lemonade",
                                     price: "3.50",
                                     photo_url: "http://damndelicious.net/wp-content/uploads/2014/05/IMG_9018edit.jpg")
 
+soy = drinks.items.create(name: "Soylent",
+                             description: "The drink of champions",
+                             price: "2.50",
+                             photo_url: "http://ecx.images-amazon.com/images/I/21Ql8EnD%2B1L._AC_UL160_SR160,160_.jpg")
+
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: drinks.items.sample) }
 
