@@ -23,7 +23,7 @@ sweets = m.sections.create(name: "Raw Bar")
 lobster = main.items.create(name: "Lobster Roll",
                                 price: "16.00",
                                 photo_url: "http://assets3.thrillist.com/v1/image/746319/size/tl-horizontal_main/buttery-bunned-lobster-rolls-you-bring-the-booze",
-                                description: "Chilled lobster atop a buttered, toasted New England-style split-top bun",
+                                description: "Seasoned and buttered up roll with fresh New England lobster.",
                                 featured: true)
 
 crab = main.items.create(name: "Crab Roll",
@@ -49,7 +49,7 @@ noah = main.items.create(name: "Noah's Ark (for 2)",
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
 clam = extras.items.create(name: "New England Clam Chowder",
-                               description: "Clams and broth",
+                               description: "Thick and creamy New England Clam Chowder chock full of fresh clams, potatoes, bacon, roasted garlic, cream, celery root and chives.",
                                price: "9.00",
                                photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
 
