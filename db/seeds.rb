@@ -29,20 +29,54 @@ crab = main.items.create(name: "Crab Roll",
                              price: "13.00",
                              photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg")
 
+shrimp = main.items.create(name: "Shrimp Roll",
+                             price: "9.00",
+                             photo_url: "http://www.seamless.com/finedining/img/vendormenuplustabcontentimages/lg_57505_0.jpg")
+
+maine = main.items.create(name: "Taste of Maine",
+                                price: "24.00",
+                                photo_url: "http://foodforfel.com/wp-content/gallery/lukeslobster.12.14.09/IMG_0001.JPG")
+
+noah = main.items.create(name: "Noah's Ark (for 2)",
+                                price: "46.00",
+                                photo_url: "http://www.lukeslobsterupperwest.com/gallery/-/media/7E0648FFA07C4353A1A77D673E5FC844.jpg")
+
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
 clam = extras.items.create(name: "New England Clam Chowder",
                                price: "9.00",
                                photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
+
 claws = extras.items.create(name: "4 Jonah Crab Claws",
                                 price: "8.00",
                                 photo_url: "https://www.giltcity.com/images/share/uploads/0000/0003/0415/304158271/orig.jpg")
 
+soup = extras.items.create(name: "Soups",
+                                price: "9.50",
+                                photo_url: "http://www.thegoodshoppingguide.com/wp-content/uploads/2013/03/soup.jpg")
+
+cheese = extras.items.create(name: "Grilled Cheese",
+                                price: "5.00",
+                                photo_url: "http://www.ilovegrilledcheese.com/img/slide1.jpg")
+
+chips = extras.items.create(name: "Cape Cod Chips",
+                                price: "2.00",
+                                photo_url: "http://snyderslance.com/images/capecodheader.png")
+
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: extras.items.sample) }
+
+mainebrew = drinks.items.create(name: "Maine Microbrews",
+                                     price: "6.50",
+                                     photo_url: "http://s3-media4.fl.yelpcdn.com/bphoto/5L6AXcbZlNFxhTbQ0UW9Kw/258s.jpg")
 
 mainesoda = drinks.items.create(name: "Maine Root Soda & Lemonade",
                                      price: "3.00",
                                      photo_url: "https://s3.amazonaws.com/trycaviar.com/offers/143/5932.jpg")
+
+lemonade = drinks.items.create(name: "Luke's Blueberry Lemonade",
+                                    price: "3.50",
+                                    photo_url: "http://damndelicious.net/wp-content/uploads/2014/05/IMG_9018edit.jpg")
+
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: drinks.items.sample) }
 
@@ -58,16 +92,47 @@ crab.taste_list = "salty, buttery"
 crab.ingredient_list = "crab, butter"
 crab.save
 
-clam.taste_list = "savory"
+shrimp.taste_list = "salty, buttery"
+shrimp.ingredient_list = "shrimp, butter"
+shrimp.save
+
+maine.taste_list = "salty, buttery"
+maine.ingredient_list = "lobster, shrimp, crab, butter"
+maine.save
+
+noah.taste_list = "salty, buttery"
+noah.ingredient_list = "lobster, shrimp, crab, butter"
+noah.save
+
+clam.taste_list = "savory, briney"
 clam.ingredient_list = "clam"
 clam.save
 
 claws.ingredient_list = "crab"
 claws.save
 
+soup.taste_list = "savory, salty"
+soup.save
+
+cheese.taste_list = "savory"
+cheese.ingredient_list = "cheese"
+cheese.save
+
+chips.taste_list = "savory"
+chips.ingredient_list = "chips"
+chips.save
+
+mainebrew.taste_list = "hoppy, citrusy"
+mainebrew.ingredient_list = "beer"
+mainebrew.save
+
 mainesoda.taste_list = "sweet"
-mainesoda.ingredient_list = "blueberry, lemon, sarsparilla, ginger"
+mainesoda.ingredient_list = "lemon, sarsparilla, ginger"
 mainesoda.save
+
+lemonade.taste_list = "sweet, sour"
+lemonade.ingredient_list = "blueberry, lemon"
+lemonade.save
 
 icecream.taste_list = "sweet"
 icecream.ingredient_list = "milk, blueberry, chocolate"
