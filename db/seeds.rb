@@ -23,31 +23,38 @@ sweets = m.sections.create(name: "Raw Bar")
 lobster = main.items.create(name: "Lobster Roll",
                                 price: "16.00",
                                 photo_url: "http://assets3.thrillist.com/v1/image/746319/size/tl-horizontal_main/buttery-bunned-lobster-rolls-you-bring-the-booze",
+                                description: "Chilled lobster atop a buttered, toasted New England-style split-top bun",
                                 featured: true)
 
 crab = main.items.create(name: "Crab Roll",
                              price: "13.00",
                              photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg")
+                             description: "Chilled crab atop a buttered, toasted New England-style split-top bun")
 
 shrimp = main.items.create(name: "Shrimp Roll",
                              price: "9.00",
+                             description: "Chilled shrimp atop a buttered, toasted New England-style split-top bun",
                              photo_url: "http://www.seamless.com/finedining/img/vendormenuplustabcontentimages/lg_57505_0.jpg")
 
 maine = main.items.create(name: "Taste of Maine",
                                 price: "24.00",
+                                description: "Chilled lobster, crab, and shrimp atop a buttered, toasted New England-style split-top bun",
                                 photo_url: "http://foodforfel.com/wp-content/gallery/lukeslobster.12.14.09/IMG_0001.JPG")
 
 noah = main.items.create(name: "Noah's Ark (for 2)",
                                 price: "46.00",
+                                description: "Chilled lobster, crab, and shrimp atop a buttered, toasted New England-style split-top bun",
                                 photo_url: "http://www.lukeslobsterupperwest.com/gallery/-/media/7E0648FFA07C4353A1A77D673E5FC844.jpg")
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
 clam = extras.items.create(name: "New England Clam Chowder",
+                               description: "Clams and broth",
                                price: "9.00",
                                photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
 
-claws = extras.items.create(name: "4 Jonah Crab Claws",
+claws = extras.items.create(name: "Crab Claws",
+                                description: "4 Jonah Crab Claws",
                                 price: "8.00",
                                 photo_url: "https://www.giltcity.com/images/share/uploads/0000/0003/0415/304158271/orig.jpg")
 
