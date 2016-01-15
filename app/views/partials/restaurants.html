@@ -3,9 +3,9 @@
     <div class="restaurant" ng-repeat="restaurant in restaurants track by $index">
 
       <p>
-        <a class="restaurant-name" ng-href="#/restaurants/{{restaurant.id}}/menuItems">
+        <a ng-href="#/restaurants/{{restaurant.id}}/menuItems">
           <img class="restaurant-logo" ng-src="{{restaurant.logo_url}}">
-          <div>
+          <div class="restaurant-name">
             {{restaurant.name}}
           </div>
           <div>
