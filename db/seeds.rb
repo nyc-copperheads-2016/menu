@@ -28,7 +28,7 @@ lobster = main.items.create(name: "Lobster Roll",
 
 crab = main.items.create(name: "Crab Roll",
                              price: "13.00",
-                             photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg")
+                             photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg",
                              description: "Chilled crab atop a buttered, toasted New England-style split-top bun")
 
 shrimp = main.items.create(name: "Shrimp Roll",
