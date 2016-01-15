@@ -23,17 +23,18 @@ sweets = m.sections.create(name: "Raw Bar")
 lobster = main.items.create(name: "Lobster Roll",
                                 price: "16.00",
                                 photo_url: "http://assets3.thrillist.com/v1/image/746319/size/tl-horizontal_main/buttery-bunned-lobster-rolls-you-bring-the-booze",
-                                featured: true)
+                                featured: true, description: "Seasoned and buttered up roll with fresh New England lobster.")
 
 crab = main.items.create(name: "Crab Roll",
                              price: "13.00",
-                             photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg")
+                             photo_url: "http://newyork.seriouseats.com/20090928-lukeslobster-crabroll.jpg", description: "Creamy and fresh crab meat onto buttered toasted bun.")
 
 rand(50).times { Favorite.create(user: FactoryGirl.create(:user), item: main.items.sample) }
 
 clam = extras.items.create(name: "New England Clam Chowder",
                                price: "9.00",
-                               photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg")
+                               photo_url: "http://captaincrab.org/wp-content/uploads/2015/06/chowder-large.jpg", description: "Thick and creamy New England Clam Chowder chock full of fresh clams, potatoes, bacon, roasted garlic, cream, celery root and chives.")
+
 claws = extras.items.create(name: "4 Jonah Crab Claws",
                                 price: "8.00",
                                 photo_url: "https://www.giltcity.com/images/share/uploads/0000/0003/0415/304158271/orig.jpg")
