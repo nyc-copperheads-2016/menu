@@ -514,7 +514,6 @@ u3 = User.create(username: "admin3", email: "admin@example3.com", password: "asd
 #   end
 # end
 
-###############################################################################
 claudio = Restaurant.create(name: "Da Claudio Ristorante",
   website: "http://www.daclaudionyc.com",
   description: "In the heart of lower Manhattan, Da Claudio brings a locally sourced seasonal Italian menu and friendly modern aesthetic to one of the oldest streets in New York. Its Nassau / Ann Street location is rich with both history and possibility. Da Claudio embraces New York tradition along with the city's changing dining landscape, offering curated fresh market driven-fare enhanced with the finest Italian imports,  a beautiful bar and salumeria as well as take-out and full service dining in a contemporary, light and airy space.",
@@ -633,7 +632,7 @@ u2.favorites.create(item_id: carpaccio.id)
 u3.favorites.create(item_id: carpaccio.id)
 
 insalata = antipasti.items.create(
-  name: "Carpaccio Di Bresaola",
+  name: "Insalata Du Radicchio",
   price: "14.00",
   photo_url: "",
   description: "With spicy sopressata, balsamiv, pecorino cheese, caramelized walnuts",
@@ -1002,5 +1001,3 @@ crostatina.taste_list = "sweet"
 crostatina.ingredient_list = "dairy"
 crostatina.diet_list = "vegetarian"
 crostatina.save
-
-###############################################################################
