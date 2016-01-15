@@ -12,13 +12,15 @@
     </h4>
     <ol>
       <li ng-repeat="item in user.items">
-        <a ng-href="#restaurants/{{item.section.menu.restaurant.id}}/menuItems/{{item.id}}">
-          {{item.name}}
-        </a>
-        from
-        <a ng-href="#restaurants/{{item.section.menu.restaurant.id}}/menuItems">
-          {{item.section.menu.restaurant.name}}
-        </a>
+        <p>
+          <a ng-href="#restaurants/{{item.section.menu.restaurant.id}}/menuItems/{{item.id}}">
+            {{item.name}}
+          </a>
+          from
+          <a ng-href="#restaurants/{{item.section.menu.restaurant.id}}/menuItems">
+            {{item.section.menu.restaurant.name}}
+          </a>
+        </p>
       </li>
     </ol>
   </div>
