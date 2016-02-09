@@ -6,7 +6,6 @@
 
 # Ignore config.
 /.bundle
-/config/secrets.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
