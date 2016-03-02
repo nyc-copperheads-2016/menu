@@ -10,11 +10,9 @@ Business owners are able to fully-control their online menus and their brand.
 
 Figuring out what to eat with up-to-date menus has never been easier!
 
-## Demo
-https://youtu.be/CYhv8IjMsWQ?t=35m40s
+**[Demo](https://youtu.be/CYhv8IjMsWQ?t=35m40s)**
 
-## Roadmap and Changelog
-https://trello.com/b/dQNBPk19/menu
+**[Roadmap and Changelog](https://trello.com/b/dQNBPk19/menu)**
 
 ## Technologies
 
