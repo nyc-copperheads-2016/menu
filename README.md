@@ -32,3 +32,23 @@ https://trello.com/b/dQNBPk19/menu
 - HTML5
 - CSS3
 - Foundation
+
+## Contributing
+
+Pull requests and issues are welcome!
+
+First, make sure you have [Git](https://git-scm.com/) installed and in your terminal, you can clone our repository and navigate to the folder:
+```
+git clone https://github.com/nyc-copperheads-2016/menu.git
+cd menu
+```
+
+To run the site locally, make sure you have [Ruby](https://www.ruby-lang.org/en/) and [PostgreSQL](http://www.postgresql.org/) installed, then follow the steps below:
+```
+gem install bundler
+bundle install
+bundle exec rake db:reset
+bundle exec rails server
+```
+
+Then navigate to http://localhost:3000/
