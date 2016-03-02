@@ -18,7 +18,7 @@ Figuring out what to eat with up-to-date menus has never been easier!
 
 ### Back-end
 - Ruby on Rails
-- Locu API (https://dev.locu.com/documentation/)
+- [Locu API](https://dev.locu.com/documentation/)
 - RESTful API
 - RSpec
 - CircleCI
@@ -35,7 +35,7 @@ Figuring out what to eat with up-to-date menus has never been easier!
 
 Pull requests and issues are welcome!
 
-First, make sure you have [Git](https://git-scm.com/) installed and in your terminal, you can clone our repository and navigate to the folder:
+First, make sure you have [Git](https://git-scm.com/) installed and in your terminal, you can run the following commands to clone our repository and navigate to the folder:
 ```
 git clone https://github.com/nyc-copperheads-2016/menu.git
 cd menu
@@ -50,3 +50,17 @@ bundle exec rails server
 ```
 
 Then navigate to http://localhost:3000/
+
+If you want to make changes, create a new feature branch:
+```
+git checkout -b feature-branch-name
+```
+
+Make commits early and often according to these [guidelines](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
+
+When the changes are functional (with tests if complex!), push your branch to GitHub and make a pull request.
+```
+git push origin feature-branch-name
+```
+
+Thanks!
