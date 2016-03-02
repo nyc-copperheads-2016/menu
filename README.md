@@ -49,7 +49,7 @@ bundle exec rake db:reset
 bundle exec rails server
 ```
 
-Then navigate to http://localhost:3000/
+Then go to http://localhost:3000/ and play with the app!
 
 If you want to make changes, create a new feature branch:
 ```
