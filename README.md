@@ -1,51 +1,66 @@
 CircleCI Tests: [![Circle CI](https://circleci.com/gh/nyc-copperheads-2016/menu.svg?style=svg)](https://circleci.com/gh/nyc-copperheads-2016/menu)
 
-<b>MENU APP</b>
-by Aaron, Eunice, Jay & Jon
+# [MENU](http://menu-inc.herokuapp.com/)
 
-*Trello:* https://trello.com/b/dQNBPk19/menu
+Menu is a mobile-first, single-page web app that serves as a digital alternative to paper menus.
 
-*Tech Stack:* 
+Visitors view nearby restaurants and their official menus, filter menu items (by tastes, ingredients, and diets), and favorite items to their profiles straight from their phones.
+
+Business owners are able to fully-control their online menus and their brand.
+
+Figuring out what to eat with up-to-date menus has never been easier!
+
+**[Demo](https://youtu.be/CYhv8IjMsWQ?t=35m40s)**
+
+**[Roadmap and Changelog](https://trello.com/b/dQNBPk19/menu)**
+
+## Technologies
+
+### Back-end
 - Ruby on Rails
+- [Locu API](https://dev.locu.com/documentation/)
+- RESTful API
+- RSpec
+- CircleCI
+- Heroku Continuous Deployment
+
+### Front-end
+- Javascript
 - AngularJS
-- Foundation Zurb
+- HTML5
+- CSS3
+- Foundation
 
-*Potential APIs:*
-- https://github.com/sosedoff/opentable
-- https://www.yelp.com/developers/documentation/v2 (search and business API's) 
-- http://nypl.github.io/menus-api/
-- https://dev.locu.com/documentation/
-- https://developers.google.com/maps/documentation/embed/
+## Contributing
 
-*Testing: Focus on models and features*
-- Capybara 
-- Rspec 
+Pull requests and issues are welcome!
 
-*Workflow:* 
-- Pairing 
-- Agile
+First, make sure you have [Git](https://git-scm.com/) installed and in your terminal, you can run the following commands to clone our repository and navigate to the folder:
+```
+git clone https://github.com/nyc-copperheads-2016/menu.git
+cd menu
+```
 
-<b>The Mission</b> (Also see Trello board for stories)
+To run the site locally, make sure you have [Ruby](https://www.ruby-lang.org/en/) and [PostgreSQL](http://www.postgresql.org/) installed, then follow the steps below:
+```
+gem install bundler
+bundle install
+bundle exec rake db:reset
+bundle exec rails server
+```
 
-*User Experience:*
-- Users can view owner-managed, owner-curated menus and decide on their order before being seated at a restaurant.
-- Users can favorite menu items and contribute anonymous feedback about their experience to the business directly.
+Then go to http://localhost:3000/ and play with the app!
 
-*Owner Experience:*
-- Owner can manage and curate their menus.
-- Owner can eliminate the expenses of print versions of their menus.
-- Owner can easily update menus.
-- Owner can receive anonymous patron feedback to aid in continuous business improvement.
+If you want to make changes, create a new feature branch:
+```
+git checkout -b feature-branch-name
+```
 
-*Wireframes:*
-- Login: Display different view based on account type.
-- Register: 
-  Let a user sign up.
-  Let an owner register/claim their business.
-- First Page: Search for restaurant by name or geolocation. 
-- Restaurant Page:
-  Brief About statement.
-  Default breakfast/lunch/dinner menu based on the current time of day.
-  Drop down to sort menu items by trending/special of the day/(owner) featured.
+Make commits early and often according to these [guidelines](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
 
-*Schema:* (See db/schema.png)
+When the changes are functional (with tests if complex!), push your branch to GitHub and make a pull request.
+```
+git push origin feature-branch-name
+```
+
+Thanks!
