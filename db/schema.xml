@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
-<!-- Active URL: https://schemadesigner.devbootcamp.com/ -->
+<!-- Active URL: http://schemadesigner.devbootcamp.com/ -->
 <sql>
 <datatypes db="mysql">
   <group label="Numeric" color="rgb(238,238,170)">
@@ -65,6 +65,10 @@
 <row name="logo_url" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="admin_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="admin" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -80,6 +84,10 @@
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="active (t/f)" null="1" autoincrement="0">
+<datatype>BLOB</datatype>
+<default>NULL</default><comment>boolean</comment>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -206,6 +214,38 @@
 <default>NULL</default></row>
 <row name="longitude" null="1" autoincrement="0">
 <datatype>DECIMAL</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="45" y="329" name="admin">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="first_name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="last_name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="username" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="password_digest" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="contact_number" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="contact_number_two" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="company_name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
